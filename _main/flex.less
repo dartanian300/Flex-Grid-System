@@ -1,0 +1,151 @@
+/*
+* Flex v1.0
+* Copyright 2014, Caleb Hardin.  All rights reserved.
+**** www.calebhardin.com
+**** Free to use under the MIT license.
+**** http://www.opensource.org/licenses/mit-license.php
+**** 6/20/2012
+*/
+
+
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
+
+
+@gutter: 1%;
+@numOfColumns: 12;
+
+.width(@columnNum){
+    @dividend: 100 - (@gutter * ((@numOfColumns / @columnNum) - 1));  // 100 - number of gaps multiplied by gutter
+    @numColumns: @numOfColumns / @columnNum;              // Number of actual columns to span width
+
+    width: (@dividend / @numColumns);
+}
+
+.marginLeft(@columnNum){
+    @dividend: 100 - (@gutter * ((@numOfColumns / @columnNum) - 1));  // 100 - number of gaps multiplied by gutter
+    @numColumns: @numOfColumns / @columnNum;              // Number of actual columns to span width
+
+    margin-left: (@dividend / @numColumns) + @gutter;
+}
+
+/* #Base 960 Grid
+================================================== */
+
+    .container {position: relative; width: 100%; margin: 0 auto; padding: 0;
+        
+        .column,
+        .columns { float: left; display: block; margin-left: @gutter / 2; margin-right: @gutter / 2; }
+        .row     { margin-bottom: 20px; }
+
+        /* Nested Column Classes */
+        .column.alpha, .columns.alpha               { margin-left: 0; }
+        .column.omega, .columns.omega               { margin-right: 0; }
+
+        /* Base Grid */
+        .one.column,
+        .one.columns                     { .width(1); }
+        .two.columns                     { .width(2); }
+        .three.columns                   { .width(3); }
+        .four.columns                    { .width(4); }
+        .five.columns                    { .width(5); }
+        .six.columns                     { .width(6); }
+        .seven.columns                   { .width(7); }
+        .eight.columns                   { .width(8); }
+        .nine.columns                    { .width(9); }
+        .ten.columns                     { .width(10); }
+        .eleven.columns                  { .width(11); }
+        .twelve.columns                  { .width(12); margin-right: 0; margin-left: 0;}
+
+        .one-third.column,
+        .one-third.columns               { .width(4); }
+        .two-thirds.column,
+        .two-thirds.columns              { .width(8); }
+
+        /* Offsets */
+        .offset-by-one                   { .marginLeft(1); }
+        .offset-by-two                   { .marginLeft(2); }
+        .offset-by-three                 { .marginLeft(3); }
+        .offset-by-four                  { .marginLeft(4); }
+        .offset-by-five                  { .marginLeft(5); }
+        .offset-by-six                   { .marginLeft(6); }
+        .offset-by-seven                 { .marginLeft(7); }
+        .offset-by-eight                 { .marginLeft(8); }
+        .offset-by-nine                  { .marginLeft(9); }
+        .offset-by-ten                   { .marginLeft(10); }
+        .offset-by-eleven                { .marginLeft(11); }
+
+    }
+
+
+
+
+/* #Tablet (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        
+    }
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+        
+    }
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    }
+
+
+/* #Clearing
+================================================== */
+
+    /* Self Clearing Goodness */
+    .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+    /* You can also use a <br class="clear" /> to clear columns */
+    .clear {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
