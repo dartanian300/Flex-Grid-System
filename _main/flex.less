@@ -15,7 +15,7 @@
     #Clearing */
 
 
-@gutter: 5%;
+@gutter: 2%;
 @numOfColumns: 12;
 
 .width(@columnNum){
@@ -29,7 +29,7 @@
     @dividend: 100 - (@gutter * ((@numOfColumns / @columnNum) - 1));  // 100 - number of gaps multiplied by gutter
     @numColumns: @numOfColumns / @columnNum;              // Number of actual columns to span width
 
-    margin-left: (@dividend / @numColumns) + @gutter;
+    margin-left: (@dividend / @numColumns) + (@gutter * 1.5);
 }
 
 /* #Base 960 Grid

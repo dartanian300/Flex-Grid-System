@@ -27,8 +27,8 @@
 .container .columns {
   float: left;
   display: block;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 .container .row {
   margin-bottom: 20px;
@@ -43,37 +43,37 @@
 }
 .container .one.column,
 .container .one.columns {
-  width: 3.75%;
+  width: 6.5%;
 }
 .container .two.columns {
-  width: 12.5%;
+  width: 15%;
 }
 .container .three.columns {
-  width: 21.25%;
+  width: 23.5%;
 }
 .container .four.columns {
-  width: 30%;
+  width: 32%;
 }
 .container .five.columns {
-  width: 38.75%;
+  width: 40.5%;
 }
 .container .six.columns {
-  width: 47.5%;
+  width: 49%;
 }
 .container .seven.columns {
-  width: 56.25%;
+  width: 57.5%;
 }
 .container .eight.columns {
-  width: 65%;
+  width: 66%;
 }
 .container .nine.columns {
-  width: 73.75%;
+  width: 74.5%;
 }
 .container .ten.columns {
-  width: 82.5%;
+  width: 83%;
 }
 .container .eleven.columns {
-  width: 91.25%;
+  width: 91.5%;
 }
 .container .twelve.columns {
   width: 100%;
@@ -82,44 +82,44 @@
 }
 .container .one-third.column,
 .container .one-third.columns {
-  width: 30%;
+  width: 32%;
 }
 .container .two-thirds.column,
 .container .two-thirds.columns {
-  width: 65%;
+  width: 66%;
 }
 .container .offset-by-one {
-  margin-left: 8.75%;
+  margin-left: 9.5%;
 }
 .container .offset-by-two {
-  margin-left: 17.5%;
+  margin-left: 18%;
 }
 .container .offset-by-three {
-  margin-left: 26.25%;
+  margin-left: 26.5%;
 }
 .container .offset-by-four {
   margin-left: 35%;
 }
 .container .offset-by-five {
-  margin-left: 43.75%;
+  margin-left: 43.5%;
 }
 .container .offset-by-six {
-  margin-left: 52.5%;
+  margin-left: 52%;
 }
 .container .offset-by-seven {
-  margin-left: 61.25%;
+  margin-left: 60.5%;
 }
 .container .offset-by-eight {
-  margin-left: 70%;
+  margin-left: 69%;
 }
 .container .offset-by-nine {
-  margin-left: 78.75%;
+  margin-left: 77.5%;
 }
 .container .offset-by-ten {
-  margin-left: 87.5%;
+  margin-left: 86%;
 }
 .container .offset-by-eleven {
-  margin-left: 96.25%;
+  margin-left: 94.5%;
 }
 /* #Tablet (Portrait)
 ================================================== */
