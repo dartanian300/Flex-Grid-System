@@ -8,7 +8,7 @@
 
 /* Table of Contents
 ==================================================
-    #Base 960 Grid
+    #Base Grid
     #Tablet (Portrait)
     #Mobile (Portrait)
     #Mobile (Landscape)
@@ -32,13 +32,13 @@
     margin-left: (@dividend / @numColumns) + (@gutter * 1.5);
 }
 
-/* #Base 960 Grid
+/* #Base Grid
 ================================================== */
 
     .container {position: relative; width: 100%; margin: 0 auto; padding: 0;
         
         .column,
-        .columns { float: left; display: block; margin-left: @gutter / 2; margin-right: @gutter / 2; }
+        .columns { float: left; display: block; margin-left: @gutter / 2; margin-right: @gutter / 2; box-sizing: border-box; -moz-box-sizing: border-box;}
         .row     { margin-bottom: 20px; }
 
         /* Nested Column Classes */
@@ -48,16 +48,27 @@
         /* Base Grid */
         .one.column,
         .one.columns                     { .width(1); }
+        .two.column,
         .two.columns                     { .width(2); }
+        .three.column,
         .three.columns                   { .width(3); }
+        .four.column,
         .four.columns                    { .width(4); }
+        .five.column,
         .five.columns                    { .width(5); }
+        .six.column,
         .six.columns                     { .width(6); }
+        .seven.column,
         .seven.columns                   { .width(7); }
+        .eight.column,
         .eight.columns                   { .width(8); }
+        .nine.column,
         .nine.columns                    { .width(9); }
+        .ten.column,
         .ten.columns                     { .width(10); }
+        .eleven.column,
         .eleven.columns                  { .width(11); }
+        .twelve.column,
         .twelve.columns                  { .width(12); margin-right: 0; margin-left: 0;}
 
         .one-third.column,
@@ -77,6 +88,72 @@
         .offset-by-nine                  { .marginLeft(9); }
         .offset-by-ten                   { .marginLeft(10); }
         .offset-by-eleven                { .marginLeft(11); }
+
+    }
+
+
+
+
+
+.widthNoGutter(@columnNum){
+    width: (@columnNum / @numOfColumns) * 100%;
+}
+
+.marginLeftNoGutter(@columnNum){
+    margin-left: (@columnNum / @numOfColumns) * 100%;
+}
+
+
+
+    .container.no-gutter {
+        
+        .column,
+        .columns {margin-left: 0; margin-right: 0; }
+        .row     { margin-bottom: 20px; }
+
+        /* Base Grid */
+        .one.column,
+        .one.columns                     { .widthNoGutter(1); }
+        .two.column,
+        .two.columns                     { .widthNoGutter(2); }
+        .three.column,
+        .three.columns                   { .widthNoGutter(3); }
+        .four.column,
+        .four.columns                    { .widthNoGutter(4); }
+        .five.column,
+        .five.columns                    { .widthNoGutter(5); }
+        .six.column,
+        .six.columns                     { .widthNoGutter(6); }
+        .seven.column,
+        .seven.columns                   { .widthNoGutter(7); }
+        .eight.column,
+        .eight.columns                   { .widthNoGutter(8); }
+        .nine.column,
+        .nine.columns                    { .widthNoGutter(9); }
+        .ten.column,
+        .ten.columns                     { .widthNoGutter(10); }
+        .eleven.column,
+        .eleven.columns                  { .widthNoGutter(11); }
+        .twelve.column,
+        .twelve.columns                  { .widthNoGutter(12); }
+
+        .one-third.column,
+        .one-third.columns               { .widthNoGutter(4); }
+        .two-thirds.column,
+        .two-thirds.columns              { .widthNoGutter(8); }
+
+        /* Offsets */
+        .offset-by-one                   { .marginLeftNoGutter(1); }
+        .offset-by-two                   { .marginLeftNoGutter(2); }
+        .offset-by-three                 { .marginLeftNoGutter(3); }
+        .offset-by-four                  { .marginLeftNoGutter(4); }
+        .offset-by-five                  { .marginLeftNoGutter(5); }
+        .offset-by-six                   { .marginLeftNoGutter(6); }
+        .offset-by-seven                 { .marginLeftNoGutter(7); }
+        .offset-by-eight                 { .marginLeftNoGutter(8); }
+        .offset-by-nine                  { .marginLeftNoGutter(9); }
+        .offset-by-ten                   { .marginLeftNoGutter(10); }
+        .offset-by-eleven                { .marginLeftNoGutter(11); }
 
     }
 

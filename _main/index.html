@@ -11,63 +11,122 @@
       .columns {height: 50px; margin-bottom: 2px; background: #e5e5e5;}
   </style>
    
-   <div class="container">
-      <div class="one columns alpha">1</div>
-      <div class="one columns">1</div>
-      <div class="one columns">1</div>
-      <div class="one columns">1</div>
-      <div class="one columns">1</div>
-      <div class="one columns">1</div>
-      <div class="one columns">1</div>
-      <div class="one columns">1</div>
-      <div class="one columns">1</div>
-      <div class="one columns">1</div>
-      <div class="one columns">1</div>
-      <div class="one columns omega">1</div>
-      
-      <br /><br />
-      </div>
-    <div class="container">
-      <div class="one columns alpha"></div>
-      <div class="one columns"></div>
-      <div class="two columns offset-by-one"></div>
-    </div>
-    
-    <div class="container">
-        <div class="three columns alpha"></div>
-        <div class="eight columns omega offset-by-one"></div>
-    </div>
-    
-    <div class="container">
-      
-       <div class="alpha one columns ">1</div>       <div class="omega eleven columns">11</div>
-       <div class="alpha two columns">2</div>        <div class="omega ten columns">10</div>
-       <div class="alpha three columns">3</div>      <div class="omega nine columns">9</div>
-       <div class="alpha four columns">4</div>       <div class="omega eight columns">8</div>
-       <div class="alpha five columns">5</div>       <div class="omega seven columns">7</div>
-       <div class="alpha six columns">6</div>        <div class="omega six columns">6</div>
-       <div class="alpha seven columns">7</div>      <div class="omega five columns">5</div>
-       <div class="alpha eight columns">8</div>      <div class="omega four columns">4</div>
-       <div class="alpha nine columns">9</div>       <div class="omega three columns">3</div>
-       <div class="alpha ten columns">10</div>       <div class="omega two columns">2</div>
-       <div class="alpha eleven columns">11</div>    <div class="omega one columns">1</div>
-       <div class="twelve columns">12</div>
+   <h1>No Gutter</h1>
+   
+   <div class="container no-gutter">
+       <div class="row">
+           <div class="one columns">1</div>
+           <div class="one columns">1</div>
+           <div class="one columns">1</div>
+           <div class="one columns">1</div>
+           <div class="one columns">1</div>
+           <div class="one columns">1</div>
+           <div class="one columns">1</div>
+           <div class="one columns">1</div>
+           <div class="one columns">1</div>
+           <div class="one columns">1</div>
+           <div class="one columns">1</div>
+           <div class="one columns">1</div>
+       </div>
+       
+       <div class="row">
+           <div class="three columns">3</div>
+           <div class="eight columns offset-by-one">8 - offset by 1</div>
+       </div>
+       
+       <div class="row">
+           <div class="two columns offset-by-five">2 - offset by 5</div>
+           <div class="four columns offset-by-one">4 - offset by 1</div>
+       </div>
    </div>
    
-   <br />
+   <h1>With Gutter</h1>
+   
    <div class="container">
-      <div class="four columns alpha">4</div>
-      <div class="four columns">4</div>
-      <div class="four columns omega">4</div>
+      <div class="row">
+          <div class="one columns alpha">1</div>
+          <div class="one columns">1</div>
+          <div class="one columns">1</div>
+          <div class="one columns">1</div>
+          <div class="one columns">1</div>
+          <div class="one columns">1</div>
+          <div class="one columns">1</div>
+          <div class="one columns">1</div>
+          <div class="one columns">1</div>
+          <div class="one columns">1</div>
+          <div class="one columns">1</div>
+          <div class="one columns omega">1</div>
+      </div>
+    </div>
       
-      <br />
+    <div class="container">
+      <div class="one columns alpha">1</div>
+      <div class="one columns">1</div>
+      <div class="two columns offset-by-one">1 - offset by 1</div>
+    </div>
+    
+    <div class="container">
+        <div class="three columns alpha">3</div>
+        <div class="eight columns omega offset-by-one">8 - offset by 1</div>
+    </div>
+    
+    <div class="container">
       
-       <div class="one-third columns alpha">1/3</div>
-       <div class="one-third columns">1/3</div>
-       <div class="one-third columns omega">1/3</div>
+       <div class="row">
+           <div class="alpha one columns ">1</div>       <div class="omega eleven columns">11</div>
+       </div>
+       <div class="row">
+           <div class="alpha two columns">2</div>        <div class="omega ten columns">10</div>
+       </div>
+       <div class="row">
+           <div class="alpha three columns">3</div>      <div class="omega nine columns">9</div>
+       </div>
+       <div class="row">
+           <div class="alpha four columns">4</div>       <div class="omega eight columns">8</div>
+       </div>
+       <div class="row">
+           <div class="alpha five columns">5</div>       <div class="omega seven columns">7</div>
+       </div>
+       <div class="row">
+           <div class="alpha six columns">6</div>        <div class="omega six columns">6</div>
+       </div>
+       <div class="row">
+           <div class="alpha seven columns">7</div>      <div class="omega five columns">5</div>
+       </div>
+       <div class="row">
+           <div class="alpha eight columns">8</div>      <div class="omega four columns">4</div>
+       </div>
+       <div class="row">
+           <div class="alpha nine columns">9</div>       <div class="omega three columns">3</div>
+       </div>
+       <div class="row">
+           <div class="alpha ten columns">10</div>       <div class="omega two columns">2</div>
+       </div>
+       <div class="row">
+           <div class="alpha eleven columns">11</div>    <div class="omega one columns">1</div>
+       </div>
+       <div class="row">
+           <div class="twelve columns">12</div>
+       </div>
+   </div>
+   
+   <div class="container">
+      <div class="row">
+          <div class="four columns alpha">4</div>
+          <div class="four columns">4</div>
+          <div class="four columns omega">4</div>
+      </div>
+            
+       <div class="row">
+           <div class="one-third columns alpha">1/3</div>
+           <div class="one-third columns">1/3</div>
+           <div class="one-third columns omega">1/3</div>
+       </div>
        
-       <div class="two-thirds columns alpha">2/3</div>
-       <div class="one-third columns omega">1/3</div>
+       <div class="row">
+           <div class="two-thirds columns alpha">2/3</div>
+           <div class="one-third columns omega">1/3</div>
+       </div>
    </div>
     
 </body>
