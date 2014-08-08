@@ -8,12 +8,90 @@
 <body>
   
   <style>
-      .columns {height: 50px; margin-bottom: 2px; background: #e5e5e5;}
+      .columns, .column {height: 20px; margin-bottom: 2px; background: #e5e5e5;}
+      .sm-one {height: 20px; background: #e5e5e5;}
+      .parent {height: 20px; background: #e5e5e5;}
+      
+      .blue {background: blue;}
+      .red {background: red;}
+      .purple {background: purple;}
+      .yellow {background: yellow;}
+      .orange {background: orange;}
+      .gray {background: gray;}
+      .black {background: black;}
+      .green {background: green;}
   </style>
+  
+  
+  <h1>Responsive Grids</h1>
+  <div class="grid">
+      <div class="row">
+          <div class="sm-one md-two column">1</div>
+          <div class="sm-one md-two column">1</div>
+          <div class="sm-one md-two column">1</div>
+          <div class="sm-one md-two column">1</div>
+          <div class="sm-one md-two column">1</div>
+          <div class="sm-one md-two column">1</div>
+          <div class="sm-one md-two column">1</div>
+          <div class="sm-one md-two column">1</div>
+          <div class="sm-one md-two column">1</div>
+          <div class="sm-one md-two column">1</div>
+          <div class="sm-one md-two column">1</div>
+          <div class="sm-one md-two column">1</div>
+      </div>
+      
+      <div class="row">
+          <div class="sm-three columns">3</div>
+          <div class="sm-three columns">3</div>
+          <div class="sm-three columns">3</div>
+          <div class="sm-three columns">3</div>
+      </div>
+      
+      <h2>Parent-Based Sizing</h2>
+      <div class="row twelve sm-twelve md-six lg-four xlg-three">
+          <div class="row">
+              <div class="parent yellow">
+                  <div class="six columns blue"></div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="parent yellow">
+                 <div class="sm-one columns green">1</div>
+                 <div class="sm-one columns green">2</div>
+                 <div class="sm-one columns green">3</div>
+                 <div class="sm-one columns green">4</div>
+                 <div class="sm-one columns green">5</div>
+                 <div class="sm-one columns green">6</div>
+                 <div class="sm-one columns green">7</div>
+                 <div class="sm-one columns green">8</div>
+                 <div class="sm-one columns green">9</div>
+                 <div class="sm-one columns green">10</div>
+                 <div class="sm-one columns green">11</div>
+                 <div class="sm-one columns green">12</div>
+                 
+                  <div class="sm-one columns blue"></div>
+                  <div class="sm-one sm-offset-by-one md-offset-by-two lg-offset-by-four xlg-offset-by-six columns blue"></div>
+              </div>
+          </div>
+          <div class="parent yellow">0</div>
+          <div class="parent yellow">0</div>
+      </div>
+  </div>
+  
+  
+  
+  
+  
+  <br /><br /><br /><br /><br />
+  
+  
+  
+  
    
-   <h1>No Gutter</h1>
+   <h1>Normal Grids</h1>
    
-   <div class="container no-gutter">
+   <h2>No Gutter</h2>
+   <div class="grid no-gutter">
        <div class="row">
            <div class="one columns">1</div>
            <div class="one columns">1</div>
@@ -40,9 +118,20 @@
        </div>
    </div>
    
-   <h1>With Gutter</h1>
    
-   <div class="container">
+   
+   
+   
+   
+   <br />
+   
+   
+   
+   
+   
+   <h2>Grids With Gutter</h2>
+   
+   <div class="grid">
       <div class="row">
           <div class="one columns alpha">1</div>
           <div class="one columns">1</div>
@@ -58,19 +147,27 @@
           <div class="one columns omega">1</div>
       </div>
     </div>
+     
+     <div class="grid">
+         <div class="row">
+             <div class="alpha eight columns">8</div>
+             <div class="two columns offset-by-two omega">2</div>
+             
+         </div>
+     </div>
       
-    <div class="container">
+    <div class="grid">
       <div class="one columns alpha">1</div>
       <div class="one columns">1</div>
       <div class="two columns offset-by-one">1 - offset by 1</div>
     </div>
     
-    <div class="container">
+    <div class="grid">
         <div class="three columns alpha">3</div>
         <div class="eight columns omega offset-by-one">8 - offset by 1</div>
     </div>
     
-    <div class="container">
+    <div class="grid">
       
        <div class="row">
            <div class="alpha one columns ">1</div>       <div class="omega eleven columns">11</div>
@@ -110,7 +207,7 @@
        </div>
    </div>
    
-   <div class="container">
+   <div class="grid">
       <div class="row">
           <div class="four columns alpha">4</div>
           <div class="four columns">4</div>

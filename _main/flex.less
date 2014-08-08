@@ -1,10 +1,16 @@
 /*
-* Flex v1.0
+* Flex v1.1
 * Copyright 2014, Caleb Hardin.  All rights reserved.
 **** Licensed under the GPL v2.0 license.
 **** http://www.gnu.org/licenses/gpl-2.0.txt
 */
 
+
+/* ---------- TO DO ----------
+==================================================
+-add offsets for responsive grids
+
+*/
 
 /* Table of Contents
 ==================================================
@@ -15,12 +21,23 @@
     #Clearing */
 
 
+/* #Base Grid
+================================================== */
 @gutter: 2%;
 @numOfColumns: 12;
 
+// Breakpoints
+@small: 400px;
+@medium: 500px;
+@large: 700px;
+@xlarge: 1000px;
+
+/* #Base Grid
+================================================== */
+
 .width(@columnNum){
-    @dividend: 100 - (@gutter * ((@numOfColumns / @columnNum) - 1));  // 100 - number of gaps multiplied by gutter
     @numColumns: @numOfColumns / @columnNum;              // Number of actual columns to span width
+    @dividend: 100 - (@gutter * @numColumns);       // 100 - number of gaps multiplied by gutter
 
     width: (@dividend / @numColumns);
 }
@@ -32,13 +49,12 @@
     margin-left: (@dividend / @numColumns) + (@gutter * 1.5);
 }
 
-/* #Base Grid
-================================================== */
 
-    .container {position: relative; width: 100%; margin: 0 auto; padding: 0;
+    .grid {position: relative; width: 100%; margin: 0 auto; padding: 0;
         
         .column,
-        .columns { float: left; display: block; margin-left: @gutter / 2; margin-right: @gutter / 2; box-sizing: border-box; -moz-box-sizing: border-box;}
+        .columns,
+        .parent  { float: left; display: block; margin-left: @gutter / 2; margin-right: @gutter / 2; box-sizing: border-box; -moz-box-sizing: border-box;}
         .row     { margin-bottom: 20px; }
 
         /* Nested Column Classes */
@@ -69,7 +85,9 @@
         .eleven.column,
         .eleven.columns                  { .width(11); }
         .twelve.column,
-        .twelve.columns                  { .width(12); margin-right: 0; margin-left: 0;}
+        .twelve.columns,
+        .full.column,
+        .full.columns                    { .width(12); }
 
         .one-third.column,
         .one-third.columns               { .width(4); }
@@ -88,12 +106,43 @@
         .offset-by-nine                  { .marginLeft(9); }
         .offset-by-ten                   { .marginLeft(10); }
         .offset-by-eleven                { .marginLeft(11); }
+        
+        
+        
+        /* Parent-Based Sizing */
+        .grid.one .parent,
+        .row.one .parent         { .responsiveWidth(1); }
+        .grid.two .parent,
+        .row.two .parent         { .responsiveWidth(2); }
+        .grid.three .parent,
+        .row.three .parent       { .responsiveWidth(3); }
+        .grid.four .parent,
+        .row.four .parent        { .responsiveWidth(4); }
+        .grid.five .parent,
+        .row.five .parent        { .responsiveWidth(5); }
+        .grid.six .parent,
+        .row.six .parent         { .responsiveWidth(6); }
+        .grid.seven .parent,
+        .row.seven .parent       { .responsiveWidth(7); }
+        .grid.eight .parent,
+        .row.eight .parent       { .responsiveWidth(8); }
+        .grid.nine .parent,
+        .row.nine .parent        { .responsiveWidth(9); }
+        .grid.ten .parent,
+        .row.ten .parent         { .responsiveWidth(10); }
+        .grid.eleven .parent,
+        .row.eleven .parent      { .responsiveWidth(11); }
+        .grid.twelve .parent,
+        .row.twelve .parent,
+        .grid.full .parent,
+        .row.full .parent        { .responsiveWidth(12); }
 
     }
 
 
 
-
+/* #Base Grid With No Gutters
+================================================== */
 
 .widthNoGutter(@columnNum){
     width: (@columnNum / @numOfColumns) * 100%;
@@ -105,11 +154,11 @@
 
 
 
-    .container.no-gutter {
+    .grid.no-gutter {
         
         .column,
         .columns {margin-left: 0; margin-right: 0; }
-        .row     { margin-bottom: 20px; }
+        .row     { margin-bottom: 0; }
 
         /* Base Grid */
         .one.column,
@@ -135,7 +184,9 @@
         .eleven.column,
         .eleven.columns                  { .widthNoGutter(11); }
         .twelve.column,
-        .twelve.columns                  { .widthNoGutter(12); }
+        .twelve.columns,
+        .full.column,
+        .full.columns                    { .widthNoGutter(12); }
 
         .one-third.column,
         .one-third.columns               { .widthNoGutter(4); }
@@ -163,11 +214,101 @@
 /* #Tablet (Portrait)
 ================================================== */
 
-    /* Note: Design for a width of 768px */
 
-    @media only screen and (min-width: 768px) and (max-width: 959px) {
-        
+.responsiveWidth(@columnNum){
+    @numColumns: @numOfColumns / @columnNum;     // Number of actual columns to span width
+    @dividend: 100 - (@gutter * @numColumns);     // 100 - number of gaps multiplied by gutter
+
+    width: (@dividend / @numColumns);
+}
+
+.responsiveMarginLeft(@columnNum){
+    @numColumns: @numOfColumns / @columnNum;  // Number of actual columns to span width
+    @columnGutter: @gutter * @numColumns;     // gutter % from standard margins of cols.
+    @dividend: 100 - @columnGutter;           // available width after margins
+    
+
+    margin-left: (@dividend / @numColumns) + (@gutter * 1.5);
+}
+
+
+    @media only screen and (min-width: 0px) {
+        .grid {
+            /* Responsive Grids */
+            .sm-one.column,
+            .sm-one.columns             { .responsiveWidth(1); }
+            .sm-two.column,
+            .sm-two.columns             { .responsiveWidth(2); }
+            .sm-three.column,
+            .sm-three.columns           { .responsiveWidth(3); }
+            .sm-four.column,
+            .sm-four.columns            { .responsiveWidth(4); }
+            .sm-five.column,
+            .sm-five.columns            { .responsiveWidth(5); }
+            .sm-six.column,
+            .sm-six.columns             { .responsiveWidth(6); }
+            .sm-seven.column,
+            .sm-seven.columns           { .responsiveWidth(7); }
+            .sm-eight.column,
+            .sm-eight.columns           { .responsiveWidth(8); }
+            .sm-nine.column,
+            .sm-nine.columns            { .responsiveWidth(9); }
+            .sm-ten.column,
+            .sm-ten.columns             { .responsiveWidth(10); }
+            .sm-eleven.column,
+            .sm-eleven.columns          { .responsiveWidth(11); }
+            .sm-twelve.column,
+            .sm-twelve.columns,
+            .sm-full.column,
+            .sm-full.columns            { .responsiveWidth(12); }
+            
+            /* Responsive Offsets */
+            .sm-offset-by-one           { .responsiveMarginLeft(1); }
+            .sm-offset-by-two           { .responsiveMarginLeft(2); }
+            .sm-offset-by-three         { .responsiveMarginLeft(3); }
+            .sm-offset-by-four          { .responsiveMarginLeft(4); }
+            .sm-offset-by-five          { .responsiveMarginLeft(5); }
+            .sm-offset-by-six           { .responsiveMarginLeft(6); }
+            .sm-offset-by-seven         { .responsiveMarginLeft(7); }
+            .sm-offset-by-eight         { .responsiveMarginLeft(8); }
+            .sm-offset-by-nine          { .responsiveMarginLeft(9); }
+            .sm-offset-by-ten           { .responsiveMarginLeft(10); }
+            .sm-offset-by-eleven        { .responsiveMarginLeft(11); }
+            
+            
+            /* Parent-Based Sizing */
+            &.sm-one .parent,
+            .row.sm-one .parent         { .responsiveWidth(1); }
+            &.sm-two .parent,
+            .row.sm-two .parent         { .responsiveWidth(2); }
+            &.sm-three .parent,
+            .row.sm-three .parent       { .responsiveWidth(3); }
+            &.sm-four .parent,
+            .row.sm-four .parent        { .responsiveWidth(4); }
+            &.sm-five .parent,
+            .row.sm-five .parent        { .responsiveWidth(5); }
+            &.sm-six .parent,
+            .row.sm-six .parent         { .responsiveWidth(6); }
+            &.sm-seven .parent,
+            .row.sm-seven .parent       { .responsiveWidth(7); }
+            &.sm-eight .parent,
+            .row.sm-eight .parent       { .responsiveWidth(8); }
+            &.sm-nine .parent,
+            .row.sm-nine .parent        { .responsiveWidth(9); }
+            &.sm-ten .parent,
+            .row.sm-ten .parent         { .responsiveWidth(10); }
+            &.sm-eleven .parent,
+            .row.sm-eleven .parent      { .responsiveWidth(11); }
+            &.sm-twelve .parent,
+            .row.sm-twelve .parent,
+            &.sm-full .parent,
+            .row.sm-full .parent      { .responsiveWidth(12); }
+            
+        }
     }
+
+
+
 
 
 /*  #Mobile (Portrait)
@@ -175,8 +316,155 @@
 
     /* Note: Design for a width of 320px */
 
-    @media only screen and (max-width: 767px) {
-        
+    @media only screen and (min-width: @small) {
+        .grid {
+            /* Responsive Grids */
+            .md-one.column,
+            .md-one.columns             { .responsiveWidth(1); }
+            .md-two.column,
+            .md-two.columns             { .responsiveWidth(2); }
+            .md-three.column,
+            .md-three.columns           { .responsiveWidth(3); }
+            .md-four.column,
+            .md-four.columns            { .responsiveWidth(4); }
+            .md-five.column,
+            .md-five.columns            { .responsiveWidth(5); }
+            .md-six.column,
+            .md-six.columns             { .responsiveWidth(6); }
+            .md-seven.column,
+            .md-seven.columns           { .responsiveWidth(7); }
+            .md-eight.column,
+            .md-eight.columns           { .responsiveWidth(8); }
+            .md-nine.column,
+            .md-nine.columns            { .responsiveWidth(9); }
+            .md-ten.column,
+            .md-ten.columns             { .responsiveWidth(10); }
+            .md-eleven.column,
+            .md-eleven.columns          { .responsiveWidth(11); }
+            .md-twelve.column,
+            .md-twelve.columns,
+            .md-full.column,
+            .md-full.columns            { .responsiveWidth(12); }
+            
+            /* Responsive Offsets */
+            .md-offset-by-one           { .responsiveMarginLeft(1); }
+            .md-offset-by-two           { .responsiveMarginLeft(2); }
+            .md-offset-by-three         { .responsiveMarginLeft(3); }
+            .md-offset-by-four          { .responsiveMarginLeft(4); }
+            .md-offset-by-five          { .responsiveMarginLeft(5); }
+            .md-offset-by-six           { .responsiveMarginLeft(6); }
+            .md-offset-by-seven         { .responsiveMarginLeft(7); }
+            .md-offset-by-eight         { .responsiveMarginLeft(8); }
+            .md-offset-by-nine          { .responsiveMarginLeft(9); }
+            .md-offset-by-ten           { .responsiveMarginLeft(10); }
+            .md-offset-by-eleven        { .responsiveMarginLeft(11); }
+            
+            
+            /* Parent-Based Sizing */
+            &.md-one .parent,
+            .row.md-one .parent         { .responsiveWidth(1); }
+            &.md-two .parent,
+            .row.md-two .parent         { .responsiveWidth(2); }
+            &.md-three .parent,
+            .row.md-three .parent       { .responsiveWidth(3); }
+            &.md-four .parent,
+            .row.md-four .parent        { .responsiveWidth(4); }
+            &.md-five .parent,
+            .row.md-five .parent        { .responsiveWidth(5); }
+            &.md-six .parent,
+            .row.md-six .parent         { .responsiveWidth(6); }
+            &.md-seven .parent,
+            .row.md-seven .parent       { .responsiveWidth(7); }
+            &.md-eight .parent,
+            .row.md-eight .parent       { .responsiveWidth(8); }
+            &.md-nine .parent,
+            .row.md-nine .parent        { .responsiveWidth(9); }
+            &.md-ten .parent,
+            .row.md-ten .parent         { .responsiveWidth(10); }
+            &.md-eleven .parent,
+            .row.md-eleven .parent      { .responsiveWidth(11); }
+            &.md-twelve .parent,
+            .row.md-twelve .parent,
+            &.md-full .parent,
+            .row.md-full .parent        { .responsiveWidth(12); }
+        }
+    }
+
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: @medium) {
+        .grid {
+            /* Responsive Grids */
+            .lg-one.column,
+            .lg-one.columns             { .responsiveWidth(1); }
+            .lg-two.column,
+            .lg-two.columns             { .responsiveWidth(2); }
+            .lg-three.column,
+            .lg-three.columns           { .responsiveWidth(3); }
+            .lg-four.column,
+            .lg-four.columns            { .responsiveWidth(4); }
+            .lg-five.column,
+            .lg-five.columns            { .responsiveWidth(5); }
+            .lg-six.column,
+            .lg-six.columns             { .responsiveWidth(6); }
+            .lg-seven.column,
+            .lg-seven.columns           { .responsiveWidth(7); }
+            .lg-eight.column,
+            .lg-eight.columns           { .responsiveWidth(8); }
+            .lg-nine.column,
+            .lg-nine.columns            { .responsiveWidth(9); }
+            .lg-ten.column,
+            .lg-ten.columns             { .responsiveWidth(10); }
+            .lg-eleven.column,
+            .lg-eleven.columns          { .responsiveWidth(11); }
+            .lg-twelve.column,
+            .lg-twelve.columns,
+            .lg-full.column,
+            .lg-full.columns            { .responsiveWidth(12); }
+            
+            /* Responsive Offsets */
+            .lg-offset-by-one           { .responsiveMarginLeft(1); }
+            .lg-offset-by-two           { .responsiveMarginLeft(2); }
+            .lg-offset-by-three         { .responsiveMarginLeft(3); }
+            .lg-offset-by-four          { .responsiveMarginLeft(4); }
+            .lg-offset-by-five          { .responsiveMarginLeft(5); }
+            .lg-offset-by-six           { .responsiveMarginLeft(6); }
+            .lg-offset-by-seven         { .responsiveMarginLeft(7); }
+            .lg-offset-by-eight         { .responsiveMarginLeft(8); }
+            .lg-offset-by-nine          { .responsiveMarginLeft(9); }
+            .lg-offset-by-ten           { .responsiveMarginLeft(10); }
+            .lg-offset-by-eleven        { .responsiveMarginLeft(11); }
+            
+            
+            /* Parent-Based Sizing */
+            &.lg-one .parent,
+            .row.lg-one .parent         { .responsiveWidth(1); }
+            &.lg-two .parent,
+            .row.lg-two .parent         { .responsiveWidth(2); }
+            &.lg-three .parent,
+            .row.lg-three .parent       { .responsiveWidth(3); }
+            &.lg-four .parent,
+            .row.lg-four .parent        { .responsiveWidth(4); }
+            &.lg-five .parent,
+            .row.lg-five .parent        { .responsiveWidth(5); }
+            &.lg-six .parent,
+            .row.lg-six .parent         { .responsiveWidth(6); }
+            &.lg-seven .parent,
+            .row.lg-seven .parent       { .responsiveWidth(7); }
+            &.lg-eight .parent,
+            .row.lg-eight .parent       { .responsiveWidth(8); }
+            &.lg-nine .parent,
+            .row.lg-nine .parent        { .responsiveWidth(9); }
+            &.lg-ten .parent,
+            .row.lg-ten .parent         { .responsiveWidth(10); }
+            &.lg-eleven .parent,
+            .row.lg-eleven .parent      { .responsiveWidth(11); }
+            &.lg-twelve .parent,
+            .row.lg-twelve .parent,
+            &.lg-full .parent,
+            .row.lg-full .parent        { .responsiveWidth(12); }
+        }
     }
 
 
@@ -185,8 +473,80 @@
 
     /* Note: Design for a width of 480px */
 
-    @media only screen and (min-width: 480px) and (max-width: 767px) {
 
+
+    @media only screen and (min-width: @large) {
+        .grid {
+            /* Responsive Grids */
+            .xlg-one.column,
+            .xlg-one.columns             { .responsiveWidth(1); }
+            .xlg-two.column,
+            .xlg-two.columns             { .responsiveWidth(2); }
+            .xlg-three.column,
+            .xlg-three.columns           { .responsiveWidth(3); }
+            .xlg-four.column,
+            .xlg-four.columns            { .responsiveWidth(4); }
+            .xlg-five.column,
+            .xlg-five.columns            { .responsiveWidth(5); }
+            .xlg-six.column,
+            .xlg-six.columns             { .responsiveWidth(6); }
+            .xlg-seven.column,
+            .xlg-seven.columns           { .responsiveWidth(7); }
+            .xlg-eight.column,
+            .xlg-eight.columns           { .responsiveWidth(8); }
+            .xlg-nine.column,
+            .xlg-nine.columns            { .responsiveWidth(9); }
+            .xlg-ten.column,
+            .xlg-ten.columns             { .responsiveWidth(10); }
+            .xlg-eleven.column,
+            .xlg-eleven.columns          { .responsiveWidth(11); }
+            .xlg-twelve.column,
+            .xlg-twelve.columns,
+            .xlg-full.column,
+            .xlg-full.columns            { .responsiveWidth(12); }
+            
+            /* Responsive Offsets */
+            .xlg-offset-by-one           { .responsiveMarginLeft(1); }
+            .xlg-offset-by-two           { .responsiveMarginLeft(2); }
+            .xlg-offset-by-three         { .responsiveMarginLeft(3); }
+            .xlg-offset-by-four          { .responsiveMarginLeft(4); }
+            .xlg-offset-by-five          { .responsiveMarginLeft(5); }
+            .xlg-offset-by-six           { .responsiveMarginLeft(6); }
+            .xlg-offset-by-seven         { .responsiveMarginLeft(7); }
+            .xlg-offset-by-eight         { .responsiveMarginLeft(8); }
+            .xlg-offset-by-nine          { .responsiveMarginLeft(9); }
+            .xlg-offset-by-ten           { .responsiveMarginLeft(10); }
+            .xlg-offset-by-eleven        { .responsiveMarginLeft(11); }
+            
+            
+            /* Parent-Based Sizing */
+            &.xlg-one .parent,
+            .row.xlg-one .parent         { .responsiveWidth(1); }
+            &.xlg-two .parent,
+            .row.xlg-two .parent         { .responsiveWidth(2); }
+            &.xlg-three .parent,
+            .row.xlg-three .parent       { .responsiveWidth(3); }
+            &.xlg-four .parent,
+            .row.xlg-four .parent        { .responsiveWidth(4); }
+            &.xlg-five .parent,
+            .row.xlg-five .parent        { .responsiveWidth(5); }
+            &.xlg-six .parent,
+            .row.xlg-six .parent         { .responsiveWidth(6); }
+            &.xlg-seven .parent,
+            .row.xlg-seven .parent       { .responsiveWidth(7); }
+            &.xlg-eight .parent,
+            .row.xlg-eight .parent       { .responsiveWidth(8); }
+            &.xlg-nine .parent,
+            .row.xlg-nine .parent        { .responsiveWidth(9); }
+            &.xlg-ten .parent,
+            .row.xlg-ten .parent         { .responsiveWidth(10); }
+            &.xlg-eleven .parent,
+            .row.xlg-eleven .parent      { .responsiveWidth(11); }
+            &.xlg-twelve .parent,
+            .row.xlg-twelve .parent,
+            &.xlg-full .parent,
+            .row.xlg-full .parent        { .responsiveWidth(12); }
+        }
     }
 
 
