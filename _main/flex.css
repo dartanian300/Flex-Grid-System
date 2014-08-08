@@ -584,7 +584,7 @@
   }
 }
 /* Note: Design for a width of 768px */
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 600px) {
   .grid {
     /* Responsive Grids */
     /* Responsive Offsets */
@@ -727,7 +727,7 @@
 /* #Mobile (Landscape)
 ================================================== */
 /* Note: Design for a width of 480px */
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 900px) {
   .grid {
     /* Responsive Grids */
     /* Responsive Offsets */
