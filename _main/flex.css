@@ -54,61 +54,61 @@
 }
 .grid .one.column,
 .grid .one.columns {
-  width: 6.33333333%;
+  width: 6.5%;
 }
 .grid .two.column,
 .grid .two.columns {
-  width: 14.66666667%;
+  width: 15%;
 }
 .grid .three.column,
 .grid .three.columns {
-  width: 23%;
+  width: 23.5%;
 }
 .grid .four.column,
 .grid .four.columns {
-  width: 31.33333333%;
+  width: 32%;
 }
 .grid .five.column,
 .grid .five.columns {
-  width: 39.66666667%;
+  width: 40.5%;
 }
 .grid .six.column,
 .grid .six.columns {
-  width: 48%;
+  width: 49%;
 }
 .grid .seven.column,
 .grid .seven.columns {
-  width: 56.33333333%;
+  width: 57.5%;
 }
 .grid .eight.column,
 .grid .eight.columns {
-  width: 64.66666667%;
+  width: 66%;
 }
 .grid .nine.column,
 .grid .nine.columns {
-  width: 73%;
+  width: 74.5%;
 }
 .grid .ten.column,
 .grid .ten.columns {
-  width: 81.33333333%;
+  width: 83%;
 }
 .grid .eleven.column,
 .grid .eleven.columns {
-  width: 89.66666667%;
+  width: 91.5%;
 }
 .grid .twelve.column,
 .grid .twelve.columns,
 .grid .full.column,
 .grid .full.columns {
-  width: 98%;
+  width: 100%;
 }
 .grid .one-third.column,
 .grid .one-third.columns {
-  width: 31.33333333%;
+  width: 32%;
 }
 .grid .two-thirds.column,
 .grid .two-thirds.columns {
-  width: 64.66666667%;
+  width: 66%;
 }
 .grid .offset-by-one {
   margin-left: 9.5%;
@@ -870,7 +870,7 @@
 /* #Clearing
 ================================================== */
 /* Self Clearing Goodness */
-.container:after {
+.grid:after {
   content: "\0020";
   display: block;
   height: 0;
