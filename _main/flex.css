@@ -468,6 +468,18 @@
   .grid .row.sm-full .parent {
     width: 98%;
   }
+  .grid.sm-one-third .parent,
+  .grid .row.sm-one-third .parent {
+    width: 31.33333333%;
+  }
+  .grid.sm-two-thirds .parent,
+  .grid .row.sm-two-thirds .parent {
+    width: 64.66666667%;
+  }
+  .grid.sm-one-fifth .parent,
+  .grid .row.sm-one-fifth .parent {
+    width: 18%;
+  }
 }
 /*  #Mobile (Portrait)
 ================================================== */
@@ -626,6 +638,18 @@
   .grid .row.md-full .parent {
     width: 98%;
   }
+  .grid.md-one-third .parent,
+  .grid .row.md-one-third .parent {
+    width: 31.33333333%;
+  }
+  .grid.md-two-thirds .parent,
+  .grid .row.md-two-thirds .parent {
+    width: 64.66666667%;
+  }
+  .grid.md-one-fifth .parent,
+  .grid .row.md-one-fifth .parent {
+    width: 18%;
+  }
 }
 /* Note: Design for a width of 768px */
 @media only screen and (min-width: 600px) {
@@ -781,6 +805,18 @@
   .grid.lg-full .parent,
   .grid .row.lg-full .parent {
     width: 98%;
+  }
+  .grid.lg-one-third .parent,
+  .grid .row.lg-one-third .parent {
+    width: 31.33333333%;
+  }
+  .grid.lg-two-thirds .parent,
+  .grid .row.lg-two-thirds .parent {
+    width: 64.66666667%;
+  }
+  .grid.lg-one-fifth .parent,
+  .grid .row.lg-one-fifth .parent {
+    width: 18%;
   }
 }
 /* #Mobile (Landscape)
@@ -939,6 +975,18 @@
   .grid.xlg-full .parent,
   .grid .row.xlg-full .parent {
     width: 98%;
+  }
+  .grid.xlg-one-third .parent,
+  .grid .row.xlg-one-third .parent {
+    width: 31.33333333%;
+  }
+  .grid.xlg-two-thirds .parent,
+  .grid .row.xlg-two-thirds .parent {
+    width: 64.66666667%;
+  }
+  .grid.xlg-one-fifth .parent,
+  .grid .row.xlg-one-fifth .parent {
+    width: 18%;
   }
 }
 /* #Clearing
