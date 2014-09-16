@@ -14,14 +14,15 @@
 
 /* Table of Contents
 ==================================================
-    #Base Grid
-    #Tablet (Portrait)
-    #Mobile (Portrait)
-    #Mobile (Landscape)
-    #Clearing */
+    1. Base Grid
+    2. Base Grid (with no gutters)
+    3. Small Responsive Grid
+    4. Medium Responsive Grid
+    5. Large Responsive Grid
+    6. Extra Large Responsive Grid
 
 
-/* #Base Grid
+/* Variables
 ================================================== */
 @gutter: 2%;
 @numOfColumns: 12;
@@ -219,7 +220,7 @@
 
 
 
-/* #Tablet (Portrait)
+/* Small Responsive Grid
 ================================================== */
 
 
@@ -335,10 +336,8 @@
 
 
 
-/*  #Mobile (Portrait)
+/*  Medium Responsive Grid
 ================================================== */
-
-    /* Note: Design for a width of 320px */
 
     @media only screen and (min-width: @small) {
         .grid {
@@ -431,7 +430,8 @@
     }
 
 
-    /* Note: Design for a width of 768px */
+/* Large Responsive Grid
+================================================== */
 
     @media only screen and (min-width: @medium) {
         .grid {
@@ -524,12 +524,8 @@
     }
 
 
-/* #Mobile (Landscape)
+/* Extra Large Responsive Grid
 ================================================== */
-
-    /* Note: Design for a width of 480px */
-
-
 
     @media only screen and (min-width: @large) {
         .grid {

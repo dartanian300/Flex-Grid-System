@@ -12,12 +12,15 @@
 */
 /* Table of Contents
 ==================================================
-    #Base Grid
-    #Tablet (Portrait)
-    #Mobile (Portrait)
-    #Mobile (Landscape)
-    #Clearing */
-/* #Base Grid
+    1. Base Grid
+    2. Base Grid (with no gutters)
+    3. Small Responsive Grid
+    4. Medium Responsive Grid
+    5. Large Responsive Grid
+    6. Extra Large Responsive Grid
+
+
+/* Variables
 ================================================== */
 /* #Base Grid
 ================================================== */
@@ -312,7 +315,7 @@
 .grid.no-gutter .offset-by-one-fifth {
   margin-left: 20%;
 }
-/* #Tablet (Portrait)
+/* Small Responsive Grid
 ================================================== */
 @media only screen and (min-width: 0px) {
   .grid {
@@ -481,9 +484,8 @@
     width: 18%;
   }
 }
-/*  #Mobile (Portrait)
+/*  Medium Responsive Grid
 ================================================== */
-/* Note: Design for a width of 320px */
 @media only screen and (min-width: 400px) {
   .grid {
     /* Responsive Grids */
@@ -651,7 +653,8 @@
     width: 18%;
   }
 }
-/* Note: Design for a width of 768px */
+/* Large Responsive Grid
+================================================== */
 @media only screen and (min-width: 600px) {
   .grid {
     /* Responsive Grids */
@@ -819,9 +822,8 @@
     width: 18%;
   }
 }
-/* #Mobile (Landscape)
+/* Extra Large Responsive Grid
 ================================================== */
-/* Note: Design for a width of 480px */
 @media only screen and (min-width: 900px) {
   .grid {
     /* Responsive Grids */
