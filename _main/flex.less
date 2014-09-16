@@ -1,5 +1,5 @@
 /*
-* Flex v1.1
+* Flex v1.2
 * Copyright 2014, Caleb Hardin.  All rights reserved.
 **** Licensed under the GPL v2.0 license.
 **** http://www.gnu.org/licenses/gpl-2.0.txt
@@ -241,94 +241,117 @@
 }
 
 
-    @media only screen and (min-width: 0px) {
-        .grid {
+
+
+
+
+
+
+
+
+.responsiveGrids(@prefix){
             /* Responsive Grids */
-            .sm-one.column,
-            .sm-one.columns             { .responsiveWidth(1); }
-            .sm-two.column,
-            .sm-two.columns             { .responsiveWidth(2); }
-            .sm-three.column,
-            .sm-three.columns           { .responsiveWidth(3); }
-            .sm-four.column,
-            .sm-four.columns            { .responsiveWidth(4); }
-            .sm-five.column,
-            .sm-five.columns            { .responsiveWidth(5); }
-            .sm-six.column,
-            .sm-six.columns             { .responsiveWidth(6); }
-            .sm-seven.column,
-            .sm-seven.columns           { .responsiveWidth(7); }
-            .sm-eight.column,
-            .sm-eight.columns           { .responsiveWidth(8); }
-            .sm-nine.column,
-            .sm-nine.columns            { .responsiveWidth(9); }
-            .sm-ten.column,
-            .sm-ten.columns             { .responsiveWidth(10); }
-            .sm-eleven.column,
-            .sm-eleven.columns          { .responsiveWidth(11); }
-            .sm-twelve.column,
-            .sm-twelve.columns,
-            .sm-full.column,
-            .sm-full.columns            { .responsiveWidth(12); }
+            .@{prefix}-one.column,
+            .@{prefix}-one.columns             { .responsiveWidth(1); }
+            .@{prefix}-two.column,
+            .@{prefix}-two.columns             { .responsiveWidth(2); }
+            .@{prefix}-three.column,
+            .@{prefix}-three.columns           { .responsiveWidth(3); }
+            .@{prefix}-four.column,
+            .@{prefix}-four.columns            { .responsiveWidth(4); }
+            .@{prefix}-five.column,
+            .@{prefix}-five.columns            { .responsiveWidth(5); }
+            .@{prefix}-six.column,
+            .@{prefix}-six.columns             { .responsiveWidth(6); }
+            .@{prefix}-seven.column,
+            .@{prefix}-seven.columns           { .responsiveWidth(7); }
+            .@{prefix}-eight.column,
+            .@{prefix}-eight.columns           { .responsiveWidth(8); }
+            .@{prefix}-nine.column,
+            .@{prefix}-nine.columns            { .responsiveWidth(9); }
+            .@{prefix}-ten.column,
+            .@{prefix}-ten.columns             { .responsiveWidth(10); }
+            .@{prefix}-eleven.column,
+            .@{prefix}-eleven.columns          { .responsiveWidth(11); }
+            .@{prefix}-twelve.column,
+            .@{prefix}-twelve.columns,
+            .@{prefix}-full.column,
+            .@{prefix}-full.columns            { .responsiveWidth(12); }
             
-            .sm-one-third.column,
-            .sm-one-third.columns       { .responsiveWidth(4); }
-            .sm-two-thirds.column,
-            .sm-two-thirds.columns      { .responsiveWidth(8); }
-            .sm-one-fifth.column,
-            .sm-one-fifth.columns       { .responsiveWidth(2.4); }
+            .@{prefix}-one-third.column,
+            .@{prefix}-one-third.columns       { .responsiveWidth(4); }
+            .@{prefix}-two-thirds.column,
+            .@{prefix}-two-thirds.columns      { .responsiveWidth(8); }
+            .@{prefix}-one-fifth.column,
+            .@{prefix}-one-fifth.columns       { .responsiveWidth(2.4); }
             
+
             /* Responsive Offsets */
-            .sm-offset-by-one           { .responsiveMarginLeft(1); }
-            .sm-offset-by-two           { .responsiveMarginLeft(2); }
-            .sm-offset-by-three         { .responsiveMarginLeft(3); }
-            .sm-offset-by-four          { .responsiveMarginLeft(4); }
-            .sm-offset-by-five          { .responsiveMarginLeft(5); }
-            .sm-offset-by-six           { .responsiveMarginLeft(6); }
-            .sm-offset-by-seven         { .responsiveMarginLeft(7); }
-            .sm-offset-by-eight         { .responsiveMarginLeft(8); }
-            .sm-offset-by-nine          { .responsiveMarginLeft(9); }
-            .sm-offset-by-ten           { .responsiveMarginLeft(10); }
-            .sm-offset-by-eleven        { .responsiveMarginLeft(11); }
+            .@{prefix}-offset-by-one           { .responsiveMarginLeft(1); }
+            .@{prefix}-offset-by-two           { .responsiveMarginLeft(2); }
+            .@{prefix}-offset-by-three         { .responsiveMarginLeft(3); }
+            .@{prefix}-offset-by-four          { .responsiveMarginLeft(4); }
+            .@{prefix}-offset-by-five          { .responsiveMarginLeft(5); }
+            .@{prefix}-offset-by-six           { .responsiveMarginLeft(6); }
+            .@{prefix}-offset-by-seven         { .responsiveMarginLeft(7); }
+            .@{prefix}-offset-by-eight         { .responsiveMarginLeft(8); }
+            .@{prefix}-offset-by-nine          { .responsiveMarginLeft(9); }
+            .@{prefix}-offset-by-ten           { .responsiveMarginLeft(10); }
+            .@{prefix}-offset-by-eleven        { .responsiveMarginLeft(11); }
             
-            .sm-offset-by-one-fifth     { .responsiveMarginLeft(2.4); }
+            .@{prefix}-offset-by-one-fifth     { .responsiveMarginLeft(2.4); }
             
             
             /* Parent-Based Sizing */
-            &.sm-one .parent,
-            .row.sm-one .parent         { .responsiveWidth(1); }
-            &.sm-two .parent,
-            .row.sm-two .parent         { .responsiveWidth(2); }
-            &.sm-three .parent,
-            .row.sm-three .parent       { .responsiveWidth(3); }
-            &.sm-four .parent,
-            .row.sm-four .parent        { .responsiveWidth(4); }
-            &.sm-five .parent,
-            .row.sm-five .parent        { .responsiveWidth(5); }
-            &.sm-six .parent,
-            .row.sm-six .parent         { .responsiveWidth(6); }
-            &.sm-seven .parent,
-            .row.sm-seven .parent       { .responsiveWidth(7); }
-            &.sm-eight .parent,
-            .row.sm-eight .parent       { .responsiveWidth(8); }
-            &.sm-nine .parent,
-            .row.sm-nine .parent        { .responsiveWidth(9); }
-            &.sm-ten .parent,
-            .row.sm-ten .parent         { .responsiveWidth(10); }
-            &.sm-eleven .parent,
-            .row.sm-eleven .parent      { .responsiveWidth(11); }
-            &.sm-twelve .parent,
-            .row.sm-twelve .parent,
-            &.sm-full .parent,
-            .row.sm-full .parent        { .responsiveWidth(12); }
+            &.@{prefix}-one .parent,
+            .row.@{prefix}-one .parent         { .responsiveWidth(1); }
+            &.@{prefix}-two .parent,
+            .row.@{prefix}-two .parent         { .responsiveWidth(2); }
+            &.@{prefix}-three .parent,
+            .row.@{prefix}-three .parent       { .responsiveWidth(3); }
+            &.@{prefix}-four .parent,
+            .row.@{prefix}-four .parent        { .responsiveWidth(4); }
+            &.@{prefix}-five .parent,
+            .row.@{prefix}-five .parent        { .responsiveWidth(5); }
+            &.@{prefix}-six .parent,
+            .row.@{prefix}-six .parent         { .responsiveWidth(6); }
+            &.@{prefix}-seven .parent,
+            .row.@{prefix}-seven .parent       { .responsiveWidth(7); }
+            &.@{prefix}-eight .parent,
+            .row.@{prefix}-eight .parent       { .responsiveWidth(8); }
+            &.@{prefix}-nine .parent,
+            .row.@{prefix}-nine .parent        { .responsiveWidth(9); }
+            &.@{prefix}-ten .parent,
+            .row.@{prefix}-ten .parent         { .responsiveWidth(10); }
+            &.@{prefix}-eleven .parent,
+            .row.@{prefix}-eleven .parent      { .responsiveWidth(11); }
+            &.@{prefix}-twelve .parent,
+            .row.@{prefix}-twelve .parent,
+            &.@{prefix}-full .parent,
+            .row.@{prefix}-full .parent        { .responsiveWidth(12); }
             
-            &.sm-one-third .parent,
-            .row.sm-one-third .parent   { .responsiveWidth(4); }
-            &.sm-two-thirds .parent,
-            .row.sm-two-thirds .parent  { .responsiveWidth(8); }
-            &.sm-one-fifth .parent,
-            .row.sm-one-fifth .parent   { .responsiveWidth(2.4); }
-            
+            &.@{prefix}-one-third .parent,
+            .row.@{prefix}-one-third .parent   { .responsiveWidth(4); }
+            &.@{prefix}-two-thirds .parent,
+            .row.@{prefix}-two-thirds .parent  { .responsiveWidth(8); }
+            &.@{prefix}-one-fifth .parent,
+            .row.@{prefix}-one-fifth .parent   { .responsiveWidth(2.4); }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+    @media only screen and (min-width: 0px) {
+        .grid {
+            .responsiveGrids(sm);
         }
     }
 
@@ -341,91 +364,7 @@
 
     @media only screen and (min-width: @small) {
         .grid {
-            /* Responsive Grids */
-            .md-one.column,
-            .md-one.columns             { .responsiveWidth(1); }
-            .md-two.column,
-            .md-two.columns             { .responsiveWidth(2); }
-            .md-three.column,
-            .md-three.columns           { .responsiveWidth(3); }
-            .md-four.column,
-            .md-four.columns            { .responsiveWidth(4); }
-            .md-five.column,
-            .md-five.columns            { .responsiveWidth(5); }
-            .md-six.column,
-            .md-six.columns             { .responsiveWidth(6); }
-            .md-seven.column,
-            .md-seven.columns           { .responsiveWidth(7); }
-            .md-eight.column,
-            .md-eight.columns           { .responsiveWidth(8); }
-            .md-nine.column,
-            .md-nine.columns            { .responsiveWidth(9); }
-            .md-ten.column,
-            .md-ten.columns             { .responsiveWidth(10); }
-            .md-eleven.column,
-            .md-eleven.columns          { .responsiveWidth(11); }
-            .md-twelve.column,
-            .md-twelve.columns,
-            .md-full.column,
-            .md-full.columns            { .responsiveWidth(12); }
-            
-            .md-one-third.column,
-            .md-one-third.columns       { .responsiveWidth(4); }
-            .md-two-thirds.column,
-            .md-two-thirds.columns      { .responsiveWidth(8); }
-            .md-one-fifth.column,
-            .md-one-fifth.columns       { .responsiveWidth(2.4); }
-            
-            /* Responsive Offsets */
-            .md-offset-by-one           { .responsiveMarginLeft(1); }
-            .md-offset-by-two           { .responsiveMarginLeft(2); }
-            .md-offset-by-three         { .responsiveMarginLeft(3); }
-            .md-offset-by-four          { .responsiveMarginLeft(4); }
-            .md-offset-by-five          { .responsiveMarginLeft(5); }
-            .md-offset-by-six           { .responsiveMarginLeft(6); }
-            .md-offset-by-seven         { .responsiveMarginLeft(7); }
-            .md-offset-by-eight         { .responsiveMarginLeft(8); }
-            .md-offset-by-nine          { .responsiveMarginLeft(9); }
-            .md-offset-by-ten           { .responsiveMarginLeft(10); }
-            .md-offset-by-eleven        { .responsiveMarginLeft(11); }
-            
-            .md-offset-by-one-fifth     { .responsiveMarginLeft(2.4); }
-            
-            
-            /* Parent-Based Sizing */
-            &.md-one .parent,
-            .row.md-one .parent         { .responsiveWidth(1); }
-            &.md-two .parent,
-            .row.md-two .parent         { .responsiveWidth(2); }
-            &.md-three .parent,
-            .row.md-three .parent       { .responsiveWidth(3); }
-            &.md-four .parent,
-            .row.md-four .parent        { .responsiveWidth(4); }
-            &.md-five .parent,
-            .row.md-five .parent        { .responsiveWidth(5); }
-            &.md-six .parent,
-            .row.md-six .parent         { .responsiveWidth(6); }
-            &.md-seven .parent,
-            .row.md-seven .parent       { .responsiveWidth(7); }
-            &.md-eight .parent,
-            .row.md-eight .parent       { .responsiveWidth(8); }
-            &.md-nine .parent,
-            .row.md-nine .parent        { .responsiveWidth(9); }
-            &.md-ten .parent,
-            .row.md-ten .parent         { .responsiveWidth(10); }
-            &.md-eleven .parent,
-            .row.md-eleven .parent      { .responsiveWidth(11); }
-            &.md-twelve .parent,
-            .row.md-twelve .parent,
-            &.md-full .parent,
-            .row.md-full .parent        { .responsiveWidth(12); }
-            
-            &.md-one-third .parent,
-            .row.md-one-third .parent   { .responsiveWidth(4); }
-            &.md-two-thirds .parent,
-            .row.md-two-thirds .parent  { .responsiveWidth(8); }
-            &.md-one-fifth .parent,
-            .row.md-one-fifth .parent   { .responsiveWidth(2.4); }
+            .responsiveGrids(md);
         }
     }
 
@@ -435,91 +374,7 @@
 
     @media only screen and (min-width: @medium) {
         .grid {
-            /* Responsive Grids */
-            .lg-one.column,
-            .lg-one.columns             { .responsiveWidth(1); }
-            .lg-two.column,
-            .lg-two.columns             { .responsiveWidth(2); }
-            .lg-three.column,
-            .lg-three.columns           { .responsiveWidth(3); }
-            .lg-four.column,
-            .lg-four.columns            { .responsiveWidth(4); }
-            .lg-five.column,
-            .lg-five.columns            { .responsiveWidth(5); }
-            .lg-six.column,
-            .lg-six.columns             { .responsiveWidth(6); }
-            .lg-seven.column,
-            .lg-seven.columns           { .responsiveWidth(7); }
-            .lg-eight.column,
-            .lg-eight.columns           { .responsiveWidth(8); }
-            .lg-nine.column,
-            .lg-nine.columns            { .responsiveWidth(9); }
-            .lg-ten.column,
-            .lg-ten.columns             { .responsiveWidth(10); }
-            .lg-eleven.column,
-            .lg-eleven.columns          { .responsiveWidth(11); }
-            .lg-twelve.column,
-            .lg-twelve.columns,
-            .lg-full.column,
-            .lg-full.columns            { .responsiveWidth(12); }
-            
-            .lg-one-third.column,
-            .lg-one-third.columns       { .responsiveWidth(4); }
-            .lg-two-thirds.column,
-            .lg-two-thirds.columns      { .responsiveWidth(8); }
-            .lg-one-fifth.column,
-            .lg-one-fifth.columns       { .responsiveWidth(2.4); }
-            
-            /* Responsive Offsets */
-            .lg-offset-by-one           { .responsiveMarginLeft(1); }
-            .lg-offset-by-two           { .responsiveMarginLeft(2); }
-            .lg-offset-by-three         { .responsiveMarginLeft(3); }
-            .lg-offset-by-four          { .responsiveMarginLeft(4); }
-            .lg-offset-by-five          { .responsiveMarginLeft(5); }
-            .lg-offset-by-six           { .responsiveMarginLeft(6); }
-            .lg-offset-by-seven         { .responsiveMarginLeft(7); }
-            .lg-offset-by-eight         { .responsiveMarginLeft(8); }
-            .lg-offset-by-nine          { .responsiveMarginLeft(9); }
-            .lg-offset-by-ten           { .responsiveMarginLeft(10); }
-            .lg-offset-by-eleven        { .responsiveMarginLeft(11); }
-            
-            .lg-offset-by-one-fifth     { .responsiveMarginLeft(2.4); }
-            
-            
-            /* Parent-Based Sizing */
-            &.lg-one .parent,
-            .row.lg-one .parent         { .responsiveWidth(1); }
-            &.lg-two .parent,
-            .row.lg-two .parent         { .responsiveWidth(2); }
-            &.lg-three .parent,
-            .row.lg-three .parent       { .responsiveWidth(3); }
-            &.lg-four .parent,
-            .row.lg-four .parent        { .responsiveWidth(4); }
-            &.lg-five .parent,
-            .row.lg-five .parent        { .responsiveWidth(5); }
-            &.lg-six .parent,
-            .row.lg-six .parent         { .responsiveWidth(6); }
-            &.lg-seven .parent,
-            .row.lg-seven .parent       { .responsiveWidth(7); }
-            &.lg-eight .parent,
-            .row.lg-eight .parent       { .responsiveWidth(8); }
-            &.lg-nine .parent,
-            .row.lg-nine .parent        { .responsiveWidth(9); }
-            &.lg-ten .parent,
-            .row.lg-ten .parent         { .responsiveWidth(10); }
-            &.lg-eleven .parent,
-            .row.lg-eleven .parent      { .responsiveWidth(11); }
-            &.lg-twelve .parent,
-            .row.lg-twelve .parent,
-            &.lg-full .parent,
-            .row.lg-full .parent        { .responsiveWidth(12); }
-            
-            &.lg-one-third .parent,
-            .row.lg-one-third .parent   { .responsiveWidth(4); }
-            &.lg-two-thirds .parent,
-            .row.lg-two-thirds .parent  { .responsiveWidth(8); }
-            &.lg-one-fifth .parent,
-            .row.lg-one-fifth .parent   { .responsiveWidth(2.4); }
+            .responsiveGrids(lg);
         }
     }
 
@@ -529,91 +384,7 @@
 
     @media only screen and (min-width: @large) {
         .grid {
-            /* Responsive Grids */
-            .xlg-one.column,
-            .xlg-one.columns             { .responsiveWidth(1); }
-            .xlg-two.column,
-            .xlg-two.columns             { .responsiveWidth(2); }
-            .xlg-three.column,
-            .xlg-three.columns           { .responsiveWidth(3); }
-            .xlg-four.column,
-            .xlg-four.columns            { .responsiveWidth(4); }
-            .xlg-five.column,
-            .xlg-five.columns            { .responsiveWidth(5); }
-            .xlg-six.column,
-            .xlg-six.columns             { .responsiveWidth(6); }
-            .xlg-seven.column,
-            .xlg-seven.columns           { .responsiveWidth(7); }
-            .xlg-eight.column,
-            .xlg-eight.columns           { .responsiveWidth(8); }
-            .xlg-nine.column,
-            .xlg-nine.columns            { .responsiveWidth(9); }
-            .xlg-ten.column,
-            .xlg-ten.columns             { .responsiveWidth(10); }
-            .xlg-eleven.column,
-            .xlg-eleven.columns          { .responsiveWidth(11); }
-            .xlg-twelve.column,
-            .xlg-twelve.columns,
-            .xlg-full.column,
-            .xlg-full.columns            { .responsiveWidth(12); }
-            
-            .xlg-one-third.column,
-            .xlg-one-third.columns       { .responsiveWidth(4); }
-            .xlg-two-thirds.column,
-            .xlg-two-thirds.columns      { .responsiveWidth(8); }
-            .xlg-one-fifth.column,
-            .xlg-one-fifth.columns       { .responsiveWidth(2.4); }
-            
-            /* Responsive Offsets */
-            .xlg-offset-by-one           { .responsiveMarginLeft(1); }
-            .xlg-offset-by-two           { .responsiveMarginLeft(2); }
-            .xlg-offset-by-three         { .responsiveMarginLeft(3); }
-            .xlg-offset-by-four          { .responsiveMarginLeft(4); }
-            .xlg-offset-by-five          { .responsiveMarginLeft(5); }
-            .xlg-offset-by-six           { .responsiveMarginLeft(6); }
-            .xlg-offset-by-seven         { .responsiveMarginLeft(7); }
-            .xlg-offset-by-eight         { .responsiveMarginLeft(8); }
-            .xlg-offset-by-nine          { .responsiveMarginLeft(9); }
-            .xlg-offset-by-ten           { .responsiveMarginLeft(10); }
-            .xlg-offset-by-eleven        { .responsiveMarginLeft(11); }
-            
-            .xlg-offset-by-one-fifth     { .responsiveMarginLeft(2.4); }
-            
-            
-            /* Parent-Based Sizing */
-            &.xlg-one .parent,
-            .row.xlg-one .parent         { .responsiveWidth(1); }
-            &.xlg-two .parent,
-            .row.xlg-two .parent         { .responsiveWidth(2); }
-            &.xlg-three .parent,
-            .row.xlg-three .parent       { .responsiveWidth(3); }
-            &.xlg-four .parent,
-            .row.xlg-four .parent        { .responsiveWidth(4); }
-            &.xlg-five .parent,
-            .row.xlg-five .parent        { .responsiveWidth(5); }
-            &.xlg-six .parent,
-            .row.xlg-six .parent         { .responsiveWidth(6); }
-            &.xlg-seven .parent,
-            .row.xlg-seven .parent       { .responsiveWidth(7); }
-            &.xlg-eight .parent,
-            .row.xlg-eight .parent       { .responsiveWidth(8); }
-            &.xlg-nine .parent,
-            .row.xlg-nine .parent        { .responsiveWidth(9); }
-            &.xlg-ten .parent,
-            .row.xlg-ten .parent         { .responsiveWidth(10); }
-            &.xlg-eleven .parent,
-            .row.xlg-eleven .parent      { .responsiveWidth(11); }
-            &.xlg-twelve .parent,
-            .row.xlg-twelve .parent,
-            &.xlg-full .parent,
-            .row.xlg-full .parent        { .responsiveWidth(12); }
-            
-            &.xlg-one-third .parent,
-            .row.xlg-one-third .parent   { .responsiveWidth(4); }
-            &.xlg-two-thirds .parent,
-            .row.xlg-two-thirds .parent  { .responsiveWidth(8); }
-            &.xlg-one-fifth .parent,
-            .row.xlg-one-fifth .parent   { .responsiveWidth(2.4); }
+            .responsiveGrids(xlg);
         }
     }
 
