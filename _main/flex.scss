@@ -28,14 +28,10 @@ $gutter: 2%;
 $numOfColumns: 12;
 
 // Breakpoints
-/*$small: 400px;
-$medium: 600px;
-$large: 900px;
-$xlarge: 1200px;*/
-
 $breakpoints: (sm: 0px, md: 400px, lg: 600px, xlg: 900px);
 
 $columnNumbers: (one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twenty-one, twenty-two, twenty-three, twenty-four, twenty-five);
+
 $fractionalColumns: (one-third: 1/3, two-thirds: 2/3, one-fifth: 1/5);
 
 /* #Base Grid
@@ -255,41 +251,62 @@ $fractionalColumns: (one-third: 1/3, two-thirds: 2/3, one-fifth: 1/5);
 
 
 
+@mixin grids($prefix){
+            // Generate Int Grids
+            @for $i from 1 through $numOfColumns{
+                    $colNum: nth($columnNumbers, $i);
+                    .#{$colNum}.column,
+                    .#{$colNum}.columns     { @include width($i); }
 
+                    @if $i == $numOfColumns{
+                        .full.column,
+                        .full.columns     { @include width($i); }
+                    }
+
+                    // Generate Int Offsets
+                    @if $i != $numOfColumns{
+                        .offset-by-#{$colNum}           { @include marginLeft($i); }
+                    }
+            }           
+            
+            // Generate Fractional Grids
+            @each $class, $width in $fractionalColumns {
+                .#{$class}.column,
+                .#{$class}.columns       { @include width($numOfColumns * $width); }
+
+                // Generate Fractional Offsets
+                .offset-by-#{$class}     { @include marginLeft($numOfColumns * $width); }
+                //width: $numOfColumns * $width;
+            }
+            
+            // START HERE ---------------------------------------------------------------------
+            // Generate Int Parent-Based Responsive Grids
+            @for $i from 1 through $numOfColumns{
+                    $colNum: nth($columnNumbers, $i);
+                    &.#{$prefix}-#{$colNum} .parent,
+                   .row.#{$prefix}-#{$colNum} .parent         { @include responsiveWidth($i); }
+
+                    @if $i == $numOfColumns{
+                        &.#{$prefix}-full .parent,
+                        .row.#{$prefix}-full .parent        { @include responsiveWidth($i); }
+                    }
+            }
+
+            // Generate Fractional Responsive Grids
+            @each $class, $width in $fractionalColumns {
+                &.#{$prefix}-#{$class} .parent,
+                .row.#{$prefix}-#{$class} .parent   { @include responsiveWidth($numOfColumns * $width); }
+
+                // Generate Fractional Responsive Offsets
+                //.#{$prefix}-offset-by-#{$class}     { @include responsiveMarginLeft($numOfColumns * $width); }
+            }
+}
 
 
 
 
 
 @mixin responsiveGrids($prefix){
-            /* Responsive Grids */
-            /*.#{$prefix}-one.column,
-            .#{$prefix}-one.columns             { @include responsiveWidth(1); }
-            .#{$prefix}-two.column,
-            .#{$prefix}-two.columns             { @include responsiveWidth(2); }
-            .#{$prefix}-three.column,
-            .#{$prefix}-three.columns           { @include responsiveWidth(3); }
-            .#{$prefix}-four.column,
-            .#{$prefix}-four.columns            { @include responsiveWidth(4); }
-            .#{$prefix}-five.column,
-            .#{$prefix}-five.columns            { @include responsiveWidth(5); }
-            .#{$prefix}-six.column,
-            .#{$prefix}-six.columns             { @include responsiveWidth(6); }
-            .#{$prefix}-seven.column,
-            .#{$prefix}-seven.columns           { @include responsiveWidth(7); }
-            .#{$prefix}-eight.column,
-            .#{$prefix}-eight.columns           { @include responsiveWidth(8); }
-            .#{$prefix}-nine.column,
-            .#{$prefix}-nine.columns            { @include responsiveWidth(9); }
-            .#{$prefix}-ten.column,
-            .#{$prefix}-ten.columns             { @include responsiveWidth(10); }
-            .#{$prefix}-eleven.column,
-            .#{$prefix}-eleven.columns          { @include responsiveWidth(11); }
-            .#{$prefix}-twelve.column,
-            .#{$prefix}-twelve.columns,
-            .#{$prefix}-full.column,
-            .#{$prefix}-full.columns            { @include responsiveWidth(12); }*/
-            
             // Generate Int Responsive Grids
             @for $i from 1 through $numOfColumns{
                     $colNum: nth($columnNumbers, $i);
@@ -317,65 +334,27 @@ $fractionalColumns: (one-third: 1/3, two-thirds: 2/3, one-fifth: 1/5);
                 //width: $numOfColumns * $width;
             }
             
-            /* .#{$prefix}-one-third.column,
-            .#{$prefix}-one-third.columns       { @include responsiveWidth(4); }
-            .#{$prefix}-two-thirds.column,
-            .#{$prefix}-two-thirds.columns      { @include responsiveWidth(8); }
-            .#{$prefix}-one-fifth.column,
-            .#{$prefix}-one-fifth.columns       { @include responsiveWidth(2.4); } */
-            
 
-            /* Responsive Offsets */
-            /*.#{$prefix}-offset-by-one           { @include responsiveMarginLeft(1); }
-            .#{$prefix}-offset-by-two           { @include responsiveMarginLeft(2); }
-            .#{$prefix}-offset-by-three         { @include responsiveMarginLeft(3); }
-            .#{$prefix}-offset-by-four          { @include responsiveMarginLeft(4); }
-            .#{$prefix}-offset-by-five          { @include responsiveMarginLeft(5); }
-            .#{$prefix}-offset-by-six           { @include responsiveMarginLeft(6); }
-            .#{$prefix}-offset-by-seven         { @include responsiveMarginLeft(7); }
-            .#{$prefix}-offset-by-eight         { @include responsiveMarginLeft(8); }
-            .#{$prefix}-offset-by-nine          { @include responsiveMarginLeft(9); }
-            .#{$prefix}-offset-by-ten           { @include responsiveMarginLeft(10); }
-            .#{$prefix}-offset-by-eleven        { @include responsiveMarginLeft(11); }*/
-            
-            /*.#{$prefix}-offset-by-one-fifth     { @include responsiveMarginLeft(2.4); }*/
-            
-            
-            /* Parent-Based Sizing */
-            &.#{$prefix}-one .parent,
-            .row.#{$prefix}-one .parent         { @include responsiveWidth(1); }
-            &.#{$prefix}-two .parent,
-            .row.#{$prefix}-two .parent         { @include responsiveWidth(2); }
-            &.#{$prefix}-three .parent,
-            .row.#{$prefix}-three .parent       { @include responsiveWidth(3); }
-            &.#{$prefix}-four .parent,
-            .row.#{$prefix}-four .parent        { @include responsiveWidth(4); }
-            &.#{$prefix}-five .parent,
-            .row.#{$prefix}-five .parent        { @include responsiveWidth(5); }
-            &.#{$prefix}-six .parent,
-            .row.#{$prefix}-six .parent         { @include responsiveWidth(6); }
-            &.#{$prefix}-seven .parent,
-            .row.#{$prefix}-seven .parent       { @include responsiveWidth(7); }
-            &.#{$prefix}-eight .parent,
-            .row.#{$prefix}-eight .parent       { @include responsiveWidth(8); }
-            &.#{$prefix}-nine .parent,
-            .row.#{$prefix}-nine .parent        { @include responsiveWidth(9); }
-            &.#{$prefix}-ten .parent,
-            .row.#{$prefix}-ten .parent         { @include responsiveWidth(10); }
-            &.#{$prefix}-eleven .parent,
-            .row.#{$prefix}-eleven .parent      { @include responsiveWidth(11); }
-            &.#{$prefix}-twelve .parent,
-            .row.#{$prefix}-twelve .parent,
-            &.#{$prefix}-full .parent,
-            .row.#{$prefix}-full .parent        { @include responsiveWidth(12); }
-            
-            &.#{$prefix}-one-third .parent,
-            .row.#{$prefix}-one-third .parent   { @include responsiveWidth(4); }
-            &.#{$prefix}-two-thirds .parent,
-            .row.#{$prefix}-two-thirds .parent  { @include responsiveWidth(8); }
-            &.#{$prefix}-one-fifth .parent,
-            .row.#{$prefix}-one-fifth .parent   { @include responsiveWidth(2.4); }
+            // Generate Int Parent-Based Responsive Grids
+            @for $i from 1 through $numOfColumns{
+                    $colNum: nth($columnNumbers, $i);
+                    &.#{$prefix}-#{$colNum} .parent,
+                   .row.#{$prefix}-#{$colNum} .parent         { @include responsiveWidth($i); }
 
+                    @if $i == $numOfColumns{
+                        &.#{$prefix}-full .parent,
+                        .row.#{$prefix}-full .parent        { @include responsiveWidth($i); }
+                    }
+            }
+
+            // Generate Fractional Responsive Grids
+            @each $class, $width in $fractionalColumns {
+                &.#{$prefix}-#{$class} .parent,
+                .row.#{$prefix}-#{$class} .parent   { @include responsiveWidth($numOfColumns * $width); }
+
+                // Generate Fractional Responsive Offsets
+                //.#{$prefix}-offset-by-#{$class}     { @include responsiveMarginLeft($numOfColumns * $width); }
+            }
 }
 
 
