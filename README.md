@@ -16,7 +16,7 @@ Then simply use the `.grid` class to nest your grids within and you're good to g
 Customization
 ============
 
-Flex currently comes with 2 filetypes: `css` and `less`.
+Flex currently comes with 2 filetypes: `css` and `scss`.
 
 Both come full-featured and have a 12 column grid, a default gutter of 2% and the following breakpoints:
 
