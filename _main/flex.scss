@@ -1,46 +1,47 @@
 /*
-* Flex v1.3
+* Flex v2.0
 * Copyright 2014, Caleb Hardin.  All rights reserved.
 **** Licensed under the GPL v2.0 license.
 **** http://www.gnu.org/licenses/gpl-2.0.txt
 */
 
 
-/* ---------- TO DO ----------
-==================================================
--add offsets for responsive grids
-
-*/
-
 /* Table of Contents
 ==================================================
-    1. Base Grid
-    2. Base Grid (with no gutters)
-    3. Small Responsive Grid
-    4. Medium Responsive Grid
-    5. Large Responsive Grid
-    6. Extra Large Responsive Grid
+/*    1. Variables
+/*    2. Imports
+/*    3. Base Grid
+/*    4. Base Grid (with no gutters)
+/*    5. Responsive Grids
+/*    6. Clearfixes
+*/
 
+// #Variables
+// ==================================================
 
-/* Variables
-================================================== */
-$gutter: 2%;
+// Space between column elements.  Ignored for .no-gutter
+$gutter: 4%;
+
+// Edit this for different column schemes.  Can be 1 - 24.
 $numOfColumns: 12;
 
-// Breakpoints
-$breakpoints: (sm: 0px, md: 400px, lg: 600px, xlg: 900px);
+// Sets the sizes for responsive grids.  Uses min-width, so sm uses 0px - infinity until another breakpoint is reached.  Add and remove as you like.
+// Format: breakpoint-prefix: size(any units)
+$breakpoints: (sm: 0px, md: 37.5em, lg: 62.5em, xlg: 81.25em);
 
-$columnNumbers: (one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twenty-one, twenty-two, twenty-three, twenty-four, twenty-five);
 
-$fractionalColumns: (one-third: 1/3, two-thirds: 2/3, one-fifth: 1/5);
+// Used for odd sizes not supported by the grid scheme.  Add and remove as you like.
+// Format: class-name: fraction
+$fractionalColumns: (one-third: 1/3, two-thirds: 2/3, one-fifth: 1/5, two-fifths: 2/5, three-fifths: 3/5, four-fifths: 4/5);
 
+
+// #Imports
+// ==================================================
 @import "flex_functions.scss";
+
+
 /* #Base Grid
 ================================================== */
-
-
-
-
     .grid {position: relative; width: 100%; margin: 0 auto; padding: 0;
         
         .column,
@@ -53,97 +54,12 @@ $fractionalColumns: (one-third: 1/3, two-thirds: 2/3, one-fifth: 1/5);
         .column.omega, .columns.omega               { margin-right: 0; }
 
         @include grids();
-        /* Base Grid */
-//        .one.column,
-//        .one.columns                     { @include width(1); }
-//        .two.column,
-//        .two.columns                     { @include width(2); }
-//        .three.column,
-//        .three.columns                   { @include width(3); }
-//        .four.column,
-//        .four.columns                    { @include width(4); }
-//        .five.column,
-//        .five.columns                    { @include width(5); }
-//        .six.column,
-//        .six.columns                     { @include width(6); }
-//        .seven.column,
-//        .seven.columns                   { @include width(7); }
-//        .eight.column,
-//        .eight.columns                   { @include width(8); }
-//        .nine.column,
-//        .nine.columns                    { @include width(9); }
-//        .ten.column,
-//        .ten.columns                     { @include width(10); }
-//        .eleven.column,
-//        .eleven.columns                  { @include width(11); }
-//        .twelve.column,
-//        .twelve.columns,
-//        .full.column,
-//        .full.columns                    { @include width(12); }
-//
-//        .one-third.column,
-//        .one-third.columns               { @include width(4); }
-//        .two-thirds.column,
-//        .two-thirds.columns              { @include width(8); }
-//        .one-fifth.column,
-//        .one-fifth.columns               { @include width(2.4); }
-//
-//        /* Offsets */
-//        .offset-by-one                   { @include marginLeft(1); }
-//        .offset-by-two                   { @include marginLeft(2); }
-//        .offset-by-three                 { @include marginLeft(3); }
-//        .offset-by-four                  { @include marginLeft(4); }
-//        .offset-by-five                  { @include marginLeft(5); }
-//        .offset-by-six                   { @include marginLeft(6); }
-//        .offset-by-seven                 { @include marginLeft(7); }
-//        .offset-by-eight                 { @include marginLeft(8); }
-//        .offset-by-nine                  { @include marginLeft(9); }
-//        .offset-by-ten                   { @include marginLeft(10); }
-//        .offset-by-eleven                { @include marginLeft(11); }
-//        
-//        .offset-by-one-fifth             { @include marginLeft(2.4); }
-//        
-//        
-//        
-//        /* Parent-Based Sizing */
-//        .grid.one .parent,
-//        .row.one .parent         { @include responsiveWidth(1); }
-//        .grid.two .parent,
-//        .row.two .parent         { @include responsiveWidth(2); }
-//        .grid.three .parent,
-//        .row.three .parent       { @include responsiveWidth(3); }
-//        .grid.four .parent,
-//        .row.four .parent        { @include responsiveWidth(4); }
-//        .grid.five .parent,
-//        .row.five .parent        { @include responsiveWidth(5); }
-//        .grid.six .parent,
-//        .row.six .parent         { @include responsiveWidth(6); }
-//        .grid.seven .parent,
-//        .row.seven .parent       { @include responsiveWidth(7); }
-//        .grid.eight .parent,
-//        .row.eight .parent       { @include responsiveWidth(8); }
-//        .grid.nine .parent,
-//        .row.nine .parent        { @include responsiveWidth(9); }
-//        .grid.ten .parent,
-//        .row.ten .parent         { @include responsiveWidth(10); }
-//        .grid.eleven .parent,
-//        .row.eleven .parent      { @include responsiveWidth(11); }
-//        .grid.twelve .parent,
-//        .row.twelve .parent,
-//        .grid.full .parent,
-//        .row.full .parent        { @include responsiveWidth(12); }
-
     }
 
 
 
 /* #Base Grid With No Gutters
 ================================================== */
-
-
-
-
-
     .grid.no-gutter {
         
         .column,
@@ -151,83 +67,10 @@ $fractionalColumns: (one-third: 1/3, two-thirds: 2/3, one-fifth: 1/5);
         .row     { margin-bottom: 0; }
         
         @include grids(false);
-        
-        /* Base Grid */
-        /*.one.column,
-        .one.columns                     { @include widthNoGutter(1); }
-        .two.column,
-        .two.columns                     { @include widthNoGutter(2); }
-        .three.column,
-        .three.columns                   { @include widthNoGutter(3); }
-        .four.column,
-        .four.columns                    { @include widthNoGutter(4); }
-        .five.column,
-        .five.columns                    { @include widthNoGutter(5); }
-        .six.column,
-        .six.columns                     { @include widthNoGutter(6); }
-        .seven.column,
-        .seven.columns                   { @include widthNoGutter(7); }
-        .eight.column,
-        .eight.columns                   { @include widthNoGutter(8); }
-        .nine.column,
-        .nine.columns                    { @include widthNoGutter(9); }
-        .ten.column,
-        .ten.columns                     { @include widthNoGutter(10); }
-        .eleven.column,
-        .eleven.columns                  { @include widthNoGutter(11); }
-        .twelve.column,
-        .twelve.columns,
-        .full.column,
-        .full.columns                    { @include widthNoGutter(12); }
-
-        .one-third.column,
-        .one-third.columns               { @include widthNoGutter(4); }
-        .two-thirds.column,
-        .two-thirds.columns              { @include widthNoGutter(8); }
-        .one-fifth.column,
-        .one-fifth.columns               { @include widthNoGutter(2.4); }
-
-         Offsets 
-        .offset-by-one                   { @include marginLeftNoGutter(1); }
-        .offset-by-two                   { @include marginLeftNoGutter(2); }
-        .offset-by-three                 { @include marginLeftNoGutter(3); }
-        .offset-by-four                  { @include marginLeftNoGutter(4); }
-        .offset-by-five                  { @include marginLeftNoGutter(5); }
-        .offset-by-six                   { @include marginLeftNoGutter(6); }
-        .offset-by-seven                 { @include marginLeftNoGutter(7); }
-        .offset-by-eight                 { @include marginLeftNoGutter(8); }
-        .offset-by-nine                  { @include marginLeftNoGutter(9); }
-        .offset-by-ten                   { @include marginLeftNoGutter(10); }
-        .offset-by-eleven                { @include marginLeftNoGutter(11); }
-        
-        .offset-by-one-fifth             { @include marginLeftNoGutter(2.4); }*/
-
     }
 
 
-
-
-/* Small Responsive Grid
-================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*  Generate Responsive Grids
+/*  #Responsive Grids
 ================================================== */
 
 @each $prefix, $breakpoint in $breakpoints{
