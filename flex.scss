@@ -27,7 +27,7 @@ $numOfColumns: 12;
 
 // Sets the sizes for responsive grids.  Uses min-width, so sm uses 0px - infinity until another breakpoint is reached.  Add and remove as you like.
 // Format: breakpoint-prefix: size(any units)
-$breakpoints: (sm: 0px, md: 37.5em, lg: 62.5em, xlg: 81.25em);
+$breakpoints: (sm: 0em, md: 37.5em, lg: 62.5em, xlg: 81.25em);
 
 
 // Used for odd sizes not supported by the grid scheme.  Add and remove as you like.
