@@ -1,0 +1,37 @@
+/*
+* Flex v2.0
+* Copyright 2014, Caleb Hardin.  All rights reserved.
+**** Licensed under the GPL v2.0 license.
+**** http://www.gnu.org/licenses/gpl-2.0.txt
+*/
+
+
+/* Table of Contents
+==================================================
+/*    1. Imports
+/*    2. Base Grid
+/*    3. Base Grid (with no gutters)
+/*    4. Responsive Grids
+/*    5. Clearfixes
+*/
+
+
+// #Imports
+// ==================================================
+@import "flex_settings.scss";
+@import "flex_functions.scss";
+
+
+
+/*  #Responsive Grids
+================================================== */
+
+@each $prefix, $breakpoint in $breakpoints{
+        .grid {
+            @include responsiveGrids($prefix);
+        }
+}
+
+
+/* #Clearing
+================================================== */
