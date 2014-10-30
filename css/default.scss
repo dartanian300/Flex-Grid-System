@@ -1,0 +1,160 @@
+@charset "UTF-8";
+@-moz-document url-prefix() {}
+
+
+
+@import 'rem_conversions';
+%stripListStyles {list-style: none; padding: 0; margin: 0;}
+%selfClear {content: ""; display: block; clear: both;}
+/*    b=#98002E   gold = #FEBC11 */
+
+
+$primary_c: #1e81c9;
+$secondary_c: #fdb013;
+$tertiary_c: #0e709e;
+$fourth_c: #414141;
+$fifth_c: #e5e5e5;
+
+$link_c: #0e709e;
+$hover_c: lighten($link_c, 10%);
+
+$background_c: $fourth_c;
+
+$elementGutter: 3%;
+$pageMargins: 4%;
+/**************************************************
+
+				   BASE RULES
+
+***************************************************/
+
+a {color: $link_c; text-decoration: none;}
+a:hover {color: $hover_c;}
+.clear {clear: both}
+
+html {font-size: 1.1em;}
+
+body{margin: 0; padding: 0; font-family: 'Raleway', sans-serif, helvetica, arial; font-weight: 400; @include font-size(1); background: white;}
+
+h1, h2, h3, h4, h5, h6 {font-family: 'Oswald', sans-serif, helvetica, arial; font-weight: 400;}
+h1 {font-weight: bold;}
+
+p {@include font-size(1); @include line-height(1.8125); font-weight: 300;}
+
+hr {border: none; outline: none; height: 1px; background: #e5e5e5; width: 100%; display: block;}
+
+img {
+    &.small { max-width: 25%; }
+    &.medium { max-width: 35%; }
+    &.large { max-width: 45%; }
+    &.xlarge { max-width: 55%; }
+    &.full { max-width: 100%; }
+}
+
+form {
+    .ninja-forms-form-wrap & label {font-weight: 400;}
+    input, textarea {@include font-size(1.25); box-sizing: content-box;}
+    input[type="text"], textarea {@include padding(.4375, 1.5%); border: none;}
+    input[type="submit"] {background: $secondary_c; color: white; @include padding(.625, 1.25); border: none; outline: none; cursor: pointer; }
+}
+
+.inner_rim {width: 100% - ($pageMargins * 2); display: block; margin: 0 auto;}
+.inner_rim::after {@extend %selfClear;}
+//$color: #eb0808;
+//$color: #0be03a;
+
+
+/**************************************************
+
+					LAYOUT
+
+***************************************************/
+
+#navbar { background: $primary_c; width: 100%; @include min-height(5); @include line-height(5);}
+.nav { @extend %stripListStyles; min-height: inherit;
+    li { float: left; min-height: inherit; }
+    a { color: white; @include padding(0, 1); }
+}
+
+#page_wrapper { background: green; min-height: 50px;}
+
+/****** MOBILE ******/
+
+
+
+
+/**************************************************
+
+					MODULE
+
+***************************************************/
+.three_col {
+    @extend %stripListStyles;
+    
+    > li { width: (100 - ($elementGutter * 2)) / 3; margin-right: $elementGutter; float: left;}
+    > li:nth-child(3n) {margin-right: 0;}
+    &::after {@extend %selfClear;}
+}
+
+.four_col {
+    @extend %stripListStyles;
+                            // 100 - $elGut * numOfGutters / numOfEls
+    > li {width: (100 - ($elementGutter * 3)) / 4; margin-right: $elementGutter; float: left;}
+    > li:nth-child(4n) {margin-right: 0;}
+    &::after {@extend %selfClear;}
+}
+
+/****** MOBILE ******/
+
+
+
+
+/**************************************************
+
+				     HOME PAGE
+
+***************************************************/
+
+
+
+
+/****** MOBILE ******/
+
+
+
+
+/**************************************************
+
+				 	 RESOURCES
+
+***************************************************/
+.imgright { float: right; @include margin(1,0,1,1); }
+.imgleft { float: left; @include margin(1,1,1,0); }
+
+
+
+/**************************************************
+
+				 	 MIX-INS
+
+***************************************************/
+
+
+
+/****** MOBILE ******/
+
+
+
+
+/**************************************************
+
+				   MEDIA QUERIES
+
+***************************************************/
+
+
+
+
+@media only screen and (max-width: 78em) {
+
+}

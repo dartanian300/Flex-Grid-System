@@ -1,0 +1,181 @@
+@-moz-document url-prefix() {}
+/*html {
+    font-size: px(3);
+}*/
+.nav, .three_col, .four_col {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.inner_rim::after, .three_col::after, .four_col::after {
+  content: "";
+  display: block;
+  clear: both; }
+
+/*    b=#98002E   gold = #FEBC11 */
+/**************************************************
+
+				   BASE RULES
+
+***************************************************/
+a {
+  color: #0e709e;
+  text-decoration: none; }
+
+a:hover {
+  color: #1291cd; }
+
+.clear {
+  clear: both; }
+
+html {
+  font-size: 1.1em; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif, helvetica, arial;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  background: white; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif, helvetica, arial;
+  font-weight: 400; }
+
+h1 {
+  font-weight: bold; }
+
+p {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 29px;
+  line-height: 1.8125rem;
+  font-weight: 300; }
+
+hr {
+  border: none;
+  outline: none;
+  height: 1px;
+  background: #e5e5e5;
+  width: 100%;
+  display: block; }
+
+img.small {
+  max-width: 25%; }
+img.medium {
+  max-width: 35%; }
+img.large {
+  max-width: 45%; }
+img.xlarge {
+  max-width: 55%; }
+img.full {
+  max-width: 100%; }
+
+.ninja-forms-form-wrap form label {
+  font-weight: 400; }
+form input, form textarea {
+  font-size: 20px;
+  font-size: 1.25rem;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
+form input[type="text"], form textarea {
+  padding: 7px 1.5%;
+  padding: 0.4375rem 1.5%;
+  border: none; }
+form input[type="submit"] {
+  background: #fdb013;
+  color: white;
+  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+.inner_rim {
+  width: 92%;
+  display: block;
+  margin: 0 auto; }
+
+/**************************************************
+
+					LAYOUT
+
+***************************************************/
+#navbar {
+  background: #1e81c9;
+  width: 100%;
+  min-height: 80px;
+  min-height: 5rem;
+  line-height: 80px;
+  line-height: 5rem; }
+
+.nav {
+  min-height: inherit; }
+  .nav li {
+    float: left;
+    min-height: inherit; }
+  .nav a {
+    color: white;
+    padding: 0px 16px;
+    padding: 0rem 1rem; }
+
+#page_wrapper {
+  background: green;
+  min-height: 50px; }
+
+/****** MOBILE ******/
+/**************************************************
+
+					MODULE
+
+***************************************************/
+.three_col > li {
+  width: 31.33333%;
+  margin-right: 3%;
+  float: left; }
+.three_col > li:nth-child(3n) {
+  margin-right: 0; }
+
+.four_col > li {
+  width: 22.75%;
+  margin-right: 3%;
+  float: left; }
+.four_col > li:nth-child(4n) {
+  margin-right: 0; }
+
+/****** MOBILE ******/
+/**************************************************
+
+				     HOME PAGE
+
+***************************************************/
+/****** MOBILE ******/
+/**************************************************
+
+				 	 RESOURCES
+
+***************************************************/
+.imgright {
+  float: right;
+  margin: 16px 0px 16px 16px;
+  margin: 1rem 0rem 1rem 1rem; }
+
+.imgleft {
+  float: left;
+  margin: 16px 16px 16px 0px;
+  margin: 1rem 1rem 1rem 0rem; }
+
+/**************************************************
+
+				 	 MIX-INS
+
+***************************************************/
+/****** MOBILE ******/
+/**************************************************
+
+				   MEDIA QUERIES
+
+***************************************************/

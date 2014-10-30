@@ -1,0 +1,304 @@
+
+
+
+$pxRemRatio: 16;
+
+
+//************************************************
+//
+//                    MARGINS
+//
+//*************************************************
+
+
+@mixin margin($args...){
+    $argLength: length($args);
+    $px1:0; $px2:0; $px3:0; $px4:0;
+    $rem1:0; $rem2:0; $rem3:0; $rem4:0;
+    
+    // Single Value Margin
+    @if $argLength == 1 {
+        margin: px(nth($args, 1));   // px
+        margin: rem(nth($args, 1));  // rem
+    }
+    
+    // Double Value Margin
+    @else if $argLength == 2 {
+        // Test if values are rems (unitless)
+        @if unit(nth($args, 1)) != "" {
+            $px1: nth($args, 1); $rem1: nth($args, 1); }
+        @else {
+            $px1: px(nth($args, 1)); $rem1: rem(nth($args, 1)); }
+        
+        @if unit(nth($args, 2)) != "" {
+            $px2: nth($args, 2); $rem2: nth($args, 2); }
+        @else {
+            $px2: px(nth($args, 2)); $rem2: rem(nth($args, 2)); }
+        
+        // Output
+        margin: $px1 $px2;    // px
+        margin: $rem1 $rem2;  // rem
+    }
+    
+    // Triple Value Margin
+    @else if $argLength == 3 {
+        // Test if values are rems (unitless)
+        @if unit(nth($args, 1)) != "" {
+            $px1: nth($args, 1); $rem1: nth($args, 1); }
+        @else {
+            $px1: px(nth($args, 1)); $rem1: rem(nth($args, 1)); }
+        
+        @if unit(nth($args, 2)) != "" {
+            $px2: nth($args, 2); $rem2: nth($args, 2); }
+        @else {
+            $px2: px(nth($args, 2)); $rem2: rem(nth($args, 2)); }
+        
+        @if unit(nth($args, 3)) != "" {
+            $px3: nth($args, 3); $rem3: nth($args, 3); }
+        @else {
+            $px3: px(nth($args, 3)); $rem3: rem(nth($args, 3)); }
+        
+        // Output
+        margin: $px1 $px2 $px3;    // px
+        margin: $rem1 $rem2 $rem3;  // rem
+    }
+    
+    // Quadruple Value Margin
+    @else if $argLength == 4 {
+        // Test if values are rems (unitless)
+        @if unit(nth($args, 1)) != "" {
+            $px1: nth($args, 1); $rem1: nth($args, 1); }
+        @else {
+            $px1: px(nth($args, 1)); $rem1: rem(nth($args, 1)); }
+        
+        @if unit(nth($args, 2)) != "" {
+            $px2: nth($args, 2); $rem2: nth($args, 2); }
+        @else {
+            $px2: px(nth($args, 2)); $rem2: rem(nth($args, 2)); }
+        
+        @if unit(nth($args, 3)) != "" {
+            $px3: nth($args, 3); $rem3: nth($args, 3); }
+        @else {
+            $px3: px(nth($args, 3)); $rem3: rem(nth($args, 3)); }
+        
+        @if unit(nth($args, 4)) != "" {
+            $px4: nth($args, 4); $rem4: nth($args, 4); }
+        @else {
+            $px4: px(nth($args, 4)); $rem4: rem(nth($args, 4)); }
+        
+        // Output
+        margin: $px1 $px2 $px3 $px4;    // px
+        margin: $rem1 $rem2 $rem3 $rem4;  // rem
+    }
+}
+
+
+@mixin margin-top($rem){
+    margin-top: px($rem); margin-top: rem($rem);
+}
+
+@mixin margin-right($rem){
+    margin-right: px($rem); margin-right: rem($rem);
+}
+
+@mixin margin-bottom($rem){
+    margin-bottom: px($rem); margin-bottom: rem($rem);
+}
+
+@mixin margin-left($rem){
+    margin-left: px($rem); margin-left: rem($rem);
+}
+
+
+//************************************************
+//
+//                    PADDINGS
+//
+//*************************************************
+
+
+@mixin padding($args...){
+    $argLength: length($args);
+    $px1:0; $px2:0; $px3:0; $px4:0;
+    $rem1:0; $rem2:0; $rem3:0; $rem4:0;
+    
+    // Single Value padding
+    @if $argLength == 1 {
+        padding: px(nth($args, 1));   // px
+        padding: rem(nth($args, 1));  // rem
+    }
+    
+    // Double Value padding
+    @else if $argLength == 2 {
+        // Test if values are rems (unitless)
+        @if unit(nth($args, 1)) != "" {
+            $px1: nth($args, 1); $rem1: nth($args, 1); }
+        @else {
+            $px1: px(nth($args, 1)); $rem1: rem(nth($args, 1)); }
+        
+        @if unit(nth($args, 2)) != "" {
+            $px2: nth($args, 2); $rem2: nth($args, 2); }
+        @else {
+            $px2: px(nth($args, 2)); $rem2: rem(nth($args, 2)); }
+        
+        // Output
+        padding: $px1 $px2;    // px
+        padding: $rem1 $rem2;  // rem
+    }
+    
+    // Triple Value padding
+    @else if $argLength == 3 {
+        // Test if values are rems (unitless)
+        @if unit(nth($args, 1)) != "" {
+            $px1: nth($args, 1); $rem1: nth($args, 1); }
+        @else {
+            $px1: px(nth($args, 1)); $rem1: rem(nth($args, 1)); }
+        
+        @if unit(nth($args, 2)) != "" {
+            $px2: nth($args, 2); $rem2: nth($args, 2); }
+        @else {
+            $px2: px(nth($args, 2)); $rem2: rem(nth($args, 2)); }
+        
+        @if unit(nth($args, 3)) != "" {
+            $px3: nth($args, 3); $rem3: nth($args, 3); }
+        @else {
+            $px3: px(nth($args, 3)); $rem3: rem(nth($args, 3)); }
+        
+        // Output
+        padding: $px1 $px2 $px3;    // px
+        padding: $rem1 $rem2 $rem3;  // rem
+    }
+    
+    // Quadruple Value padding
+    @else if $argLength == 4 {
+        // Test if values are rems (unitless)
+        @if unit(nth($args, 1)) != "" {
+            $px1: nth($args, 1); $rem1: nth($args, 1); }
+        @else {
+            $px1: px(nth($args, 1)); $rem1: rem(nth($args, 1)); }
+        
+        @if unit(nth($args, 2)) != "" {
+            $px2: nth($args, 2); $rem2: nth($args, 2); }
+        @else {
+            $px2: px(nth($args, 2)); $rem2: rem(nth($args, 2)); }
+        
+        @if unit(nth($args, 3)) != "" {
+            $px3: nth($args, 3); $rem3: nth($args, 3); }
+        @else {
+            $px3: px(nth($args, 3)); $rem3: rem(nth($args, 3)); }
+        
+        @if unit(nth($args, 4)) != "" {
+            $px4: nth($args, 4); $rem4: nth($args, 4); }
+        @else {
+            $px4: px(nth($args, 4)); $rem4: rem(nth($args, 4)); }
+        
+        // Output
+        padding: $px1 $px2 $px3 $px4;    // px
+        padding: $rem1 $rem2 $rem3 $rem4;  // rem
+    }
+}
+
+
+@mixin padding-top($rem){
+    padding-top: px($rem); padding-top: rem($rem);
+}
+
+@mixin padding-right($rem){
+    padding-right: px($rem); padding-right: rem($rem);
+}
+
+@mixin padding-bottom($rem){
+    padding-bottom: px($rem); padding-bottom: rem($rem);
+}
+
+@mixin padding-left($rem){
+    padding-left: px($rem); padding-left: rem($rem);
+}
+
+
+
+
+
+//************************************************
+//
+//                 FONT STUFF
+//
+//*************************************************
+
+@mixin font-size($val){
+    font-size: px($val);
+    font-size: rem($val);
+}
+
+@mixin line-height($val){
+    line-height: px($val);
+    line-height: rem($val);
+}
+
+//************************************************
+//
+//                 WIDTH / HEIGHT
+//
+//*************************************************
+
+@mixin height($val){
+    height: px($val);
+    height: rem($val);
+}
+
+@mixin max-height($val){
+    max-height: px($val);
+    max-height: rem($val);
+}
+
+@mixin min-height($val){
+    min-height: px($val);
+    min-height: rem($val);
+}
+
+@mixin width($val){
+    width: px($val);
+    width: rem($val);
+}
+
+@mixin max-width($val){
+    max-width: px($val);
+    max-width: rem($val);
+}
+
+@mixin min-width($val){
+    min-width: px($val);
+    min-width: rem($val);
+}
+
+
+//************************************************
+//
+//                    MISC
+//
+//*************************************************
+
+@mixin border-radius($val){
+    border-radius: px($val);
+    border-radius: rem($val);
+}
+
+
+//************************************************
+//
+//                   FUNCTIONS
+//
+//*************************************************
+
+@function px($arg){
+    @return #{$arg * $pxRemRatio}px;
+}
+
+@function rem($arg){
+    @return #{$arg}rem;
+}
+
+
+/*html {
+    font-size: px(3);
+}*/
