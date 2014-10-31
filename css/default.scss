@@ -34,10 +34,9 @@ a:hover {color: $hover_c;}
 
 html {font-size: 1.1em;}
 
-body{margin: 0; padding: 0; font-family: 'Raleway', sans-serif, helvetica, arial; font-weight: 400; @include font-size(1); background: white;}
+body{margin: 0; padding: 0; font-family: 'Raleway'; font-weight: 400; @include font-size(1); background: white; color: #363636;}
 
-h1, h2, h3, h4, h5, h6 {font-family: 'Oswald', sans-serif, helvetica, arial; font-weight: 400;}
-h1 {font-weight: bold;}
+h1, h2, h3, h4, h5, h6 {font-family: 'Bitter', sans-serif, helvetica, arial; font-weight: 400;}
 
 p {@include font-size(1); @include line-height(1.8125); font-weight: 300;}
 
@@ -70,13 +69,16 @@ form {
 
 ***************************************************/
 
-#navbar { background: $primary_c; width: 100%; @include min-height(5); @include line-height(5);}
-.nav { @extend %stripListStyles; min-height: inherit;
+#navbar { background: url(../images/bg_light.png) repeat-x $primary_c; width: 100% - ($pageMargins * 2); padding: 0 $pageMargins; @include min-height(5); @include line-height(5);}
+.nav { @extend %stripListStyles; min-height: inherit; float: right;
     li { float: left; min-height: inherit; }
     a { color: white; @include padding(0, 1); }
 }
+.logo { float: left; color: white;
+    p {margin: 0; @include line-height(5);}
+}
 
-#page_wrapper { background: green; min-height: 50px;}
+#page_wrapper { width: 100%;}
 
 /****** MOBILE ******/
 

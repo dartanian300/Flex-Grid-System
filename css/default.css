@@ -34,18 +34,16 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif, helvetica, arial;
+  font-family: 'Raleway';
   font-weight: 400;
   font-size: 16px;
   font-size: 1rem;
-  background: white; }
+  background: white;
+  color: #363636; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Oswald', sans-serif, helvetica, arial;
+  font-family: 'Bitter', sans-serif, helvetica, arial;
   font-weight: 400; }
-
-h1 {
-  font-weight: bold; }
 
 p {
   font-size: 16px;
@@ -105,15 +103,17 @@ form input[type="submit"] {
 
 ***************************************************/
 #navbar {
-  background: #1e81c9;
-  width: 100%;
+  background: url(../images/bg_light.png) repeat-x #1e81c9;
+  width: 92%;
+  padding: 0 4%;
   min-height: 80px;
   min-height: 5rem;
   line-height: 80px;
   line-height: 5rem; }
 
 .nav {
-  min-height: inherit; }
+  min-height: inherit;
+  float: right; }
   .nav li {
     float: left;
     min-height: inherit; }
@@ -122,9 +122,16 @@ form input[type="submit"] {
     padding: 0px 16px;
     padding: 0rem 1rem; }
 
+.logo {
+  float: left;
+  color: white; }
+  .logo p {
+    margin: 0;
+    line-height: 80px;
+    line-height: 5rem; }
+
 #page_wrapper {
-  background: green;
-  min-height: 50px; }
+  width: 100%; }
 
 /****** MOBILE ******/
 /**************************************************
