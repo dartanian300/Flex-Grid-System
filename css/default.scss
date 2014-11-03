@@ -42,6 +42,8 @@ p {@include font-size(1); @include line-height(1.8125); font-weight: 300;}
 
 hr {border: none; outline: none; height: 1px; background: #e5e5e5; width: 100%; display: block;}
 
+code { white-space: pre; color: black; background: #efefef; margin: 0; padding: 0; display: block;}
+
 img {
     &.small { max-width: 25%; }
     &.medium { max-width: 35%; }

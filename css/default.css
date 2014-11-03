@@ -60,6 +60,14 @@ hr {
   width: 100%;
   display: block; }
 
+code {
+  white-space: pre;
+  color: black;
+  background: #efefef;
+  margin: 0;
+  padding: 0;
+  display: block; }
+
 img.small {
   max-width: 25%; }
 img.medium {
