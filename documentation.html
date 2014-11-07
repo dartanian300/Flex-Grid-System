@@ -116,15 +116,19 @@
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="one-third column alpha"></div>
-                    <div class="one-third column"></div>
-                    <div class="one-third column omega"></div>
-                </div>
+                    &lt;div class="one-third column alpha"&gt;&lt;/div&gt;
+                    &lt;div class="one-third column"&gt;&lt;/div&gt;
+                    &lt;div class="one-third column omega"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>Renders </p>
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid">
+                <div class="one-third column alpha"></div>
+                <div class="one-third column"></div>
+                <div class="one-third column omega"></div>
+            </div>
 
             <p>The above is also the same as the first example.  However, fractional units let us achieve some layouts that are impossible with integer units, like a 5 column layout using .one-fifth</p>
 
@@ -134,16 +138,20 @@
             <p>To use the no-gutter mode, the syntax is exactly the same as above except you add the .no-gutter class to the .grid.</p>
 
             <code>
-                <div class="grid no-gutter">
-                    <div class="four columns alpha">Element 1</div>
-                    <div class="four columns">Element 2</div>
-                    <div class="four columns omega">Element 3</div>
-                </div>
+                &lt;div class="grid no-gutter"&gt;
+                    &lt;div class="four columns alpha"&gt;Element 1&lt;/div&gt;
+                    &lt;div class="four columns"&gt;Element 2&lt;/div&gt;
+                    &lt;div class="four columns omega"&gt;Element 3&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>Renders</p>
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid no-gutter">
+                <div class="four columns alpha">Element 1</div>
+                <div class="four columns">Element 2</div>
+                <div class="four columns omega">Element 3</div>
+            </div>
 
 
             <h4>Responsive Grids</h4>
@@ -151,14 +159,17 @@
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="sm-six columns"></div>
-                    <div class="sm-six columns"></div>
-                </div>
+                    &lt;div class="sm-six columns"&gt;&lt;/div&gt;
+                    &lt;div class="sm-six columns"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>Renders</p> 
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid">
+                <div class="sm-six columns"></div>
+                <div class="sm-six columns"></div>
+            </div>
 
             <p>You’ll notice that both .alpha and .omega are missing.  Thats because all responsive grids have margins on both sides to ensure uniform margins when resizing.</p>
 
@@ -179,14 +190,17 @@
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="sm-twelve lg-six columns"></div>
-                    <div class="sm-twelve lg-six columns"></div>
-                </div>
+                    &lt;div class="sm-twelve lg-six columns"&gt;&lt;/div&gt;
+                    &lt;div class="sm-twelve lg-six columns"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>Renders </p>
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid">
+                <div class="sm-twelve lg-six columns"></div>
+                <div class="sm-twelve lg-six columns"></div>
+            </div>
 
             <p>This grid will be twelve columns wide on a small and medium screens (because we didn’t define a medium size).  If it’s viewed on a large or extra-large screen, it’ll be six columns wide.  Make sense?</p>
 
@@ -194,14 +208,17 @@
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="sm-twelve md-four xlg-three columns"></div>
-                    <div class="sm-twelve md-four xlg-three columns"></div>
-                </div>
+                    &lt;div class="sm-twelve md-four xlg-three columns"&gt;&lt;/div&gt;
+                    &lt;div class="sm-twelve md-four xlg-three columns"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>Renders </p>
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid">
+                <div class="sm-twelve md-four xlg-three columns"></div>
+                <div class="sm-twelve md-four xlg-three columns"></div>
+            </div>
 
             <p>Here, the elements are twelve columns wide on small screens, four columns wide on medium and large screens, and three columns wide on extra-large and bigger screens.</p>
 
@@ -211,15 +228,19 @@
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="sm-twelve md-three columns"></div>
-                    <div class="sm-twelve md-three md-offset-by-three columns"></div>
-                    <div class="sm-twelve md-three columns"></div>
-                </div>
+                    &lt;div class="sm-twelve md-three columns"&gt;&lt;/div&gt;
+                    &lt;div class="sm-twelve md-three md-offset-by-three columns"&gt;&lt;/div&gt;
+                    &lt;div class="sm-twelve md-three columns"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>Renders </p>
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid">
+                <div class="sm-twelve md-three columns"></div>
+                <div class="sm-twelve md-three md-offset-by-three columns"></div>
+                <div class="sm-twelve md-three columns"></div>
+            </div>
 
             <p>In the example above, the elements are 12 columns wide on small screens and three columns wide on all other screens.  However, the middle element will be offset by three columns on medium, large, and extra-large screens, but not small screens.</p>
 
@@ -230,30 +251,30 @@
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="md-three columns"></div>
-                    <div class="md-three columns"></div>
-                    <div class="md-three columns"></div>
-                </div>
+                    &lt;div class="md-three columns"&gt;&lt;/div&gt;
+                    &lt;div class="md-three columns"&gt;&lt;/div&gt;
+                    &lt;div class="md-three columns"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>and this one will break on anything smaller than a large screen</p>
 
             <code>
                   &lt;div class="grid"&gt;
-                    <div class="lg-six columns"></div>
-                    <div class="lg-six columns"></div>
-                    <div class="lg-six columns"></div>
-                </div>
+                    &lt;div class="lg-six columns"&gt;&lt;/div&gt;
+                    &lt;div class="lg-six columns"&gt;&lt;/div&gt;
+                    &lt;div class="lg-six columns"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>So even if you want it to be six columns all the time (but you want to use responsive grids), use sm- like the following:</p>
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="sm-six columns"></div>
-                    <div class="sm-six columns"></div>
-                    <div class="sm-six columns"></div>
-                </div>
+                    &lt;div class="sm-six columns"&gt;&lt;/div&gt;
+                    &lt;div class="sm-six columns"&gt;&lt;/div&gt;
+                    &lt;div class="sm-six columns"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <h3>Parent-Based Sizing</h3>
@@ -267,70 +288,82 @@
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="sm-six columns"></div>
-                    <div class="sm-six columns"></div>
-                    <div class="sm-six columns"></div>
-                </div>
+                    &lt;div class="sm-six columns"&gt;&lt;/div&gt;
+                    &lt;div class="sm-six columns"&gt;&lt;/div&gt;
+                    &lt;div class="sm-six columns"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>becomes</p>
 
             <code>
-                <div class="grid sm-six">
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                </div>
+                &lt;div class="grid sm-six"&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>If you want to define multiple sizes, just apply those units the the parent.</p>
 
             <code>
-                <div class="grid sm-six lg-three xlg-four">
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                </div>
+                &lt;div class="grid sm-six lg-three xlg-four"&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <h4>Standard Parent-Based Sizing</h4>
             <p>Parent-Based sizing also works with standard grids.  Here’s a few examples</p>
 
             <code>
-                <div class="grid four">
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                </div>
+                &lt;div class="grid four"&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>Renders</p>
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid four">
+                <div class="parent"></div>
+                <div class="parent"></div>
+                <div class="parent"></div>
+            </div>
 
             <code>
-                <div class="grid three">
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                </div>
+                &lt;div class="grid three"&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>Renders</p>
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid three">
+                <div class="parent"></div>
+                <div class="parent"></div>
+                <div class="parent"></div>
+                <div class="parent"></div>
+            </div>
 
             <code>
-                <div class="grid six">
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                </div>
+                &lt;div class="grid six"&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>Renders</p>
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid six">
+                <div class="parent"></div>
+                <div class="parent"></div>
+            </div>
 
             <h2>Customization</h2>
 
@@ -399,86 +432,112 @@
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="three columns alpha">
-                        <div class="six columns alpha"></div>
-                        <div class="six columns omega"></div>
-                    </div>
-                    <div class="three columns"></div>
-                    <div class="three columns offset-by-three omega"></div>
-                </div>
+                    &lt;div class="three columns alpha"&gt;
+                        &lt;div class="six columns alpha"&gt;&lt;/div&gt;
+                        &lt;div class="six columns omega"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="three columns"&gt;&lt;/div&gt;
+                    &lt;div class="three columns offset-by-three omega"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>and it renders</p>
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid">
+                <div class="three columns alpha">
+                    <div class="six columns alpha"></div>
+                    <div class="six columns omega"></div>
+                </div>
+                <div class="three columns"></div>
+                <div class="three columns offset-by-three omega"></div>
+            </div>
 
             <p>Here’s another example:</p>
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="row">
-                        <div class="three columns alpha">
-                            <div class="six columns alpha"></div>
-                            <div class="six columns omega"></div>
-                        </div>
-                        <div class="three columns">
-                            <div class="row">
-                                <div class="seven columns alpha">7 columns</div>
-                <div class="five columns omega">5 columns</div>
-                            </div>
-                            <div class="row">
-                                <div class="three columns alpha">3 columns</div>
-                <div class="eight columns">8 columns</div>
-                <div class="one columns omega">1 columns</div>
-                            </div>
-                        </div>
-                        <div class="three columns offset-by-three omega"></div>
-                    </div>
-                </div>
+                    &lt;div class="row"&gt;
+                        &lt;div class="three columns alpha"&gt;
+                            &lt;div class="six columns alpha"&gt;&lt;/div&gt;
+                            &lt;div class="six columns omega"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="three columns"&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="seven columns alpha"&gt;7 columns&lt;/div&gt;
+                &lt;div class="five columns omega"&gt;5 columns&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="three columns alpha"&gt;3 columns&lt;/div&gt;
+                &lt;div class="eight columns"&gt;8 columns&lt;/div&gt;
+                &lt;div class="one columns omega"&gt;1 columns&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="three columns offset-by-three omega"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>Renders</p>
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid">
+                <div class="row">
+                    <div class="three columns alpha">
+                        <div class="six columns alpha"></div>
+                        <div class="six columns omega"></div>
+                    </div>
+                    <div class="three columns">
+                        <div class="row">
+                            <div class="seven columns alpha">7 columns</div>
+            <div class="five columns omega">5 columns</div>
+                        </div>
+                        <div class="row">
+                            <div class="three columns alpha">3 columns</div>
+            <div class="eight columns">8 columns</div>
+            <div class="one columns omega">1 columns</div>
+                        </div>
+                    </div>
+                    <div class="three columns offset-by-three omega"></div>
+                </div>
+            </div>
 
             <p>The same works for responsive grids.</p>
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="sm-six columns">
-                        <div class="sm-full md-four columns">sm - 12 Columns, md- 4 Columns</div>
-                        <div class="sm-full md-four columns">sm - 12 Columns, md- 4 Columns</div>
-                        <div class="sm-full md-four columns">sm - 12 Columns, md- 4 Columns</div>
-                    </div>
-                    <div class="sm-six columns"></div>
-                    <div class="sm-six columns"></div>
-                </div>
+                    &lt;div class="sm-six columns"&gt;
+                        &lt;div class="sm-full md-four columns"&gt;sm - 12 Columns, md- 4 Columns&lt;/div&gt;
+                        &lt;div class="sm-full md-four columns"&gt;sm - 12 Columns, md- 4 Columns&lt;/div&gt;
+                        &lt;div class="sm-full md-four columns"&gt;sm - 12 Columns, md- 4 Columns&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="sm-six columns"&gt;&lt;/div&gt;
+                    &lt;div class="sm-six columns"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>and even parent-based sizing:</p>
 
             <code>
-                <div class="grid four">
-                    <div class="parent"></div>
-                    <div class="parent">
-                        <div class="seven columns">7 Columns</div>
-                        <div class="five columns">5 Columns</div>
-                    </div>
-                    <div class="parent"></div>
-                </div>
+                &lt;div class="grid four"&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;
+                        &lt;div class="seven columns"&gt;7 Columns&lt;/div&gt;
+                        &lt;div class="five columns"&gt;5 Columns&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>and</p> 
 
             <code>
-                <div class="grid sm-four md-three">
-                    <div class="parent"></div>
-                    <div class="parent">
-                        <div class="sm-full lg-six columns">sm - 12 Columns, lg - 6 Columns</div>
-                        <div class="sm-full lg-six columns">sm - 12 Columns, lg - 6 Columns</div>
-                    </div>
-                    <div class="parent"></div>
-                </div>
+                &lt;div class="grid sm-four md-three"&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;
+                        &lt;div class="sm-full lg-six columns"&gt;sm - 12 Columns, lg - 6 Columns&lt;/div&gt;
+                        &lt;div class="sm-full lg-six columns"&gt;sm - 12 Columns, lg - 6 Columns&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>*Note: because parent-based sizing targets all children and not direct children, nesting multiple parent-based elements may not render what you’re looking for.</p>
@@ -490,22 +549,22 @@
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="full columns"></div>
-                </div>
+                    &lt;div class="full columns"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <code>
                 &lt;div class="grid"&gt;
-                    <div class="sm-full md-six columns"></div>
-                </div>
+                    &lt;div class="sm-full md-six columns"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <code>
-                <div class="grid sm-full md-four lg-three">
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                </div>
+                &lt;div class="grid sm-full md-four lg-three"&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <h3>.column vs .columns</h3>
@@ -515,30 +574,38 @@
             <p>Don’t be afraid to try to mix and match (although it might eventually break).  One way you can do that is to mix parent-based sizing with non-parent based sizing, like so:</p>
 
             <code>
-                <div class="grid sm-full md-four lg-three">
-                    <div class="sm-six lg-one columns"></div>
-                    <div class="parent"></div>
-                    <div class="parent"></div>
-                </div>
+                &lt;div class="grid sm-full md-four lg-three"&gt;
+                    &lt;div class="sm-six lg-one columns"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>Renders</p>
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid sm-full md-four lg-three">
+                <div class="sm-six lg-one columns"></div>
+                <div class="parent"></div>
+                <div class="parent"></div>
+            </div>
 
             <p>It works for Standard Grids too</p>
 
             <code>
-                <div class="grid four">
-                    <div class="parent alpha"></div>
-                    <div class="two columns offset-by-one"></div>
-                    <div class="parent omega offset-by-one"></div>
-                </div>
+                &lt;div class="grid four"&gt;
+                    &lt;div class="parent alpha"&gt;&lt;/div&gt;
+                    &lt;div class="two columns offset-by-one"&gt;&lt;/div&gt;
+                    &lt;div class="parent omega offset-by-one"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
 
             <p>Renders</p>
 
-            <p>****PUT RENDERING HERE****</p>
+            <div class="grid four">
+                <div class="parent alpha"></div>
+                <div class="two columns offset-by-one"></div>
+                <div class="parent omega offset-by-one"></div>
+            </div>
 
             <p>Using this method, you can get some pretty interesting results.</p>
 
