@@ -37,6 +37,12 @@ html {font-size: 1.1em;}
 body{margin: 0; padding: 0; font-family: 'Raleway'; font-weight: 400; @include font-size(1); background: white; color: #363636;}
 
 h1, h2, h3, h4, h5, h6 {font-family: 'Bitter', sans-serif, helvetica, arial; font-weight: 400;}
+h1 {font-size: 3em;}
+h2 {font-size: 2.5em; background: $primary_c; padding: .1em 2%; width: 96%; color: white;}
+h3 {font-size: 1.7em; border-bottom: 1px solid black;}
+h4 {font-size: 1.4em;}
+h5 {font-size: 1.2em;}
+h6 {font-size: 1em;}
 
 p {@include font-size(1); @include line-height(1.8125); font-weight: 300;}
 
@@ -118,8 +124,33 @@ form {
 				     HOME PAGE
 
 ***************************************************/
-.column, .columns
+.documentation {
+    
+    &.sidebar {
+        position: fixed; right: 4%; width: 22%; /*border: 1px solid black;*/ @include padding(1, 1%); padding-top: 0; background: #f0f0f0;
+        
+        ol {
+            font-weight: bold; @include font-size(1.1);
+            li {@include padding(.2, 0); }
+            ol {font-weight: normal; @include font-size(1);}
+        }
+        
+        h1 { background: $primary_c; color: white; font-size: 2em; margin: 0; margin-left: -4.5454%; @include padding(.4, 4.5454%); width: 100%;}
+    }
+    
+    &.content {
+        margin-left: 4%; width: 64%;
 
+        .grid {background: #e5e5e5;}
+        .column, .columns, .parent {
+            min-height: 2em; background: #6f6f6f; color: white;
+
+            > .column, .columns, .parent {background: #4d4d4d;}
+        }
+
+        h2 { margin-top: 2em;}
+    }
+}
 
 
 /****** MOBILE ******/

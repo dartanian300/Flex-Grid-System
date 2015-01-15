@@ -45,6 +45,29 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Bitter', sans-serif, helvetica, arial;
   font-weight: 400; }
 
+h1 {
+  font-size: 3em; }
+
+h2 {
+  font-size: 2.5em;
+  background: #1e81c9;
+  padding: .1em 2%;
+  width: 96%;
+  color: white; }
+
+h3 {
+  font-size: 1.7em;
+  border-bottom: 1px solid black; }
+
+h4 {
+  font-size: 1.4em; }
+
+h5 {
+  font-size: 1.2em; }
+
+h6 {
+  font-size: 1em; }
+
 p {
   font-size: 16px;
   font-size: 1rem;
@@ -84,8 +107,6 @@ img.full {
 form input, form textarea {
   font-size: 20px;
   font-size: 1.25rem;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
   box-sizing: content-box; }
 form input[type="text"], form textarea {
   padding: 7px 1.5%;
@@ -167,6 +188,49 @@ form input[type="submit"] {
 				     HOME PAGE
 
 ***************************************************/
+.documentation.sidebar {
+  position: fixed;
+  right: 4%;
+  width: 22%;
+  /*border: 1px solid black;*/
+  padding: 16px 1%;
+  padding: 1rem 1%;
+  padding-top: 0;
+  background: #f0f0f0; }
+  .documentation.sidebar ol {
+    font-weight: bold;
+    font-size: 17.6px;
+    font-size: 1.1rem; }
+    .documentation.sidebar ol li {
+      padding: 3.2px 0px;
+      padding: 0.2rem 0rem; }
+    .documentation.sidebar ol ol {
+      font-weight: normal;
+      font-size: 16px;
+      font-size: 1rem; }
+  .documentation.sidebar h1 {
+    background: #1e81c9;
+    color: white;
+    font-size: 2em;
+    margin: 0;
+    margin-left: -4.5454%;
+    padding: 6.4px 4.5454%;
+    padding: 0.4rem 4.5454%;
+    width: 100%; }
+.documentation.content {
+  margin-left: 4%;
+  width: 64%; }
+  .documentation.content .grid {
+    background: #e5e5e5; }
+  .documentation.content .column, .documentation.content .columns, .documentation.content .parent {
+    min-height: 2em;
+    background: #6f6f6f;
+    color: white; }
+    .documentation.content .column > .column, .documentation.content .column .columns, .documentation.content .column .parent, .documentation.content .columns > .column, .documentation.content .columns .columns, .documentation.content .columns .parent, .documentation.content .parent > .column, .documentation.content .parent .columns, .documentation.content .parent .parent {
+      background: #4d4d4d; }
+  .documentation.content h2 {
+    margin-top: 2em; }
+
 /****** MOBILE ******/
 /**************************************************
 

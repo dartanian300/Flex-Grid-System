@@ -1,0 +1,115 @@
+/*
+* Flex v2.0
+* Copyright 2014, Caleb Hardin.  All rights reserved.
+**** Licensed under the GPL v2.0 license.
+**** http://www.gnu.org/licenses/gpl-2.0.txt
+*/
+
+
+/* Table of Contents
+==================================================
+/*    1. Imports
+/*    2. Base Grid
+/*    3. Base Grid (with no gutters)
+/*    4. Responsive Grids
+/*    5. Clearfixes
+*/
+
+
+// #Imports
+// ==================================================
+
+// Space between column elements.  Ignored for .no-gutter
+$gutter: 4%;
+
+// Edit this for different column schemes.  Can be 1 - 24.
+$numOfColumns: 12;
+
+// Sets the sizes for responsive grids.  Uses min-width, so sm uses 0px - infinity until another breakpoint is reached.  Add and remove as you like.
+// Format: breakpoint-prefix: size(any units)
+$breakpoints: (sm: 0em, md: 37.5em, lg: 62.5em, xlg: 81.25em);
+
+
+// Used for odd sizes not supported by the grid scheme.  Add and remove as you like.
+// Format: class-name: fraction
+$fractionalColumns: (one-third: 1/3, two-thirds: 2/3, one-fifth: 1/5, two-fifths: 2/5, three-fifths: 3/5, four-fifths: 4/5);
+
+@import "flex_functions.scss";
+
+
+/* #Base Grid
+================================================== */
+    .grid {position: relative; width: 100%; margin: 0 auto; padding: 0;
+        
+        .column,
+        .columns,
+        .parent  { float: left; display: block; margin-left: $gutter / 2; margin-right: $gutter / 2; box-sizing: border-box; -moz-box-sizing: border-box;}
+        .row     { margin-bottom: 20px; }
+
+        /* Nested Column Classes */
+        .column.alpha, .columns.alpha, .parent.alpha               { margin-left: 0; }
+        .column.omega, .columns.omega, .parent.omega               { margin-right: 0; }
+
+        @include grids();
+    }
+
+
+
+/* #Base Grid With No Gutters
+================================================== */
+    .grid.no-gutter {
+        
+        .column,
+        .columns {margin-left: 0; margin-right: 0; }
+        .row     { margin-bottom: 0; }
+        
+        @include grids(false);
+    }
+
+
+/*  #Responsive Grids
+================================================== */
+
+@each $prefix, $breakpoint in $breakpoints{
+     @media only screen and (min-width: $breakpoint) {
+        .grid {
+            @include responsiveGrids($prefix);
+        }
+    }
+}
+
+
+/* #Clearing
+================================================== */
+
+    /* Self Clearing Goodness */
+    .grid:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+    /* You can also use a <br class="clear" /> to clear columns */
+    .clear {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }

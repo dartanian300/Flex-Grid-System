@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/flex.css">
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700|Raleway:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -15,9 +16,9 @@
                    <p>Flex Grid System</p>
                </div>
                <ul class="nav">
-                   <li><a href="">Home</a></li>
+                   <li><a href="index.php">Home</a></li>
                    <li><a href="">Quick-Start Guide</a></li>
-                   <li><a href="">Documentation</a></li>
+                   <li><a href="documentation.php">Documentation</a></li>
                </ul>
            </div><!-- /navbar -->
            <div id="banner">

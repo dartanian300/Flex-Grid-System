@@ -1,44 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/default.css">
-    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700|Raleway:400,700' rel='stylesheet' type='text/css'>
-</head>
-<body>
-   
-   <div id="site_wrapper">
-       <div id="header">
-           <div id="navbar">
-               <div class="logo">
-                   <p>Flex Grid System</p>
-               </div>
-               <ul class="nav">
-                   <li><a href="">Home</a></li>
-                   <li><a href="">Quick-Start Guide</a></li>
-                   <li><a href="">Documentation</a></li>
-               </ul>
-           </div><!-- /navbar -->
-           <div id="banner">
-               
-           </div><!-- /banner -->
-       </div><!-- /header -->
-       
-       <div id="page_wrapper">
+<?php include("includes/top.php"); ?>
 <!----------------------------------
 ------------------------------------->
+       
+         
+       <div class="sidebar documentation">
+           <h1>Table of Contents</h1>
+           
+           <ol>
+               <li>
+                  <a href="#intro">Intro</a>
+                  <ol type="i">
+                      <li><a href="#basic_classes">Basic Classes</a></li>
+                      <li><a href="#units">Units</a></li>
+                      <li><a href="#standard_grids_vs_responsive_grids">Standard Grids vs Responsive Grids</a></li>
+                      <li><a href="#parent_based_sizing">Parent-Based Sizing</a></li>
+                  </ol> 
+               </li>
+               
+               <li>
+                   <a href="#customization">Customization</a>
+                   <ol type="i">
+                       <li><a href="#editing_flex">Editing flex.scss</a></li>
+                   </ol>
+               </li>
+               
+               <li>
+                   <a href="#tips_and_tricks">Tips and Tricks</a>
+                   <ol type="i">
+                       <li><a href="#nesting">Nesting</a></li>
+                       <li><a href="#full">.full</a></li>
+                       <li><a href="#column_vs_columns">.column vs .columns</a></li>
+                       <li><a href="#mix_n_match">Mix 'n Match</a></li>
+                       <li><a href="#where_to_use">Where To Use?</a></li>
+                       <li><a href="#set_variables_first">Set Variables First</a></li>
+                   </ol>
+               </li>
+               
+               <li><a href="#defaults">Defaults</a></li>
+               
+               <li><a href="#compatibility">Compatibility</a></li>
+           </ol>
+       </div><!-- /sidebar -->
           
-       <div class="content inner_rim">
+       <div class="content inner_rim documentation">
            
            
-            <h1>Flex Grid System 2</h1>
+            <h1>Flex Grid System</h1>
             
+            <p>*The grids on this page have additional styling for color and height to give better examples.  These styles aren't in the package.</p>
             
-            <h2>Intro</h2>
+            <h2 id="intro">I. Intro</h2>
             <p>Flex is a powerful CSS grid framework inspired by both Skeleton and Pure.  It’s responsive, so it uses percentages instead of pixel values.  Here’s a few things to remember:</p>
 
-            <h3>Basic Classes</h3>
+            <h3 id="basic_classes">i. Basic Classes</h3>
             <p>Fles has 3 main classes:</p>
             <ul>
                 <li>.grid</li>
@@ -55,7 +69,9 @@
             <h4>.column(s)</h4>
             <p>.column and .columns activate an element’s styling.  This (in conjunction with a unit) is what actually defines the width of an element.</p>
 
-            <h3>Units</h3>
+           
+           
+            <h3 id="units">ii. Units</h3>
             <p>In addition to these basic classes, Flex has tons of unit classes that define the width of an element.  By default, it contains:</p>
 
             <ul>
@@ -64,7 +80,7 @@
             </ul>
 
 
-            <h3>Standard Grids vs Responsive Grids</h3>
+            <h3 id="standard_grids_vs_responsive_grids">iii. Standard Grids vs Responsive Grids</h3>
             <p>Flex ships with 2 types of grids: standard and responsive.  Standard, as you might think, is the standard type of grid.  That means that if you define an element as 50% width with standard grids, it’ll always be 50% width.  However, responsive grids have the ability to change size based on the width of the browser.</p>
 
             <p>Both types must be nested within the .grid class and both support parent-based sizing, but there are a few differences.</p>
@@ -277,7 +293,9 @@
                 &lt;/div&gt;
             </code>
 
-            <h3>Parent-Based Sizing</h3>
+           
+           
+            <h3 id="parent_based_sizing">iv. Parent-Based Sizing</h3>
             <p>Often, you’ll have examples like those above that repeat the same styles.  While you can do this, it’s repetitive and difficult to change once it’s set up.  Parent-Based sizing solves this issue.</p>
 
             <p>Instead of styling each child element individually, the classes are applied to the parent and the child elements are styled automatically.</p>
@@ -303,9 +321,17 @@
                     &lt;div class="parent"&gt;&lt;/div&gt;
                 &lt;/div&gt;
             </code>
+            
+            <p>which renders</p>
+            
+            <div class="grid sm-six">
+                <div class="parent"></div>
+                <div class="parent"></div>
+                <div class="parent"></div>
+            </div>
 
-            <p>If you want to define multiple sizes, just apply those units the the parent.</p>
-
+            <p>If you want to define multiple sizes, just apply those units the the parent.<br /></p>
+            <br />
             <code>
                 &lt;div class="grid sm-six lg-three xlg-four"&gt;
                     &lt;div class="parent"&gt;&lt;/div&gt;
@@ -313,59 +339,76 @@
                     &lt;div class="parent"&gt;&lt;/div&gt;
                 &lt;/div&gt;
             </code>
+            
+            <br />
+            
+            <div class="grid sm-six lg-three xlg-four">
+                <div class="parent"></div>
+                <div class="parent"></div>
+                <div class="parent"></div>
+            </div>
 
             <h4>Standard Parent-Based Sizing</h4>
             <p>Parent-Based sizing also works with standard grids.  Here’s a few examples</p>
 
             <code>
                 &lt;div class="grid four"&gt;
+                    &lt;div class="parent alpha"&gt;&lt;/div&gt;
                     &lt;div class="parent"&gt;&lt;/div&gt;
-                    &lt;div class="parent"&gt;&lt;/div&gt;
-                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent omega"&gt;&lt;/div&gt;
                 &lt;/div&gt;
             </code>
 
             <p>Renders</p>
 
             <div class="grid four">
+                <div class="parent alpha"></div>
                 <div class="parent"></div>
-                <div class="parent"></div>
-                <div class="parent"></div>
+                <div class="parent omega"></div>
             </div>
-
+            
+            <br /><br />
+            
             <code>
                 &lt;div class="grid three"&gt;
+                    &lt;div class="parent alpha"&gt;&lt;/div&gt;
                     &lt;div class="parent"&gt;&lt;/div&gt;
                     &lt;div class="parent"&gt;&lt;/div&gt;
-                    &lt;div class="parent"&gt;&lt;/div&gt;
-                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent omega"&gt;&lt;/div&gt;
                 &lt;/div&gt;
             </code>
 
             <p>Renders</p>
 
             <div class="grid three">
+                <div class="parent alpha"></div>
                 <div class="parent"></div>
                 <div class="parent"></div>
-                <div class="parent"></div>
-                <div class="parent"></div>
+                <div class="parent omega"></div>
             </div>
 
+           <br /><br />
+           
             <code>
                 &lt;div class="grid six"&gt;
-                    &lt;div class="parent"&gt;&lt;/div&gt;
-                    &lt;div class="parent"&gt;&lt;/div&gt;
+                    &lt;div class="parent alpha"&gt;&lt;/div&gt;
+                    &lt;div class="parent omega"&gt;&lt;/div&gt;
                 &lt;/div&gt;
             </code>
 
             <p>Renders</p>
 
             <div class="grid six">
-                <div class="parent"></div>
-                <div class="parent"></div>
+                <div class="parent alpha"></div>
+                <div class="parent omega"></div>
             </div>
 
-            <h2>Customization</h2>
+           
+           
+           
+           
+           
+            <h2 id="customization">II. Customization</h2>
 
             <p>Not only is Flex built to be useful and easy, but it’s built specifically for customization.  If you want to customize Flex you’ll need these files:</p>
 
@@ -380,7 +423,9 @@
             <p>flex.scss - Contains the actual generation of flex.css and all your settings.  This is what outputs the final CSS file.</p>
             <p>flex_functions.scss - This contains all the functions used in flex.scss to generate the grids</p>
 
-            <h3>Editing flex.scss</h3>
+           
+           
+            <h3 id="editing_flex">i. Editing flex.scss</h3>
             <p>Flex is based on the values of variables and lists (arrays).  This makes it easy to define, add, and change things to suit your needs.  There are 4 main variables you’ll need to worry about:</p>
 
             <ul>
@@ -423,9 +468,14 @@
             <p>The columnSize can be whatever you want, but it makes sense for it to match the fraction.  Also, any sizes defined here are calculated for all grids.  That means you can use these sizes in standard (two-thirds columns) and responsive grids (sm-two-thirds columns), as well as with offsets (offset-two-thirds columns & sm-offset-two-thirds columns).</p>
 
 
-            <h2>Tips and Tricks</h2>
+           
+           
+           
+           
+            <h2 id="tips_and_tricks">III. Tips and Tricks</h2>
 
-            <h3>Nesting</h3>
+           
+            <h3 id="nesting">i. Nesting</h3>
             <p>Flex is pretty rock-solid and can handle most things you throw at it, including nesting grids.</p>
 
             <p>This is perfectly valid:</p>
@@ -458,18 +508,19 @@
                 &lt;div class="grid"&gt;
                     &lt;div class="row"&gt;
                         &lt;div class="three columns alpha"&gt;
-                            &lt;div class="six columns alpha"&gt;&lt;/div&gt;
-                            &lt;div class="six columns omega"&gt;&lt;/div&gt;
+                            3 cols&lt;br&gt;
+                            &lt;div class="six columns alpha"&gt;6 cols&lt;/div&gt;
+                            &lt;div class="six columns omega"&gt;6 cols&lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class="three columns"&gt;
                             &lt;div class="row"&gt;
                                 &lt;div class="seven columns alpha"&gt;7 columns&lt;/div&gt;
-                &lt;div class="five columns omega"&gt;5 columns&lt;/div&gt;
+                                &lt;div class="five columns omega"&gt;5 columns&lt;/div&gt;
                             &lt;/div&gt;
                             &lt;div class="row"&gt;
-                                &lt;div class="three columns alpha"&gt;3 columns&lt;/div&gt;
-                &lt;div class="eight columns"&gt;8 columns&lt;/div&gt;
-                &lt;div class="one columns omega"&gt;1 columns&lt;/div&gt;
+                                &lt;div class="three columns alpha"&gt;3 cols&lt;/div&gt;
+                                &lt;div class="eight columns"&gt;8 columns&lt;/div&gt;
+                                &lt;div class="one columns omega"&gt;1&lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class="three columns offset-by-three omega"&gt;&lt;/div&gt;
@@ -482,18 +533,19 @@
             <div class="grid">
                 <div class="row">
                     <div class="three columns alpha">
-                        <div class="six columns alpha"></div>
-                        <div class="six columns omega"></div>
+                        3 cols<br>
+                        <div class="six columns alpha">6 cols</div>
+                        <div class="six columns omega">6 cols</div>
                     </div>
                     <div class="three columns">
                         <div class="row">
                             <div class="seven columns alpha">7 columns</div>
-            <div class="five columns omega">5 columns</div>
+                            <div class="five columns omega">5 columns</div>
                         </div>
                         <div class="row">
-                            <div class="three columns alpha">3 columns</div>
-            <div class="eight columns">8 columns</div>
-            <div class="one columns omega">1 columns</div>
+                            <div class="three columns alpha">3 cols</div>
+                            <div class="eight columns">8 columns</div>
+                            <div class="one columns omega">1</div>
                         </div>
                     </div>
                     <div class="three columns offset-by-three omega"></div>
@@ -542,7 +594,9 @@
 
             <p>*Note: because parent-based sizing targets all children and not direct children, nesting multiple parent-based elements may not render what you’re looking for.</p>
 
-            <h3>.full</h3>
+           
+           
+            <h3 id="full">ii. .full</h3>
             <p>Flex also has a shortcut class for sizing elements to width: 100%.  This can be achieved either by using the classes for the total number of columns (by default, .twelve .columns, .sm-twelve .columns etc) or by using .full.</p>
 
             <p>.full is used exactly the same way as those classes above, but just replaces the unit.  Here’s a few examples:</p>
@@ -567,10 +621,13 @@
                 &lt;/div&gt;
             </code>
 
-            <h3>.column vs .columns</h3>
+           
+            <h3 id="column_vs_columns">iii. .column vs .columns</h3>
             <p>As you’ve seen, Flex sometimes requires .column or .columns.  You can always use either and it’ll still work the same.  I try to make this easy.</p>
 
-            <h3>Mix ‘n Match</h3>
+           
+           
+            <h3 id="mix_n_match">iv. Mix ‘n Match</h3>
             <p>Don’t be afraid to try to mix and match (although it might eventually break).  One way you can do that is to mix parent-based sizing with non-parent based sizing, like so:</p>
 
             <code>
@@ -609,15 +666,21 @@
 
             <p>Using this method, you can get some pretty interesting results.</p>
 
-            <h3>Where To Use?</h3>
+           
+           
+            <h3 id="where_to_use">v. Where To Use?</h3>
             <p>While you can use Flex for layouts and sidebars and such, I personally recommend to use it only in content areas.  If you do use it for templates, know that if you need to change something, you’ll have to change it in the HTML (and potentially in several places).  You also complicate additional CSS for those elements.</p>
 
             <p>Flex really shines in the content areas for laying out pages that are unique.  It’s great for forms and especially for any site in a CMS (since you don’t typically touch the CSS after the template is created).</p>
 
-            <h3>Set Variables First</h3>
+           
+           
+            <h3 id="set_variables_first">vi. Set Variables First</h3>
             <p>Since Flex is implemented in the HTML, it’s kind of pain to go back and change things after you’ve started using it.  That’s why I’d recommend setting $breakpoints and $numOfColumns first.  $fractionalColumns and $gutter don’t break your layout, but if you change md- from 37.5em to 20em, you’ll probably have to go back and change all the places where you used md-.</p>
 
-            <h2>Defaults</h2>
+           
+           
+            <h2 id="defaults">IV. Defaults</h2>
 
             <p>Here’s the current default values in Flex:</p>
 
@@ -644,7 +707,9 @@
                 </li>
             </ul>
 
-            <h2>Compatibility</h2>
+           
+           
+            <h2 id="compatibility">V. Compatibility</h2>
 
             <p>Flex is supported in all modern browsers and Internet Explorer 9+.  If you need support for IE8 and below, use the flex_ie.scss.  Note that this will force IE8 and below to use the largest size defined on each element, regardless of the size of the viewport.  So if you have 4 breakpoints defined but don’t want IE to use the largest size, just remove it in the IE stylesheet.</p>
 
@@ -654,9 +719,4 @@
            
 <!----------------------------------
 ------------------------------------->
-       </div><!-- /page_wrapper -->
-   </div>
-   
-    
-</body>
-</html>
+<?php include("includes/bottom.php"); ?>
