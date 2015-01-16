@@ -1,0 +1,194 @@
+//* Copyright 2014, Caleb Hardin.  All rights reserved.
+//**** Licensed under the GPL v2.0 license.
+//**** http://www.gnu.org/licenses/gpl-2.0.txt
+
+
+//  ---------- TO DO ----------
+// ==================================================
+// -add support for multiple gutters
+
+
+
+// Table of Contents
+//==================================================
+//    1. Variables
+//    2. Standard Grid Calculations
+//    3. No-Gutter Calculations
+//    4. Responsive Grid Calculations
+//    5. Standard & No-Gutter Generation
+//    6. Responsive Grid Generation
+
+
+// 1. Variables
+//==================================================
+$columnNumbers: (one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twenty-one, twenty-two, twenty-three, twenty-four, twenty-five);
+
+
+// 2. Standard width & margin-left calculations
+//================================================ */
+@mixin width($columnNum){
+    $numColumns: ($numOfColumns / $columnNum) - 1;        // Number of actual columns to span width
+    $dividend: 100 - ($gutter * $numColumns);       // 100 - number of gaps multiplied by gutter
+
+    width: ($dividend / ($numColumns + 1));
+}
+
+@mixin marginLeft($columnNum){
+    $dividend: 100 - ($gutter * (($numOfColumns / $columnNum) - 1));  // 100 - number of gaps multiplied by gutter
+    $numColumns: $numOfColumns / $columnNum;              // Number of actual columns to span width
+
+    margin-left: ($dividend / $numColumns) + ($gutter * 1.5);
+}
+
+
+// 3. No Gutter width & margin-left calculations
+//================================================ */
+@mixin widthNoGutter($columnNum){
+    width: ($columnNum / $numOfColumns) * 100%;
+}
+
+@mixin marginLeftNoGutter($columnNum){
+    margin-left: ($columnNum / $numOfColumns) * 100%;
+}
+
+
+// 4. Responsive width & margin-left calculations
+//================================================ */
+@mixin responsiveWidth($columnNum){
+    $numColumns: $numOfColumns / $columnNum;      // Number of actual (visible) columns to span width
+    $dividend: 100 - ($gutter * $numColumns);     // 100 - number of gaps multiplied by gutter
+
+    width: ($dividend / $numColumns);
+}
+
+@mixin responsiveMarginLeft($columnNum){
+    $numColumns: $numOfColumns / $columnNum;  // Number of actual columns to span width
+    $columnGutter: $gutter * $numColumns;     // gutter % from standard margins of cols.
+    $dividend: 100 - $columnGutter;           // available width after margins
+    
+
+    margin-left: ($dividend / $numColumns) + ($gutter * 1.5);
+}
+
+
+
+
+
+//
+// 5. Generates all styles for standard & no-gutter grids
+//================================================ */
+
+// When called, generates all standard grids
+//    grids,
+//    offsets,
+//    parent-based sizing
+@mixin grids($gutters: true){
+            // Generate Int Grids
+            @for $i from 1 through $numOfColumns{
+                    $colNum: nth($columnNumbers, $i);
+                    .#{$colNum}.column,
+                    .#{$colNum}.columns                    { @if $gutters == true { @include width($i); } @else { @include widthNoGutter($i); } }
+
+                    @if $i == $numOfColumns{
+                        .full.column,
+                        .full.columns                      { @if $gutters == true { @include width($i); } @else { @include widthNoGutter($i); } }
+                    }
+
+                    // Generate Int Offsets
+                    @if $i != $numOfColumns{
+                        .offset-by-#{$colNum}              { @if $gutters == true { @include marginLeft($i); } @else { @include marginLeftNoGutter($i); } }
+                    }
+            }           
+            
+            // Generate Fractional Grids
+            @each $class, $width in $fractionalColumns {
+                .#{$class}.column,
+                .#{$class}.columns                         { @if $gutters == true { @include width($numOfColumns * $width); } @else { @include widthNoGutter($numOfColumns * $width); } }
+
+                // Generate Fractional Offsets
+                .offset-by-#{$class}                       { @if $gutters == true { @include marginLeft($numOfColumns * $width); } @else { @include marginLeftNoGutter($numOfColumns * $width); } }
+                //width: $numOfColumns * $width;
+            }
+            
+            // Generate Int Parent-Based Grids
+            @for $i from 1 through $numOfColumns{
+                    $colNum: nth($columnNumbers, $i);
+                    &.#{$colNum} .parent,
+                    .row.#{$colNum} .parent                { @if $gutters == true { @include width($i); } @else { @include widthNoGutter($i); } }
+
+                    @if $i == $numOfColumns{
+                        &.full .parent,
+                        .row.full .parent                  { @if $gutters == true { @include width($i); } @else { @include widthNoGutter($i); } }
+                    }
+            }
+            
+
+            // Generate Fractional Parent-Based Grids
+            @each $class, $width in $fractionalColumns {
+                &.#{$class} .parent,
+                .row.#{$class} .parent                     { @if $gutters == true { @include width($numOfColumns * $width); } @else { @include widthNoGutter($numOfColumns * $width); } }
+
+                // Generate Fractional Responsive Offsets
+                //.#{$prefix}-offset-by-#{$class}     { @include responsiveMarginLeft($numOfColumns * $width); }
+            }
+}
+
+
+//
+// 6. Generates all styles for responsive grids
+//================================================ */
+
+// When called, generates all responsive grids
+//    responsive grids,
+//    responsive offsets,
+//    responsive parent-based sizing
+@mixin responsiveGrids($prefix){
+            // Generate Int Responsive Grids
+            @for $i from 1 through $numOfColumns{
+                    $colNum: nth($columnNumbers, $i);
+                    .#{$prefix}-#{$colNum}.column,
+                    .#{$prefix}-#{$colNum}.columns         { @include responsiveWidth($i); }
+
+                    @if $i == $numOfColumns{
+                        .#{$prefix}-full.column,
+                        .#{$prefix}-full.columns           { @include responsiveWidth($i); }
+                    }
+
+                    // Generate Int Responsive Offsets
+                    @if $i != $numOfColumns{
+                        .#{$prefix}-offset-by-#{$colNum}   { @include responsiveMarginLeft($i); }
+                    }
+            }           
+            
+            // Generate Fractional Responsive Grids
+            @each $class, $width in $fractionalColumns {
+                .#{$prefix}-#{$class}.column,
+                .#{$prefix}-#{$class}.columns               { @include responsiveWidth($numOfColumns * $width); }
+
+                // Generate Fractional Responsive Offsets
+                .#{$prefix}-offset-by-#{$class}             { @include responsiveMarginLeft($numOfColumns * $width); }
+                //width: $numOfColumns * $width;
+            }
+            
+
+            // Generate Int Parent-Based Responsive Grids
+            @for $i from 1 through $numOfColumns{
+                    $colNum: nth($columnNumbers, $i);
+                    &.#{$prefix}-#{$colNum} .parent,
+                   .row.#{$prefix}-#{$colNum} .parent       { @include responsiveWidth($i); }
+
+                    @if $i == $numOfColumns{
+                        &.#{$prefix}-full .parent,
+                        .row.#{$prefix}-full .parent        { @include responsiveWidth($i); }
+                    }
+            }
+
+            // Generate Fractional Parent-Based Responsive Grids
+            @each $class, $width in $fractionalColumns {
+                &.#{$prefix}-#{$class} .parent,
+                .row.#{$prefix}-#{$class} .parent           { @include responsiveWidth($numOfColumns * $width); }
+
+                // Generate Fractional Responsive Offsets
+                //.#{$prefix}-offset-by-#{$class}     { @include responsiveMarginLeft($numOfColumns * $width); }
+            }
+}
