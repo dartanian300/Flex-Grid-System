@@ -32,23 +32,23 @@ a {color: $link_c; text-decoration: none;}
 a:hover {color: $hover_c;}
 .clear {clear: both}
 
-html {font-size: 1.1em;}
+html {font-size: 1.1em; background: $primary_c;}
 
 body{margin: 0; padding: 0; font-family: 'Raleway'; font-weight: 400; @include font-size(1); background: white; color: #363636;}
 
 h1, h2, h3, h4, h5, h6 {font-family: 'Bitter', sans-serif, helvetica, arial; font-weight: 400;}
-h1 {font-size: 3em;}
-h2 {font-size: 2.5em; background: $primary_c; padding: .1em 2%; width: 96%; color: white;}
-h3 {font-size: 1.7em; border-bottom: 1px solid black;}
-h4 {font-size: 1.4em;}
-h5 {font-size: 1.2em;}
-h6 {font-size: 1em;}
+h1 {@include font-size(3);}
+h2 {@include font-size(2.5);}
+h3 {@include font-size(2);}
+h4 {@include font-size(1.4);}
+h5 {@include font-size(1.2);}
+h6 {@include font-size(1);}
 
 p {@include font-size(1); @include line-height(1.8125); font-weight: 300;}
 
 hr {border: none; outline: none; height: 1px; background: #e5e5e5; width: 100%; display: block;}
 
-code { white-space: pre; color: black; background: #efefef; margin: 0; padding: 0; display: block;}
+code { white-space: pre; color: black; background: #efefef; margin: 0; padding: 0; display: block; overflow-x: auto;}
 
 img {
     &.small { max-width: 25%; }
@@ -82,11 +82,20 @@ form {
     li { float: left; min-height: inherit; }
     a { color: white; @include padding(0, 1); }
 }
-.logo { float: left; color: white;
+.logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal;
+    img { width: 100%; }
     p {margin: 0; @include line-height(5);}
 }
 
-#page_wrapper { width: 100%;}
+#page_wrapper { width: 100%; @include margin-bottom(5); background: white;}
+
+.content { @include min-height(20); }
+
+#footer {
+    background: $primary_c; color: white; width: 100% - ($pageMargins * 2); @include padding(1.5, $pageMargins);
+    a { color: #fff; font-weight: bold; }
+    a:hover { text-decoration: underline; }
+}
 
 /****** MOBILE ******/
 
@@ -124,10 +133,30 @@ form {
 				     HOME PAGE
 
 ***************************************************/
+.download_feature {
+    text-align: center; background: lighten($fifth_c, 8%) ; width: 100%; border-top: 1px solid $primary_c; @include margin-bottom(2); @include padding(2.2,0,1.8,0);
+    
+    .title { margin: 0; font-weight: normal;}
+    .subtitle { margin: 0; @include margin-bottom(2.5);}
+    
+    .btn_container {@include margin-bottom(.2);}
+    .btn {
+        border: 1px solid $primary_c; @include padding(.5, .7);
+        &:hover { background: $primary_c; color: white;}
+    }
+    .github { margin: 0; @include font-size(.7);}
+}
+
+.home {
+    .fa { float: left; @include margin-right(1.357); color: $primary_c;}
+    
+    .grid h3 { margin: 0;}
+}
+
 .documentation {
     
     &.sidebar {
-        position: fixed; right: 4%; width: 22%; /*border: 1px solid black;*/ @include padding(1, 1%); padding-top: 0; background: #f0f0f0;
+        position: fixed; right: $pageMargins; width: 22%; /*border: 1px solid black;*/ @include padding(1, 1%); padding-top: 0; background: #f0f0f0;
         
         ol {
             font-weight: bold; @include font-size(1.1);
@@ -139,8 +168,11 @@ form {
     }
     
     &.content {
-        margin-left: 4%; width: 64%;
+        margin-left: $pageMargins; width: 64%;
 
+        h2 {@include font-size(2.5); background: $primary_c; padding: .1em 2%; width: 96%; color: white;}
+        h3 {@include font-size(1.7); border-bottom: 1px solid black;}
+        
         .grid {background: #e5e5e5;}
         .column, .columns, .parent {
             min-height: 2em; background: #6f6f6f; color: white;
@@ -190,6 +222,6 @@ form {
 
 
 
-@media only screen and (max-width: 78em) {
-
+@media only screen and (max-width: 75em) {
+    html {font-size: .95em;}
 }

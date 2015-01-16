@@ -1,16 +1,9 @@
 @-moz-document url-prefix() {}
-/*html {
-    font-size: px(3);
+/*html { font-size: px(3);
 }*/
-.nav, .three_col, .four_col {
-  list-style: none;
-  padding: 0;
-  margin: 0; }
+.nav, .three_col, .four_col { list-style: none; padding: 0; margin: 0; }
 
-.inner_rim::after, .three_col::after, .four_col::after {
-  content: "";
-  display: block;
-  clear: both; }
+.inner_rim::after, .three_col::after, .four_col::after { content: ""; display: block; clear: both; }
 
 /*    b=#98002E   gold = #FEBC11 */
 /**************************************************
@@ -18,149 +11,71 @@
 				   BASE RULES
 
 ***************************************************/
-a {
-  color: #0e709e;
-  text-decoration: none; }
+a { color: #0e709e; text-decoration: none; }
 
-a:hover {
-  color: #1291cd; }
+a:hover { color: #1291cd; }
 
-.clear {
-  clear: both; }
+.clear { clear: both; }
 
-html {
-  font-size: 1.1em; }
+html { font-size: 1.1em; background: #1e81c9; }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Raleway';
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  background: white;
-  color: #363636; }
+body { margin: 0; padding: 0; font-family: 'Raleway'; font-weight: 400; font-size: 16px; font-size: 1rem; background: white; color: #363636; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bitter', sans-serif, helvetica, arial;
-  font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Bitter', sans-serif, helvetica, arial; font-weight: 400; }
 
-h1 {
-  font-size: 3em; }
+h1 { font-size: 48px; font-size: 3rem; }
 
-h2 {
-  font-size: 2.5em;
-  background: #1e81c9;
-  padding: .1em 2%;
-  width: 96%;
-  color: white; }
+h2 { font-size: 40px; font-size: 2.5rem; }
 
-h3 {
-  font-size: 1.7em;
-  border-bottom: 1px solid black; }
+h3 { font-size: 32px; font-size: 2rem; }
 
-h4 {
-  font-size: 1.4em; }
+h4 { font-size: 22.4px; font-size: 1.4rem; }
 
-h5 {
-  font-size: 1.2em; }
+h5 { font-size: 19.2px; font-size: 1.2rem; }
 
-h6 {
-  font-size: 1em; }
+h6 { font-size: 16px; font-size: 1rem; }
 
-p {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 29px;
-  line-height: 1.8125rem;
-  font-weight: 300; }
+p { font-size: 16px; font-size: 1rem; line-height: 29px; line-height: 1.8125rem; font-weight: 300; }
 
-hr {
-  border: none;
-  outline: none;
-  height: 1px;
-  background: #e5e5e5;
-  width: 100%;
-  display: block; }
+hr { border: none; outline: none; height: 1px; background: #e5e5e5; width: 100%; display: block; }
 
-code {
-  white-space: pre;
-  color: black;
-  background: #efefef;
-  margin: 0;
-  padding: 0;
-  display: block; }
+code { white-space: pre; color: black; background: #efefef; margin: 0; padding: 0; display: block; overflow-x: auto; }
 
-img.small {
-  max-width: 25%; }
-img.medium {
-  max-width: 35%; }
-img.large {
-  max-width: 45%; }
-img.xlarge {
-  max-width: 55%; }
-img.full {
-  max-width: 100%; }
+img.small { max-width: 25%; }
+img.medium { max-width: 35%; }
+img.large { max-width: 45%; }
+img.xlarge { max-width: 55%; }
+img.full { max-width: 100%; }
 
-.ninja-forms-form-wrap form label {
-  font-weight: 400; }
-form input, form textarea {
-  font-size: 20px;
-  font-size: 1.25rem;
-  box-sizing: content-box; }
-form input[type="text"], form textarea {
-  padding: 7px 1.5%;
-  padding: 0.4375rem 1.5%;
-  border: none; }
-form input[type="submit"] {
-  background: #fdb013;
-  color: white;
-  padding: 10px 20px;
-  padding: 0.625rem 1.25rem;
-  border: none;
-  outline: none;
-  cursor: pointer; }
+.ninja-forms-form-wrap form label { font-weight: 400; }
+form input, form textarea { font-size: 20px; font-size: 1.25rem; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; }
+form input[type="text"], form textarea { padding: 7px 1.5%; padding: 0.4375rem 1.5%; border: none; }
+form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20px; padding: 0.625rem 1.25rem; border: none; outline: none; cursor: pointer; }
 
-.inner_rim {
-  width: 92%;
-  display: block;
-  margin: 0 auto; }
+.inner_rim { width: 92%; display: block; margin: 0 auto; }
 
 /**************************************************
 
 					LAYOUT
 
 ***************************************************/
-#navbar {
-  background: url(../images/bg_light.png) repeat-x #1e81c9;
-  width: 92%;
-  padding: 0 4%;
-  min-height: 80px;
-  min-height: 5rem;
-  line-height: 80px;
-  line-height: 5rem; }
+#navbar { background: url(../images/bg_light.png) repeat-x #1e81c9; width: 92%; padding: 0 4%; min-height: 80px; min-height: 5rem; line-height: 80px; line-height: 5rem; }
 
-.nav {
-  min-height: inherit;
-  float: right; }
-  .nav li {
-    float: left;
-    min-height: inherit; }
-  .nav a {
-    color: white;
-    padding: 0px 16px;
-    padding: 0rem 1rem; }
+.nav { min-height: inherit; float: right; }
+.nav li { float: left; min-height: inherit; }
+.nav a { color: white; padding: 0px 16px; padding: 0rem 1rem; }
 
-.logo {
-  float: left;
-  color: white; }
-  .logo p {
-    margin: 0;
-    line-height: 80px;
-    line-height: 5rem; }
+.logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal; }
+.logo img { width: 100%; }
+.logo p { margin: 0; line-height: 80px; line-height: 5rem; }
 
-#page_wrapper {
-  width: 100%; }
+#page_wrapper { width: 100%; margin-bottom: 80px; margin-bottom: 5rem; background: white; }
+
+.content { min-height: 320px; min-height: 20rem; }
+
+#footer { background: #1e81c9; color: white; width: 92%; padding: 24px 4%; padding: 1.5rem 4%; }
+#footer a { color: #fff; font-weight: bold; }
+#footer a:hover { text-decoration: underline; }
 
 /****** MOBILE ******/
 /**************************************************
@@ -168,19 +83,11 @@ form input[type="submit"] {
 					MODULE
 
 ***************************************************/
-.three_col > li {
-  width: 31.33333%;
-  margin-right: 3%;
-  float: left; }
-.three_col > li:nth-child(3n) {
-  margin-right: 0; }
+.three_col > li { width: 31.33333%; margin-right: 3%; float: left; }
+.three_col > li:nth-child(3n) { margin-right: 0; }
 
-.four_col > li {
-  width: 22.75%;
-  margin-right: 3%;
-  float: left; }
-.four_col > li:nth-child(4n) {
-  margin-right: 0; }
+.four_col > li { width: 22.75%; margin-right: 3%; float: left; }
+.four_col > li:nth-child(4n) { margin-right: 0; }
 
 /****** MOBILE ******/
 /**************************************************
@@ -188,48 +95,29 @@ form input[type="submit"] {
 				     HOME PAGE
 
 ***************************************************/
-.documentation.sidebar {
-  position: fixed;
-  right: 4%;
-  width: 22%;
-  /*border: 1px solid black;*/
-  padding: 16px 1%;
-  padding: 1rem 1%;
-  padding-top: 0;
-  background: #f0f0f0; }
-  .documentation.sidebar ol {
-    font-weight: bold;
-    font-size: 17.6px;
-    font-size: 1.1rem; }
-    .documentation.sidebar ol li {
-      padding: 3.2px 0px;
-      padding: 0.2rem 0rem; }
-    .documentation.sidebar ol ol {
-      font-weight: normal;
-      font-size: 16px;
-      font-size: 1rem; }
-  .documentation.sidebar h1 {
-    background: #1e81c9;
-    color: white;
-    font-size: 2em;
-    margin: 0;
-    margin-left: -4.5454%;
-    padding: 6.4px 4.5454%;
-    padding: 0.4rem 4.5454%;
-    width: 100%; }
-.documentation.content {
-  margin-left: 4%;
-  width: 64%; }
-  .documentation.content .grid {
-    background: #e5e5e5; }
-  .documentation.content .column, .documentation.content .columns, .documentation.content .parent {
-    min-height: 2em;
-    background: #6f6f6f;
-    color: white; }
-    .documentation.content .column > .column, .documentation.content .column .columns, .documentation.content .column .parent, .documentation.content .columns > .column, .documentation.content .columns .columns, .documentation.content .columns .parent, .documentation.content .parent > .column, .documentation.content .parent .columns, .documentation.content .parent .parent {
-      background: #4d4d4d; }
-  .documentation.content h2 {
-    margin-top: 2em; }
+.download_feature { text-align: center; background: #f9f9f9; width: 100%; border-top: 1px solid #1e81c9; margin-bottom: 32px; margin-bottom: 2rem; padding: 35.2px 0px 28.8px 0px; padding: 2.2rem 0rem 1.8rem 0rem; }
+.download_feature .title { margin: 0; font-weight: normal; }
+.download_feature .subtitle { margin: 0; margin-bottom: 40px; margin-bottom: 2.5rem; }
+.download_feature .btn_container { margin-bottom: 3.2px; margin-bottom: 0.2rem; }
+.download_feature .btn { border: 1px solid #1e81c9; padding: 8px 11.2px; padding: 0.5rem 0.7rem; }
+.download_feature .btn:hover { background: #1e81c9; color: white; }
+.download_feature .github { margin: 0; font-size: 11.2px; font-size: 0.7rem; }
+
+.home .fa { float: left; margin-right: 21.712px; margin-right: 1.357rem; color: #1e81c9; }
+.home .grid h3 { margin: 0; }
+
+.documentation.sidebar { position: fixed; right: 4%; width: 22%; /*border: 1px solid black;*/ padding: 16px 1%; padding: 1rem 1%; padding-top: 0; background: #f0f0f0; }
+.documentation.sidebar ol { font-weight: bold; font-size: 17.6px; font-size: 1.1rem; }
+.documentation.sidebar ol li { padding: 3.2px 0px; padding: 0.2rem 0rem; }
+.documentation.sidebar ol ol { font-weight: normal; font-size: 16px; font-size: 1rem; }
+.documentation.sidebar h1 { background: #1e81c9; color: white; font-size: 2em; margin: 0; margin-left: -4.5454%; padding: 6.4px 4.5454%; padding: 0.4rem 4.5454%; width: 100%; }
+.documentation.content { margin-left: 4%; width: 64%; }
+.documentation.content h2 { font-size: 40px; font-size: 2.5rem; background: #1e81c9; padding: .1em 2%; width: 96%; color: white; }
+.documentation.content h3 { font-size: 27.2px; font-size: 1.7rem; border-bottom: 1px solid black; }
+.documentation.content .grid { background: #e5e5e5; }
+.documentation.content .column, .documentation.content .columns, .documentation.content .parent { min-height: 2em; background: #6f6f6f; color: white; }
+.documentation.content .column > .column, .documentation.content .column .columns, .documentation.content .column .parent, .documentation.content .columns > .column, .documentation.content .columns .columns, .documentation.content .columns .parent, .documentation.content .parent > .column, .documentation.content .parent .columns, .documentation.content .parent .parent { background: #4d4d4d; }
+.documentation.content h2 { margin-top: 2em; }
 
 /****** MOBILE ******/
 /**************************************************
@@ -237,15 +125,9 @@ form input[type="submit"] {
 				 	 RESOURCES
 
 ***************************************************/
-.imgright {
-  float: right;
-  margin: 16px 0px 16px 16px;
-  margin: 1rem 0rem 1rem 1rem; }
+.imgright { float: right; margin: 16px 0px 16px 16px; margin: 1rem 0rem 1rem 1rem; }
 
-.imgleft {
-  float: left;
-  margin: 16px 16px 16px 0px;
-  margin: 1rem 1rem 1rem 0rem; }
+.imgleft { float: left; margin: 16px 16px 16px 0px; margin: 1rem 1rem 1rem 0rem; }
 
 /**************************************************
 
@@ -258,3 +140,4 @@ form input[type="submit"] {
 				   MEDIA QUERIES
 
 ***************************************************/
+@media only screen and (max-width: 75em) { html { font-size: .95em; } }
