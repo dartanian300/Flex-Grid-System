@@ -1,0 +1,260 @@
+@charset "UTF-8";
+@-moz-document url-prefix() {}
+
+
+
+@import 'rem_conversions';
+%stripListStyles {list-style: none; padding: 0; margin: 0;}
+%selfClear {content: ""; display: block; clear: both;}
+/*    b=#98002E   gold = #FEBC11 */
+
+
+$primary_c: #1e81c9;
+$secondary_c: #fdb013;
+$tertiary_c: #0e709e;
+$fourth_c: #414141;
+$fifth_c: #e5e5e5;
+
+$link_c: #0e709e;
+$hover_c: lighten($link_c, 10%);
+
+$background_c: $fourth_c;
+
+$elementGutter: 3%;
+$pageMargins: 4%;
+/**************************************************
+
+				   BASE RULES
+
+***************************************************/
+
+a {color: $link_c; text-decoration: none;}
+a:hover {color: $hover_c;}
+.clear {clear: both}
+
+html {font-size: 1.1em; background: $primary_c;}
+
+body{margin: 0; padding: 0; font-family: 'Raleway'; font-weight: 400; @include font-size(1); background: white; color: #363636;}
+
+h1, h2, h3, h4, h5, h6 {font-family: 'Bitter', sans-serif, helvetica, arial; font-weight: 400;}
+h1 {@include font-size(3);}
+h2 {@include font-size(2.5); background: $primary_c; padding: .1em 2%; width: 96%; color: white;}
+h3 {@include font-size(1.7); border-bottom: 1px solid black;}
+h4 {@include font-size(1.4);}
+h5 {@include font-size(1.2);}
+h6 {@include font-size(1);}
+
+p {@include font-size(1); @include line-height(1.8125); font-weight: 300;}
+
+hr {border: none; outline: none; height: 1px; background: #e5e5e5; width: 100%; display: block;}
+
+code { white-space: pre; color: black; background: #efefef; margin: 0; padding: 0; display: block; overflow-x: auto;}
+
+img {
+    &.small { max-width: 25%; }
+    &.medium { max-width: 35%; }
+    &.large { max-width: 45%; }
+    &.xlarge { max-width: 55%; }
+    &.full { max-width: 100%; }
+}
+
+form {
+    .ninja-forms-form-wrap & label {font-weight: 400;}
+    input, textarea {@include font-size(1.25); box-sizing: content-box;}
+    input[type="text"], textarea {@include padding(.4375, 1.5%); border: none;}
+    input[type="submit"] {background: $secondary_c; color: white; @include padding(.625, 1.25); border: none; outline: none; cursor: pointer; }
+}
+
+.inner_rim {width: 100% - ($pageMargins * 2); display: block; margin: 0 auto;}
+.inner_rim::after {@extend %selfClear;}
+//$color: #eb0808;
+//$color: #0be03a;
+
+
+/**************************************************
+
+					LAYOUT
+
+***************************************************/
+
+#navbar { background: url(../images/bg_light.png) repeat-x $primary_c; width: 100% - ($pageMargins * 2); padding: 0 $pageMargins; @include min-height(5); @include line-height(5);}
+.nav { @extend %stripListStyles; min-height: inherit; float: right;
+    li { float: left; min-height: inherit; }
+    a { color: white; @include padding(0, 1); }
+}
+#header .logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal;
+    img { width: 100%; }
+    p {margin: 0; @include line-height(5);}
+}
+
+#page_wrapper { width: 100%; @include margin-bottom(5); background: white;}
+
+.content { @include min-height(20); }
+
+#footer {
+    background: $primary_c; color: white; width: 100% - ($pageMargins * 2); @include padding(1.5, $pageMargins);
+    a { color: #fff; font-weight: bold; }
+    a:hover { text-decoration: underline; }
+}
+
+/****** MOBILE ******/
+
+
+
+
+/**************************************************
+
+					MODULE
+
+***************************************************/
+.three_col {
+    @extend %stripListStyles;
+    
+    > li { width: (100 - ($elementGutter * 2)) / 3; margin-right: $elementGutter; float: left;}
+    > li:nth-child(3n) {margin-right: 0;}
+    &::after {@extend %selfClear;}
+}
+
+.four_col {
+    @extend %stripListStyles;
+                            // 100 - $elGut * numOfGutters / numOfEls
+    > li {width: (100 - ($elementGutter * 3)) / 4; margin-right: $elementGutter; float: left;}
+    > li:nth-child(4n) {margin-right: 0;}
+    &::after {@extend %selfClear;}
+}
+
+/****** MOBILE ******/
+
+
+
+
+/**************************************************
+
+				     HOME PAGE
+
+***************************************************/
+.download_feature {
+    text-align: center; background: lighten($fifth_c, 8%) ; width: 100%; border-top: 1px solid $primary_c; @include margin-bottom(2); @include padding(2.2,0,1.8,0);
+    
+    .logo { max-width: 1126px; width: 50%;}
+    .logo_subtitle { @include font-size(3); letter-spacing: 20px;  @include margin-top(-2);}
+    
+    .title { margin: 0; font-weight: normal;}
+    .subtitle { margin: 0; @include margin-bottom(2.5);}
+    
+    .btn_container {@include margin-bottom(.2);}
+    .btn {
+        border: 1px solid $primary_c; @include padding(.5, .7);
+        &:hover { background: $primary_c; color: white;}
+    }
+    .github { margin: 0; @include font-size(.7);}
+}
+
+.home {
+    .fa { float: left; @include margin-right(1.357); color: $primary_c;}
+    
+    h2 {@include font-size(2.5);}
+    h3 {@include font-size(2); border: none;}
+    
+    .grid h3 { margin: 0;}
+}
+
+.documentation {
+    
+    &.sidebar {
+        position: fixed; right: $pageMargins; width: 22%; /*border: 1px solid black;*/ @include padding(1, 1%); padding-top: 0; background: #f0f0f0;
+        
+        ol {
+            font-weight: bold; @include font-size(1.1);
+            li {@include padding(.2, 0); }
+            ol {font-weight: normal; @include font-size(1);}
+        }
+        
+        h1 { background: $primary_c; color: white; font-size: 2em; margin: 0; margin-left: -4.5454%; @include padding(.4, 4.5454%); width: 100%;}
+    }
+    
+    &.content {
+        margin-left: $pageMargins; width: 64%;
+
+        
+        
+        .grid {background: #e5e5e5;}
+        .column, .columns, .parent {
+            min-height: 2em; background: #6f6f6f; color: white;
+
+            > .column, .columns, .parent {background: #4d4d4d;}
+        }
+
+        h2 { margin-top: 2em;}
+    }
+}
+
+.quickstart {
+    .grid {background: #e5e5e5;}
+    .column, .columns, .parent {
+        min-height: 2em; background: #6f6f6f; color: white;
+
+        > .column, .columns, .parent {background: #4d4d4d;}
+    }
+}
+
+
+.grid.example{
+    background: #e5e5e5;
+    
+    .column, .columns, .parent {
+        min-height: 2em; background: #6f6f6f; color: white;
+
+        > .column, .columns, .parent {background: #4d4d4d;}
+    }
+}
+
+
+/****** MOBILE ******/
+
+
+
+
+/**************************************************
+
+				 	 RESOURCES
+
+***************************************************/
+.imgright { float: right; @include margin(1,0,1,1); }
+.imgleft { float: left; @include margin(1,1,1,0); }
+
+
+
+/**************************************************
+
+				 	 MIX-INS
+
+***************************************************/
+
+
+
+/****** MOBILE ******/
+
+
+
+
+/**************************************************
+
+				   MEDIA QUERIES
+
+***************************************************/
+
+
+
+
+@media only screen and (max-width: 75em) {
+    html {font-size: .95em;}
+    #header {
+        .logo { width: 138px; margin-top: 6px;}
+    }
+    
+    .documentation{
+        &.sidebar {display: none;}
+        &.content { width: 100% - ($pageMargins * 2);}
+    }
+}
