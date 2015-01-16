@@ -25,9 +25,9 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Bitter', sans-serif, helvetica, arial; fo
 
 h1 { font-size: 48px; font-size: 3rem; }
 
-h2 { font-size: 40px; font-size: 2.5rem; }
+h2 { font-size: 40px; font-size: 2.5rem; background: #1e81c9; padding: .1em 2%; width: 96%; color: white; }
 
-h3 { font-size: 32px; font-size: 2rem; }
+h3 { font-size: 27.2px; font-size: 1.7rem; border-bottom: 1px solid black; }
 
 h4 { font-size: 22.4px; font-size: 1.4rem; }
 
@@ -65,9 +65,9 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 .nav li { float: left; min-height: inherit; }
 .nav a { color: white; padding: 0px 16px; padding: 0rem 1rem; }
 
-.logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal; }
-.logo img { width: 100%; }
-.logo p { margin: 0; line-height: 80px; line-height: 5rem; }
+#header .logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal; }
+#header .logo img { width: 100%; }
+#header .logo p { margin: 0; line-height: 80px; line-height: 5rem; }
 
 #page_wrapper { width: 100%; margin-bottom: 80px; margin-bottom: 5rem; background: white; }
 
@@ -96,6 +96,8 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 
 ***************************************************/
 .download_feature { text-align: center; background: #f9f9f9; width: 100%; border-top: 1px solid #1e81c9; margin-bottom: 32px; margin-bottom: 2rem; padding: 35.2px 0px 28.8px 0px; padding: 2.2rem 0rem 1.8rem 0rem; }
+.download_feature .logo { max-width: 1126px; width: 50%; }
+.download_feature .logo_subtitle { font-size: 48px; font-size: 3rem; letter-spacing: 20px; margin-top: -32px; margin-top: -2rem; }
 .download_feature .title { margin: 0; font-weight: normal; }
 .download_feature .subtitle { margin: 0; margin-bottom: 40px; margin-bottom: 2.5rem; }
 .download_feature .btn_container { margin-bottom: 3.2px; margin-bottom: 0.2rem; }
@@ -104,6 +106,8 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 .download_feature .github { margin: 0; font-size: 11.2px; font-size: 0.7rem; }
 
 .home .fa { float: left; margin-right: 21.712px; margin-right: 1.357rem; color: #1e81c9; }
+.home h2 { font-size: 40px; font-size: 2.5rem; }
+.home h3 { font-size: 32px; font-size: 2rem; border: none; }
 .home .grid h3 { margin: 0; }
 
 .documentation.sidebar { position: fixed; right: 4%; width: 22%; /*border: 1px solid black;*/ padding: 16px 1%; padding: 1rem 1%; padding-top: 0; background: #f0f0f0; }
@@ -112,12 +116,18 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 .documentation.sidebar ol ol { font-weight: normal; font-size: 16px; font-size: 1rem; }
 .documentation.sidebar h1 { background: #1e81c9; color: white; font-size: 2em; margin: 0; margin-left: -4.5454%; padding: 6.4px 4.5454%; padding: 0.4rem 4.5454%; width: 100%; }
 .documentation.content { margin-left: 4%; width: 64%; }
-.documentation.content h2 { font-size: 40px; font-size: 2.5rem; background: #1e81c9; padding: .1em 2%; width: 96%; color: white; }
-.documentation.content h3 { font-size: 27.2px; font-size: 1.7rem; border-bottom: 1px solid black; }
 .documentation.content .grid { background: #e5e5e5; }
 .documentation.content .column, .documentation.content .columns, .documentation.content .parent { min-height: 2em; background: #6f6f6f; color: white; }
 .documentation.content .column > .column, .documentation.content .column .columns, .documentation.content .column .parent, .documentation.content .columns > .column, .documentation.content .columns .columns, .documentation.content .columns .parent, .documentation.content .parent > .column, .documentation.content .parent .columns, .documentation.content .parent .parent { background: #4d4d4d; }
 .documentation.content h2 { margin-top: 2em; }
+
+.quickstart .grid { background: #e5e5e5; }
+.quickstart .column, .quickstart .columns, .quickstart .parent { min-height: 2em; background: #6f6f6f; color: white; }
+.quickstart .column > .column, .quickstart .column .columns, .quickstart .column .parent, .quickstart .columns > .column, .quickstart .columns .columns, .quickstart .columns .parent, .quickstart .parent > .column, .quickstart .parent .columns, .quickstart .parent .parent { background: #4d4d4d; }
+
+.grid.example { background: #e5e5e5; }
+.grid.example .column, .grid.example .columns, .grid.example .parent { min-height: 2em; background: #6f6f6f; color: white; }
+.grid.example .column > .column, .grid.example .column .columns, .grid.example .column .parent, .grid.example .columns > .column, .grid.example .columns .columns, .grid.example .columns .parent, .grid.example .parent > .column, .grid.example .parent .columns, .grid.example .parent .parent { background: #4d4d4d; }
 
 /****** MOBILE ******/
 /**************************************************
@@ -140,4 +150,7 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 				   MEDIA QUERIES
 
 ***************************************************/
-@media only screen and (max-width: 75em) { html { font-size: .95em; } }
+@media only screen and (max-width: 75em) { html { font-size: .95em; }
+  #header .logo { width: 138px; margin-top: 6px; }
+  .documentation.sidebar { display: none; }
+  .documentation.content { width: 92%; } }

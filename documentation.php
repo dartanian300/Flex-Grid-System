@@ -1,4 +1,6 @@
-<?php include("includes/top.php"); ?>
+<?php
+$pageTitle = "Documentation";
+include("includes/top.php"); ?>
 <!----------------------------------
 ------------------------------------->
        
@@ -53,7 +55,7 @@
             <p>Flex is a powerful CSS grid framework inspired by both Skeleton and Pure.  It’s responsive, so it uses percentages instead of pixel values.  Here’s a few things to remember:</p>
 
             <h3 id="basic_classes">i. Basic Classes</h3>
-            <p>Fles has 3 main classes:</p>
+            <p>Flex has 3 main classes:</p>
             <ul>
                 <li>.grid</li>
                 <li>.row</li>
@@ -83,7 +85,7 @@
             <h3 id="standard_grids_vs_responsive_grids">iii. Standard Grids vs Responsive Grids</h3>
             <p>Flex ships with 2 types of grids: standard and responsive.  Standard, as you might think, is the standard type of grid.  That means that if you define an element as 50% width with standard grids, it’ll always be 50% width.  However, responsive grids have the ability to change size based on the width of the browser.</p>
 
-            <p>Both types must be nested within the .grid class and both support parent-based sizing, but there are a few differences.</p>
+            <p>Both types must be nested within the .grid class and both support <a href="#parent_based_sizing">parent-based sizing</a>, but there are a few differences.</p>
 
             <h4>Standard Grids</h4>
             <p>A standard grid would look something like the following:</p>
@@ -146,7 +148,7 @@
                 <div class="one-third column omega">Element 3</div>
             </div>
 
-            <p>The above is also the same as the first example.  However, fractional units let us achieve some layouts that are impossible with integer units, like a 5 column layout using .one-fifth</p>
+            <p>The above is also the same as the first example.  However, fractional units let us achieve some layouts that are impossible with integer units, like a 5 column layout using .one-fifth.</p>
 
             <h5>.no-gutter</h5>
             <p>Standard grids also support a no-gutter mode where elements won’t have any spacing between them.  This is useful if you’re trying to put the contents edge to edge.</p>
@@ -200,7 +202,7 @@
                 <li>xlg- -- 81.25em</li>
             </ul>
 
-            <p>Keep in mind that these sizes are arbitrary and can be changed, removed, and added to.  See the <a href="">customization section</a> for instructions.  These sizes are achieved through media queries using the min-width property.  This allows us to omit certain sizes if we don’t want a change.</p>
+            <p>Keep in mind that these sizes are arbitrary and can be changed, removed, and added to.  See the <a href="#customization">customization section</a> for instructions.  These sizes are achieved through media queries using the min-width property.  This allows us to omit certain sizes if we don’t want a change.</p>
 
             <p>For example, a typical responsive grid might look like:</p>
 
@@ -525,7 +527,7 @@
                                 &lt;div class="one columns omega"&gt;1&lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
-                        &lt;div class="three columns offset-by-three omega"&gt;&lt;/div&gt;
+                        &lt;div class="three columns offset-by-three omega"&gt;3 Cols - Offset 3 Cols&lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             </code>
@@ -550,7 +552,7 @@
                             <div class="one columns omega">1</div>
                         </div>
                     </div>
-                    <div class="three columns offset-by-three omega"></div>
+                    <div class="three columns offset-by-three omega">3 Cols - Offset 3 Cols</div>
                 </div>
             </div>
 

@@ -38,8 +38,8 @@ body{margin: 0; padding: 0; font-family: 'Raleway'; font-weight: 400; @include f
 
 h1, h2, h3, h4, h5, h6 {font-family: 'Bitter', sans-serif, helvetica, arial; font-weight: 400;}
 h1 {@include font-size(3);}
-h2 {@include font-size(2.5);}
-h3 {@include font-size(2);}
+h2 {@include font-size(2.5); background: $primary_c; padding: .1em 2%; width: 96%; color: white;}
+h3 {@include font-size(1.7); border-bottom: 1px solid black;}
 h4 {@include font-size(1.4);}
 h5 {@include font-size(1.2);}
 h6 {@include font-size(1);}
@@ -82,7 +82,7 @@ form {
     li { float: left; min-height: inherit; }
     a { color: white; @include padding(0, 1); }
 }
-.logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal;
+#header .logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal;
     img { width: 100%; }
     p {margin: 0; @include line-height(5);}
 }
@@ -136,6 +136,9 @@ form {
 .download_feature {
     text-align: center; background: lighten($fifth_c, 8%) ; width: 100%; border-top: 1px solid $primary_c; @include margin-bottom(2); @include padding(2.2,0,1.8,0);
     
+    .logo { max-width: 1126px; width: 50%;}
+    .logo_subtitle { @include font-size(3); letter-spacing: 20px;  @include margin-top(-2);}
+    
     .title { margin: 0; font-weight: normal;}
     .subtitle { margin: 0; @include margin-bottom(2.5);}
     
@@ -149,6 +152,9 @@ form {
 
 .home {
     .fa { float: left; @include margin-right(1.357); color: $primary_c;}
+    
+    h2 {@include font-size(2.5);}
+    h3 {@include font-size(2); border: none;}
     
     .grid h3 { margin: 0;}
 }
@@ -170,8 +176,7 @@ form {
     &.content {
         margin-left: $pageMargins; width: 64%;
 
-        h2 {@include font-size(2.5); background: $primary_c; padding: .1em 2%; width: 96%; color: white;}
-        h3 {@include font-size(1.7); border-bottom: 1px solid black;}
+        
         
         .grid {background: #e5e5e5;}
         .column, .columns, .parent {
@@ -181,6 +186,26 @@ form {
         }
 
         h2 { margin-top: 2em;}
+    }
+}
+
+.quickstart {
+    .grid {background: #e5e5e5;}
+    .column, .columns, .parent {
+        min-height: 2em; background: #6f6f6f; color: white;
+
+        > .column, .columns, .parent {background: #4d4d4d;}
+    }
+}
+
+
+.grid.example{
+    background: #e5e5e5;
+    
+    .column, .columns, .parent {
+        min-height: 2em; background: #6f6f6f; color: white;
+
+        > .column, .columns, .parent {background: #4d4d4d;}
     }
 }
 
@@ -224,4 +249,12 @@ form {
 
 @media only screen and (max-width: 75em) {
     html {font-size: .95em;}
+    #header {
+        .logo { width: 138px; margin-top: 6px;}
+    }
+    
+    .documentation{
+        &.sidebar {display: none;}
+        &.content { width: 100% - ($pageMargins * 2);}
+    }
 }
