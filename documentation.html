@@ -706,7 +706,7 @@ title: Documentation
                 }
                 else {
                     $(this).addClass("open").removeClass("closed").text("Close Table of Contents");
-                    var btnHeight = $("#jump_to").outerHeight(true);
+                    var btnHeight = $("#jump_to span").outerHeight(true);
                     var viewportHeight = $(window).height();
                     var finalHeight = viewportHeight - btnHeight;
                     console.log("btnHeight: ",btnHeight);
