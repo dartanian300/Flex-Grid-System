@@ -230,7 +230,7 @@ form {
         &:hover { background: lighten($primary_c, 10%);}
         &.open { @include margin-bottom(1); }
     }
-    > ol { display: none; overflow-y: auto; height: 0; margin: 0; @include padding-bottom(3); box-sizing: border-box;}
+    > ol { display: none; overflow-y: auto; height: 0; margin: 0; /*@include padding-bottom(3); box-sizing: border-box;*/}
     ol a { @include padding(.5, 0); display: block; }
     
 }

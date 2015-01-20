@@ -705,21 +705,25 @@ title: Documentation
                     $(this).addClass("closed").removeClass("open").text("Jump To Section");
                 }
                 else {
-                    $(this).addClass("open").removeClass("closed").text("Close Table of Contents");
-                    var btnHeight = $("#jump_to span").outerHeight(true);
-                    var viewportHeight = $(window).height();
-                    var finalHeight = viewportHeight - btnHeight;
-                    console.log("btnHeight: ",btnHeight);
-                    console.log("viewportHeight: ",viewportHeight);
-                    console.log("finalHeight: ",finalHeight);
-
-                    $("#jump_to > ol").show().animate({
-                        height: finalHeight
-                    }, 600);
+                    closeTAB();
                     
                 }
             });
             
+        
+            function closeTAB(){
+                $(this).addClass("open").removeClass("closed").text("Close Table of Contents");
+                var btnHeight = $("#jump_to span").outerHeight(true);
+                var viewportHeight = $(window).height();
+                var finalHeight = viewportHeight - btnHeight;
+                console.log("btnHeight: ",btnHeight);
+                console.log("viewportHeight: ",viewportHeight);
+                console.log("finalHeight: ",finalHeight);
+
+                $("#jump_to > ol").show().animate({
+                    height: finalHeight
+                }, 600);
+            }
         //}
         
     });
