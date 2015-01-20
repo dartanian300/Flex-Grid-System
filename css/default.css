@@ -139,8 +139,8 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 
 .imgleft { float: left; margin: 16px 16px 16px 0px; margin: 1rem 1rem 1rem 0rem; }
 
-#jump_to { top: 40%; right: 0; position: absolute; }
-#jump_to > span { -ms-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transform: rotate(-90deg); display: block; background: #1e81c9; border-radius: 8px; border-radius: 0.5rem; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+#jump_to { top: 40%; right: 0; position: fixed; }
+#jump_to > span { -ms-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transform: rotate(-90deg); display: block; background: #1e81c9; border-radius: 8px; border-radius: 0.5rem; border-bottom-left-radius: 0; border-bottom-right-radius: 0; color: white; padding: 0px 4.8px; padding: 0rem 0.3rem; }
 
 /**************************************************
 
