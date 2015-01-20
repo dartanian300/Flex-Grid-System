@@ -65,8 +65,8 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 .desktop_nav li { float: left; min-height: inherit; }
 .desktop_nav a { color: white; padding: 0px 16px; padding: 0rem 1rem; }
 
-.mobile_nav { display: none; background: #1e81c9; width: 100%; margin: 0; }
-.mobile_nav a { color: white; padding: 16px 0px; padding: 1rem 0rem; display: block; }
+.mobile_nav { display: none; background: #1e81c9; width: 100%; margin: 0; padding: 0; }
+.mobile_nav a { color: white; padding: 16px 0px; padding: 1rem 0rem; display: block; width: 92%; padding-left: 8%; }
 .mobile_nav li { display: block; width: 100%; }
 
 #header .logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal; }
