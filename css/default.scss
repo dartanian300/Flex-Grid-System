@@ -83,8 +83,8 @@ form {
     a { color: white; @include padding(0, 1); }
 }
 .mobile_nav {
-    display: none; background: $primary_c; width: 100%;
-    a { color: white; @include padding(.8,0); }
+    display: none; background: $primary_c; width: 100%; margin: 0;
+    a { color: white; @include padding(1,0); display: block; }
     li { display: block; width: 100%;}
 }
 #header .logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal;
@@ -92,7 +92,7 @@ form {
     p {margin: 0; @include line-height(5);}
 }
 
-#menu { display: none; }
+#menu { display: none; float: right; height: 2.2rem; margin-top: 1.5rem; }
 
 #page_wrapper { width: 100%; @include margin-bottom(5); background: white;}
 
