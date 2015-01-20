@@ -702,11 +702,12 @@ title: Documentation
             var btnHeight = $("#jump_to").outerHeight(true);
             var viewportHeight = $(window).height();
             var finalHeight = viewportHeight - btnHeight;
-            console.log(finalHeight);
+            console.log("btnHeight: ",btnHeight);
+            console.log("finalHeight: ",finalHeight);
             
-            $("#jump_to ol").show().animate({
+            $("#jump_to > ol").show().animate({
                 height: finalHeight
-            }, 2000);
+            }, 300);
         //}
         
     });
