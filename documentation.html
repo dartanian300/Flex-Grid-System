@@ -696,19 +696,29 @@ title: Documentation
 
 <script>
     $(window).load(function() {
-        console.log("2. match media");
         //if (window.matchMedia("max-width: 75em").matches){
-            console.log("3. match media");
-            var btnHeight = $("#jump_to").outerHeight(true);
-            var viewportHeight = $(window).height();
-            var finalHeight = viewportHeight - btnHeight;
-            console.log("btnHeight: ",btnHeight);
-            console.log("viewportHeight: ",viewportHeight);
-            console.log("finalHeight: ",finalHeight);
+            $("#jump_to span").click(function() {
+                if ($(this).hasClass("open")){
+                    $("#jump_to > ol").show().animate({
+                        height: 0
+                    }, 600);
+                    $(this).addClass("closed").removeClass("open").text("Jump To Section");
+                }
+                else {
+                    var btnHeight = $("#jump_to").outerHeight(true);
+                    var viewportHeight = $(window).height();
+                    var finalHeight = viewportHeight - btnHeight;
+                    console.log("btnHeight: ",btnHeight);
+                    console.log("viewportHeight: ",viewportHeight);
+                    console.log("finalHeight: ",finalHeight);
+
+                    $("#jump_to > ol").show().animate({
+                        height: finalHeight
+                    }, 600);
+                    $(this).addClass("open").removeClass("closed").text("Close Table of Contents");
+                }
+            });
             
-            $("#jump_to > ol").show().animate({
-                height: finalHeight
-            }, 600);
         //}
         
     });
