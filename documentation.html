@@ -698,16 +698,20 @@ title: Documentation
     $(window).load(function() {
         //if (window.matchMedia("max-width: 75em").matches){
             $("#jump_to span").click(function() {
-                if ($(this).hasClass("open")){
+                var el = $(this);
+                if (el.hasClass("open")){
                     $("#jump_to > ol").show().animate({
                         height: 0
                     }, 600);
-                    $(this).addClass("closed").removeClass("open").text("Jump To Section");
+                    el.addClass("closed").removeClass("open").text("Jump To Section");
                 }
                 else {
-                    closeTAB($(this));
-                    
+                    closeTAB(el);
                 }
+            });
+        
+            $("#jump_to a").click(function() {
+                closeTAB($("#jump_to span"));
             });
             
         
