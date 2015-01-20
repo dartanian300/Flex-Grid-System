@@ -705,14 +705,14 @@ title: Documentation
                     $(this).addClass("closed").removeClass("open").text("Jump To Section");
                 }
                 else {
-                    closeTAB();
+                    closeTAB($(this));
                     
                 }
             });
             
         
-            function closeTAB(){
-                $(this).addClass("open").removeClass("closed").text("Close Table of Contents");
+            function closeTAB(el){
+                el.addClass("open").removeClass("closed").text("Close Table of Contents");
                 var btnHeight = $("#jump_to span").outerHeight(true);
                 var viewportHeight = $(window).height();
                 var finalHeight = viewportHeight - btnHeight;
