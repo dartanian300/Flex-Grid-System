@@ -705,6 +705,7 @@ title: Documentation
                     $(this).addClass("closed").removeClass("open").text("Jump To Section");
                 }
                 else {
+                    $(this).addClass("open").removeClass("closed").text("Close Table of Contents");
                     var btnHeight = $("#jump_to").outerHeight(true);
                     var viewportHeight = $(window).height();
                     var finalHeight = viewportHeight - btnHeight;
@@ -715,7 +716,7 @@ title: Documentation
                     $("#jump_to > ol").show().animate({
                         height: finalHeight
                     }, 600);
-                    $(this).addClass("open").removeClass("closed").text("Close Table of Contents");
+                    
                 }
             });
             
