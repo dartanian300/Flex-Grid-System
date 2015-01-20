@@ -20,12 +20,15 @@
                    <a href="./"><img src="images/logo_b.png" alt=""></a>
                </div>
                <img id="menu" src="images/menu.png" alt="">
-               <ul class="nav">
-                   <li><a href="index.html">Home</a></li>
-                   <li><a href="quickstart.html">Quick-Start Guide</a></li>
-                   <li><a href="documentation.html">Documentation</a></li>
+               <ul class="desktop_nav">
+                   {% include nav.html %}
                </ul>
            </div><!-- /navbar -->
+           
+           <ul class="mobile_nav">
+                   {% include nav.html %}
+           </ul>
+           
            <div id="banner">
                
            </div><!-- /banner -->

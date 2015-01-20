@@ -1,7 +1,7 @@
 @-moz-document url-prefix() {}
 /*html { font-size: px(3);
 }*/
-.nav, .three_col, .four_col { list-style: none; padding: 0; margin: 0; }
+.desktop_nav, .three_col, .four_col { list-style: none; padding: 0; margin: 0; }
 
 .inner_rim::after, .three_col::after, .four_col::after { content: ""; display: block; clear: both; }
 
@@ -61,9 +61,13 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 ***************************************************/
 #navbar { background: url(../images/bg_light.png) repeat-x #1e81c9; width: 92%; padding: 0 4%; min-height: 80px; min-height: 5rem; line-height: 80px; line-height: 5rem; }
 
-.nav { min-height: inherit; float: right; }
-.nav li { float: left; min-height: inherit; }
-.nav a { color: white; padding: 0px 16px; padding: 0rem 1rem; }
+.desktop_nav { min-height: inherit; float: right; }
+.desktop_nav li { float: left; min-height: inherit; }
+.desktop_nav a { color: white; padding: 0px 16px; padding: 0rem 1rem; }
+
+.mobile_nav { display: none; background: #1e81c9; width: 100%; }
+.mobile_nav a { color: white; }
+.mobile_nav li { padding: 8px 0px; padding: 0.5rem 0rem; display: block; width: 100%; }
 
 #header .logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal; }
 #header .logo img { width: 100%; }

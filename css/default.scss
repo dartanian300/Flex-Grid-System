@@ -78,9 +78,14 @@ form {
 ***************************************************/
 
 #navbar { background: url(../images/bg_light.png) repeat-x $primary_c; width: 100% - ($pageMargins * 2); padding: 0 $pageMargins; @include min-height(5); @include line-height(5);}
-.nav { @extend %stripListStyles; min-height: inherit; float: right;
+.desktop_nav { @extend %stripListStyles; min-height: inherit; float: right;
     li { float: left; min-height: inherit; }
     a { color: white; @include padding(0, 1); }
+}
+.mobile_nav {
+    display: none; background: $primary_c; width: 100%;
+    a { color: white; }
+    li { @include padding(.5,0); display: block; width: 100%;}
 }
 #header .logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal;
     img { width: 100%; }
