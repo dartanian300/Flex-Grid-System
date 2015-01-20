@@ -59,7 +59,7 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 					LAYOUT
 
 ***************************************************/
-#navbar { background: url(../images/bg_light.png) repeat-x #1e81c9; width: 92%; padding: 0 4%; min-height: 80px; min-height: 5rem; line-height: 80px; line-height: 5rem; }
+#navbar { background: url(../images/bg_light.png) repeat-x #1e81c9; width: 92%; padding: 0 4%; min-height: 80px; min-height: 5rem; line-height: 80px; line-height: 5rem; overflow: hidden; }
 
 .desktop_nav { min-height: inherit; float: right; }
 .desktop_nav li { float: left; min-height: inherit; }
