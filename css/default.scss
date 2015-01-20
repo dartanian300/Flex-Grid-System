@@ -223,6 +223,11 @@ form {
 .imgright { float: right; @include margin(1,0,1,1); }
 .imgleft { float: left; @include margin(1,1,1,0); }
 
+#jump_to {
+    top: 40%; right: 0; position: absolute; 
+    > span { transform: rotate(-90deg); -webkit-transform: rotate(-90deg); display: block; background: $primary_c; @include border-radius(.5); border-bottom-left-radius: 0; border-bottom-right-radius: 0;}
+}
+
 
 
 /**************************************************
