@@ -143,7 +143,7 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 #jump_to > span { display: block; background: #1e81c9; color: white; padding: 11.2px 0px; padding: 0.7rem 0rem; text-align: center; }
 #jump_to > span:hover { background: #399ae1; }
 #jump_to > span.open { margin-bottom: 16px; margin-bottom: 1rem; }
-#jump_to > ol { display: none; overflow-y: auto; height: 0; margin: 0; }
+#jump_to > ol { display: none; overflow-y: auto; height: 0; margin: 0; padding-bottom: 48px; padding-bottom: 3rem; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 #jump_to ol a { padding: 8px 0px; padding: 0.5rem 0rem; display: block; }
 
 /**************************************************
