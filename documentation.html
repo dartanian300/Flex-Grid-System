@@ -696,7 +696,9 @@ title: Documentation
 
 <script>
     $(window).load(function() {
+        console.log("2. match media");
         if (window.matchMedia("max-width: 75em").matches){
+            console.log("3. match media");
             var btnHeight = $("#jump_to").outerHeight(true);
             var viewportHeight = $(window).height();
             var finalHeight = viewportHeight - btnHeight;
