@@ -85,7 +85,10 @@ form {
 .mobile_nav {
     display: none; background: $primary_c; width: 100%; margin: 0; padding: 0;
     a { color: white; @include padding(1,0); display: block; width: 92%; padding-left: 8%;}
-    li { display: block; width: 100%; }
+    li {
+        display: block; width: 100%;
+        &:hover { background: lighten($primary_c, 10%); }
+    }
 }
 #header .logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal;
     img { width: 100%; }

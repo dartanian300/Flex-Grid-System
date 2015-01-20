@@ -68,6 +68,7 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 .mobile_nav { display: none; background: #1e81c9; width: 100%; margin: 0; padding: 0; }
 .mobile_nav a { color: white; padding: 16px 0px; padding: 1rem 0rem; display: block; width: 92%; padding-left: 8%; }
 .mobile_nav li { display: block; width: 100%; }
+.mobile_nav li:hover { background: #399ae1; }
 
 #header .logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal; }
 #header .logo img { width: 100%; }
