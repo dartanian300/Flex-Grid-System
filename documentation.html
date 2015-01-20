@@ -690,3 +690,21 @@ title: Documentation
             
             
        </div><!-- /content -->
+
+
+
+
+<script>
+    $(window).load(function() {
+        if (window.matchMedia("max-width: 75em").matches){
+            var btnHeight = $("#jump_to").outerHeight(true);
+            var viewportHeight = $(window).height();
+            
+            $("#jump_to ol").show().animate({
+                height: viewportHeight - btnHeight;
+            }, 2000);
+        }
+        
+    });
+</script>
+
