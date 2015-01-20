@@ -224,8 +224,10 @@ form {
 .imgleft { float: left; @include margin(1,1,1,0); }
 
 #jump_to {
-    bottom: 0; position: fixed; width: 100%;
+    bottom: 0; position: fixed; width: 100%; cursor: pointer;
     > span { display: block; background: $primary_c; color: white; @include padding(.7, 0); text-align: center;}
+    
+    &:hover { background: lighten($primary_c, 10%);}
 }
 
 
