@@ -92,7 +92,7 @@ form {
     p {margin: 0; @include line-height(5);}
 }
 
-#menu { display: none; float: right; height: 2.2rem; margin-top: 1.5rem; }
+#menu { display: none; float: right; height: 2.2rem; margin-top: 1.5rem; cursor: pointer;}
 
 #page_wrapper { width: 100%; @include margin-bottom(5); background: white;}
 

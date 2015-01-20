@@ -73,7 +73,7 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 #header .logo img { width: 100%; }
 #header .logo p { margin: 0; line-height: 80px; line-height: 5rem; }
 
-#menu { display: none; float: right; height: 2.2rem; margin-top: 1.5rem; }
+#menu { display: none; float: right; height: 2.2rem; margin-top: 1.5rem; cursor: pointer; }
 
 #page_wrapper { width: 100%; margin-bottom: 80px; margin-bottom: 5rem; background: white; }
 
