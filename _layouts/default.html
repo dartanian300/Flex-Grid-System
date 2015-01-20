@@ -48,7 +48,9 @@
    
    <script>
        $(document).ready(function() {
-            $("#menu").toggle("fast");
+            $("#menu").click(function() {
+                $(".mobile_nav").toggle("fast");
+            });
        });
    </script>
     
