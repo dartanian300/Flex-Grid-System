@@ -95,7 +95,7 @@ form {
     p {margin: 0; @include line-height(5);}
 }
 
-#menu { display: none; float: right; height: 2.2rem; margin-top: 1.5rem; cursor: pointer;}
+#menu { display: none; float: right; @include height(2.2); @include margin-top(1); cursor: pointer;}
 
 #page_wrapper { width: 100%; @include margin-bottom(5); background: white;}
 
@@ -272,8 +272,10 @@ form {
 @media only screen and (max-width: 75em) {
     html {font-size: .95em;}
     #header {
-        .logo { width: 138px; margin-top: 6px;}
+        .logo { width: 104px; margin-top: 6px;}
     }
+    
+    #navbar { @include min-height(4); @include line-height(4);}
     
     h1 { @include font-size(2); }
     
