@@ -224,10 +224,16 @@ form {
 .imgleft { float: left; @include margin(1,1,1,0); }
 
 #jump_to {
-    bottom: 0; position: fixed; width: 100%; cursor: pointer;
-    > span { display: block; background: $primary_c; color: white; @include padding(.7, 0); text-align: center;}
+    bottom: 0; position: fixed; width: 100%; cursor: pointer; background: #f0f0f0; z-index: 10;
+    > span {
+        display: block; background: $primary_c; color: white; @include padding(.7, 0); text-align: center;
+        &:hover { background: lighten($primary_c, 10%);}
+    }
+    ol {
+        display: none; overflow-y: auto; height: 0;
+        #jump_to ol a { @include padding(.5, 0); display: block; }
+    }
     
-    &:hover { background: lighten($primary_c, 10%);}
 }
 
 
