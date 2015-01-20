@@ -699,9 +699,11 @@ title: Documentation
         if (window.matchMedia("max-width: 75em").matches){
             var btnHeight = $("#jump_to").outerHeight(true);
             var viewportHeight = $(window).height();
+            var finalHeight = viewportHeight - btnHeight;
+            console.log(finalHeight);
             
             $("#jump_to ol").show().animate({
-                height: viewportHeight - btnHeight
+                height: finalHeight
             }, 2000);
         }
         
