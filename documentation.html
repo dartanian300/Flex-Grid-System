@@ -700,22 +700,28 @@ title: Documentation
             $("#jump_to span").click(function() {
                 var el = $(this);
                 if (el.hasClass("open")){
-                    $("#jump_to > ol").show().animate({
-                        height: 0
-                    }, 600);
-                    el.addClass("closed").removeClass("open").text("Jump To Section");
+                    closeTAB();
                 }
                 else {
-                    closeTAB(el);
+                    openTAB();
                 }
             });
         
             $("#jump_to a").click(function() {
-                closeTAB($("#jump_to span"));
+                closeTAB();
             });
             
-        
+            
             function closeTAB(el){
+                var el = $("#jump_to span");
+                $("#jump_to > ol").show().animate({
+                    height: 0
+                }, 600);
+                el.addClass("closed").removeClass("open").text("Jump To Section");
+            }
+        
+            function openTAB(){
+                var el =$("#jump_to span");
                 el.addClass("open").removeClass("closed").text("Close Table of Contents");
                 var btnHeight = $("#jump_to span").outerHeight(true);
                 var viewportHeight = $(window).height();
