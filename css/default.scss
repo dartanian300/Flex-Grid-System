@@ -224,7 +224,7 @@ form {
 .imgleft { float: left; @include margin(1,1,1,0); }
 
 #jump_to {
-    bottom: 0; position: fixed; width: 100%; cursor: pointer; background: #f0f0f0; z-index: 10;
+    bottom: 0; position: fixed; width: 100%; cursor: pointer; background: #f0f0f0; z-index: 10; display: none;
     > span {
         display: block; background: $primary_c; color: white; @include padding(.7, 0); text-align: center;
         &:hover { background: lighten($primary_c, 10%);}
@@ -265,8 +265,12 @@ form {
         .logo { width: 138px; margin-top: 6px;}
     }
     
+    h1 { @include font-size(2); }
+    
     .documentation{
         &.sidebar {display: none;}
         &.content { width: 100% - ($pageMargins * 2);}
     }
+    
+    #jump_to { display: block; }
 }
