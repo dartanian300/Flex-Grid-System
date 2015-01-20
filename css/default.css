@@ -69,6 +69,8 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 #header .logo img { width: 100%; }
 #header .logo p { margin: 0; line-height: 80px; line-height: 5rem; }
 
+#menu { display: none; }
+
 #page_wrapper { width: 100%; margin-bottom: 80px; margin-bottom: 5rem; background: white; }
 
 .content { min-height: 320px; min-height: 20rem; }
@@ -162,4 +164,5 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
   h1 { font-size: 32px; font-size: 2rem; }
   .documentation.sidebar { display: none; }
   .documentation.content { width: 92%; }
+  #menu { display: block; }
   #jump_to { display: block; } }
