@@ -140,8 +140,9 @@ form input[type="submit"] { background: #fdb013; color: white; padding: 10px 20p
 .imgleft { float: left; margin: 16px 16px 16px 0px; margin: 1rem 1rem 1rem 0rem; }
 
 #jump_to { bottom: 0; position: fixed; width: 100%; cursor: pointer; background: #f0f0f0; z-index: 10; }
-#jump_to > span { display: block; background: #1e81c9; color: white; padding: 11.2px 0px; padding: 0.7rem 0rem; text-align: center; margin-bottom: 16px; margin-bottom: 1rem; }
+#jump_to > span { display: block; background: #1e81c9; color: white; padding: 11.2px 0px; padding: 0.7rem 0rem; text-align: center; }
 #jump_to > span:hover { background: #399ae1; }
+#jump_to > span.open { margin-bottom: 16px; margin-bottom: 1rem; }
 #jump_to > ol { display: none; overflow-y: auto; height: 0; margin: 0; }
 #jump_to ol a { padding: 8px 0px; padding: 0.5rem 0rem; display: block; }
 
