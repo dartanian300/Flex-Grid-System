@@ -1,8 +1,7 @@
-<?php
-$pageTitle = "Documentation";
-include("includes/top.php"); ?>
-<!----------------------------------
-------------------------------------->
+---
+layout: default
+title: Documentation
+---
        
          
        <div class="sidebar documentation">
@@ -720,7 +719,3 @@ include("includes/top.php"); ?>
             
             
        </div><!-- /content -->
-           
-<!----------------------------------
-------------------------------------->
-<?php include("includes/bottom.php"); ?>
