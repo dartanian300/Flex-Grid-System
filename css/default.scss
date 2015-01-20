@@ -84,8 +84,8 @@ form {
 }
 .mobile_nav {
     display: none; background: $primary_c; width: 100%;
-    a { color: white; }
-    li { @include padding(.5,0); display: block; width: 100%;}
+    a { color: white; @include padding(.8,0); }
+    li { display: block; width: 100%;}
 }
 #header .logo { float: left; color: white; width: 146px; margin-top: 10px; line-height: normal;
     img { width: 100%; }
@@ -278,6 +278,8 @@ form {
         &.sidebar {display: none;}
         &.content { width: 100% - ($pageMargins * 2);}
     }
+    
+    .desktop_nav { display: none; }
     
     #menu { display: block; }
     #jump_to { display: block; }
