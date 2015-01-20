@@ -703,11 +703,12 @@ title: Documentation
             var viewportHeight = $(window).height();
             var finalHeight = viewportHeight - btnHeight;
             console.log("btnHeight: ",btnHeight);
+            console.log("viewportHeight: ",viewportHeight);
             console.log("finalHeight: ",finalHeight);
             
             $("#jump_to > ol").show().animate({
                 height: finalHeight
-            }, 300);
+            }, 600);
         //}
         
     });
