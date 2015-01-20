@@ -224,8 +224,8 @@ form {
 .imgleft { float: left; @include margin(1,1,1,0); }
 
 #jump_to {
-    top: 40%; right: 0; position: fixed; 
-    > span { transform: rotate(-90deg); -webkit-transform: rotate(-90deg); display: block; background: $primary_c; @include border-radius(.5); border-bottom-left-radius: 0; border-bottom-right-radius: 0; color: white; @include padding(0, .3);}
+    bottom: 0; position: fixed; width: 100%;
+    > span { display: block; background: $primary_c; color: white; @include padding(.7, 0); text-align: center;}
 }
 
 
